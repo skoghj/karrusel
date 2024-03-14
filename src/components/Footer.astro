@@ -7,20 +7,38 @@
     <a href="#"><img src="#" alt="#" /></a>
   </div>
   <div class="footer-nav">
-    <ul>
-      <li><a href="#">LINEUP</a></li>
-      <li><a href="#">TICKETS</a></li>
-      <li><a href="#">PROGRAM</a></li>
-      <li><a href="#">GALLERY</a></li>
-      <li><a href="#">ABOUT US</a></li>
+    <ul class="footer-nav-list">
+      <div class="column1">
+        <li><a href="#">LINEUP</a></li>
+        <li><a href="#">TICKETS</a></li>
+        <li><a href="#">PROGRAM</a></li>
+      </div>
+      <div class="column2">
+        <li><a href="#">GALLERY</a></li>
+        <li><a href="#">ABOUT US</a></li>
+      </div>
     </ul>
   </div>
 
   <div class="footer-social">
     <p>Visit us on our socials</p>
-    <div class="footer-social-img1"><a href="#"><img src="#" alt="#" /></a></div>
-    <div class="footer-social-img2"><a href="#"><img src="#" alt="#" /></a></div>
+    <div class="footer-social-img1"><a href="#"><img src="public/facebook-rect.svg" alt="icon" /></a></div>
+    <div class="footer-social-img2"><a href="#"><img src="public/instagram-filled.svg" alt="icon" /></a></div>
   </div>
 </footer>
 
-<style></style>
+<style>
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo {
+    max-width: 130px;
+    margin: 20px;
+  }
+  .footer-nav-list {
+    display: flex;
+    justify-content: center; /* Centrerer indholdet vandret */
+    align-items: center; /* Centrerer indholdet lodret */
+  }
+</style>
