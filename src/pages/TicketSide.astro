@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Tickets from "../components/Tickets.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header />
+
+    <main>
+      <div class="tickets">
+        <Tickets />
+        <div class="om_pass">
+          <p>Early Bird Festival Passes on sale until 1 April. The Festival Pass provides access to all 3 days at Karrusel from 22–24 August 2024. Day tickets will go on sale later. Terms: Age limit: 18+. You must apply to entrance rules. Artists subject to change. Karrusel will take place rain or shine. Ticket fees apply.</p>
+          <div class="countdown">165D 18H 30M 60S</div>
+        </div>
+      </div>
+      <Footer />
+    </main>
+  </body>
+
+  <style>
+    .tickets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .om_pass {
+      color: white;
+      font-size: 20px;
+      padding-right: 100px;
+    }
+    .countdown {
+      padding-top: 160px;
+      font-size: 50px;
+    }
+  </style>
+</html>
