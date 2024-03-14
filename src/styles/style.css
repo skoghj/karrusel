@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Amarante&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1a0202;
+}
+
+header,
+footer {
+  background-color: #2e0404;
+}
+
+h1 {
+  font-family: "Amarante";
+  color: #f2f2f2;
+}
+
+p,
+li a,
+.nav-list li a {
+  font-family: "Lato";
+  text-decoration: none;
+  color: #f2f2f2;
+  font-size: 15px;
+}
+
+li a:hover,
+.nav-list li a:hover {
+  color: #f84104;
+}

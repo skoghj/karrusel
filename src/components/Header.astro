@@ -4,7 +4,7 @@
 
 <header>
   <div class="logo">
-    <a href=""><img src="#" alt="logo" /></a>
+    <a href=""><img src="public/logo_header.svg" alt="logo" /></a>
   </div>
   <nav class="nav">
     <ul class="nav-list">
@@ -23,6 +23,13 @@
 </header>
 
 <style>
+  .logo {
+    margin-top: 20px;
+    max-width: 130px;
+  }
+  .logo img {
+    width: 100%;
+  }
   .nav {
     display: flex;
     align-items: center;
@@ -31,9 +38,8 @@
 
   .nav-list {
     list-style: none;
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
+    margin: 25px;
+    padding: 10px;
   }
 
   .nav-list {
@@ -41,14 +47,7 @@
   }
 
   .nav-list li {
-    margin-right: 20px;
-  }
-
-  .nav-list a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    margin-right: 65px;
+    margin-right: 25px;
   }
 
   .burgermenu {
@@ -59,7 +58,7 @@
 
   header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
   }
 </style>

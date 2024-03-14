@@ -4,7 +4,7 @@
 
 <footer>
   <div class="footer-logo">
-    <a href="#"><img src="#" alt="#" /></a>
+    <a href="../pages/index.astro"><img src="public/logo_footer.svg" alt="footer logo" /></a>
   </div>
   <div class="footer-nav">
     <ul class="footer-nav-list">
@@ -22,6 +22,7 @@
 
   <div class="footer-social">
     <p>Visit us on our socials</p>
+    <br />
     <div class="footer-social-img1"><a href="#"><img src="public/facebook-rect.svg" alt="icon" /></a></div>
     <div class="footer-social-img2"><a href="#"><img src="public/instagram-filled.svg" alt="icon" /></a></div>
   </div>
@@ -32,13 +33,46 @@
     display: flex;
     justify-content: space-between;
   }
-  .logo {
+  .footer-logo {
     max-width: 130px;
     margin: 20px;
+  }
+
+  .footer-logo img {
+    width: 100%;
   }
   .footer-nav-list {
     display: flex;
     justify-content: center; /* Centrerer indholdet vandret */
-    align-items: center; /* Centrerer indholdet lodret */
+    text-decoration: none;
+  }
+
+  .footer-nav-list li {
+    list-style: none;
+  }
+
+  .column1,
+  .column2 {
+    margin: 25px;
+  }
+
+  .column2 {
+    margin-left: 45px;
+  }
+
+  .column1 li a,
+  .column2 li a {
+    line-height: 2;
+  }
+
+  .footer-social {
+    display: grid;
+    justify-items: center;
+    margin: 25px;
+  }
+
+  .footer-social-img1 img,
+  .footer-social-img2 img {
+    width: 30px;
   }
 </style>
