@@ -11,7 +11,6 @@ body {
   background-color: #1a0202;
 }
 
-header,
 footer {
   background-color: #2e0404;
 }
@@ -19,6 +18,7 @@ footer {
 h1 {
   font-family: "Amarante";
   color: #f2f2f2;
+  font-size: 50px;
 }
 
 p,
