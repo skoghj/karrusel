@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+import Buttons from "../components/Buttons.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Cards from "../components/Cards.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header />
+    <h1>Astro</h1>
+    <main>
+      <div class="list">
+        <Cards name="COCKHORE     " date="Thursday" land="DK" />
+        <Cards name="COCKHORE & MACHO" date="Thursday" land="DK" />
+        <Cards name="COCKHORE & MACHO" date="Thursday" land="DK" />
+        <Cards name="COCKHORE & MACHO" date="Thursday" land="DK" />
+      </div>
+      <Buttons> See more </Buttons>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .list {
+    display: flex;
+    flex-flow: wrap;
+    margin: auto;
+    gap: 30px;
+    justify-content: center;
+    padding-bottom: 100px;
+  }
+</style>
