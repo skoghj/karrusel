@@ -29,33 +29,83 @@ import "../styles/style.css";
           <Buttons>GO TO LINEUP</Buttons>
         </div>
       </div>
+      <div class="info_boxes">
+        <div class="info_box1">
+          <img src="public/webp/section_image1.webp" alt="section image" />
+          <h2>PROGRAM</h2>
+          <br />
+          <Buttons>GO TO PROGRAM..</Buttons>
+        </div>
+        <div class="info_box2">
+          <img src="public/webp/section_image2.webp" alt="section image" />
+          <h2>ABOUT US</h2>
+          <br />
+          <Buttons>LEARN MORE..</Buttons>
+        </div>
+        <div class="info_box3">
+          <img src="public/webp/section_image3.webp" alt="section image" />
+          <h2>GALLERY</h2>
+          <br />
+          <Buttons>GO TO GALLERY..</Buttons>
+        </div>
+      </div>
+      <Footer />
     </main>
-    <Footer />
   </body>
+
+  <style>
+    .container img {
+      height: 350px;
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(15%) contrast(100%) sepia(70%);
+    }
+
+    .centered {
+      text-align: center;
+      color: #ffffff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -145%);
+    }
+
+    .centered h1 {
+      background-image: url(../public/webp/mask_image.webp);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      --webkit-background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .info_boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: 35px;
+    }
+
+    .info_box1 img,
+    .info_box2 img,
+    .info_box3 img {
+      height: 250px;
+      width: 70%;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: brightness(110%) contrast(100%);
+    }
+
+    .info_box1,
+    .info_box2,
+    .info_box3 {
+      display: grid;
+      text-align: center;
+      justify-items: center;
+      color: #f2f2f2;
+    }
+
+    h2 {
+      font-family: "Amarante";
+      font-size: 30px;
+    }
+  </style>
 </html>
-
-<style>
-  .container img {
-    height: 350px;
-    width: 100%;
-    object-fit: cover;
-    filter: brightness(15%) contrast(100%) sepia(70%);
-  }
-
-  .centered {
-    text-align: center;
-    color: #ffffff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -145%);
-  }
-
-  .centered h1 {
-    background-image: url(../public/webp/mask_image.jpeg);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    --webkit-background-repeat: no-repeat;
-    background-size: cover;
-  }
-</style>
