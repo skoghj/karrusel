@@ -20,9 +20,10 @@ import "../styles/style.css";
       <div class="container">
         <img src="public/webp/frontpage_image.webp" alt="front-page image" />
         <div class="centered">
-          <h1><span class="karrusel">KARRUSEL</span> FESTIVAL</h1>
+          <h1>KARRUSEL FESTIVAL</h1>
           <br />
           <p>3 days of house, disco and techno in the woods.</p>
+          <br />
           <br />
           <Buttons>BUY TICKETS</Buttons>
           <Buttons>GO TO LINEUP</Buttons>
@@ -47,14 +48,14 @@ import "../styles/style.css";
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -160%);
+    transform: translate(-50%, -145%);
   }
 
   .centered h1 {
-    color: orangered;
-  }
-
-  .karrusel {
-    color: blueviolet;
+    background-image: url(../public/webp/mask_image.jpeg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
   }
 </style>
