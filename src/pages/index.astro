@@ -28,6 +28,7 @@ import "../styles/style.css";
           <br />
           <Buttons><a href="/ticket_side/">BUY TICKETS</a></Buttons>
           <Buttons><a href="/overview/">GO TO LINEUP</a></Buttons>
+          <h1 class="countdown" id="demo"></h1>
         </div>
         <div class="banner_container"><Banner /></div>
       </div>
@@ -69,7 +70,7 @@ import "../styles/style.css";
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -145%);
+      transform: translate(-50%, -75%);
     }
 
     .centered h1 {
@@ -109,5 +110,47 @@ import "../styles/style.css";
       font-family: "Amarante";
       font-size: 30px;
     }
+
+    .countdown {
+      transform: translate(-0px, -130px);
+      padding-top: 180px;
+      font-size: 25px;
+      font-family: "Lato";
+      color: #f2f2f2;
+    }
   </style>
+
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Aug 22, 2024 18:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Definer en variabel for days, hours, minutes og seconds som strenge
+      let days: string;
+      let hours: string;
+      let minutes: string;
+      let seconds: string;
+
+      // Konverter numeriske værdier til strenge før tildeling
+      days = String(Math.floor(distance / (1000 * 60 * 60 * 24)));
+      hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+      minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+      seconds = String(Math.floor((distance % (1000 * 60)) / 1000));
+
+      // Output the result in an element with id="demo"
+      document.getElementById("demo").innerHTML = days + "D " + hours + "H " + minutes + "M " + seconds + "S ";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
 </html>

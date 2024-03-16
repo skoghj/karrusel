@@ -1,31 +1,36 @@
 ---
-import "../styles/style.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Carrousel from "../components/Carrousel.astro";
+import "../styles/style.css";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Gallery</title>
   </head>
   <body>
     <Header />
 
     <main>
-      <div class="Carrousel_gallery">
-        <Carrousel />
-      </div>
+      <h1>GALLERY</h1>
+      <Carrousel />
     </main>
     <Footer />
   </body>
+  <style>
+    main h1 {
+      text-align: center;
+      padding-top: 10px;
+      background-image: url(../public/webp/mask_image.webp);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      --webkit-background-repeat: no-repeat;
+    }
+  </style>
 </html>
-<style>
-  .Carrousel_gallery {
-    padding-top: 100px;
-  }
-</style>
