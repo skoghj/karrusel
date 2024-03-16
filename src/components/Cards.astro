@@ -12,7 +12,7 @@ import Buttons from "./Buttons.astro";
       <img src="/public/webp/lineup/artist.webp" alt="card" />
       <div class="navn">
         <h2 class="name">{name}</h2>
-        <a href="#" class="card-button"><Buttons class="card_button"> See more </Buttons></a>
+        <div class="card_button"><a href="#" class="card-button"><Buttons> See more </Buttons></a></div>
       </div>
       <div class="date_land">
         <div class="date">{date}</div>
@@ -43,11 +43,12 @@ import Buttons from "./Buttons.astro";
   .navn {
     position: absolute;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     bottom: 0;
     width: 300px;
-    padding: 10px;
     border-radius: 0 0 20px 20px;
+    padding: 10px 20px;
+    align-items: center;
     background-color: #fff3ec;
   }
 

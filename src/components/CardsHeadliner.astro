@@ -12,7 +12,8 @@ import Buttons from "./Buttons.astro";
       <img src="/public/webp/lineup/satori-artist-card.webp" alt="card" />
       <div class="navn">
         <h2 class="name">{name}</h2>
-        <a href="#" class="card-button"><Buttons class="card_button"> See more </Buttons></a>
+
+        <a href="#"><Buttons class="card-button"> See more </Buttons></a>
       </div>
       <div class="date_land">
         <div class="date">{date}</div>
@@ -43,12 +44,12 @@ import Buttons from "./Buttons.astro";
   .navn {
     position: absolute;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     bottom: 0;
     width: 300px;
-    padding: 10px;
     border-radius: 0 0 20px 20px;
-    background-color: #fff3ec;
+    padding: 0 20px 10px 20px;
+    align-items: center;
   }
 
   .name {
@@ -67,5 +68,8 @@ import Buttons from "./Buttons.astro";
   }
   .land {
     transform: translate(196px, 6px);
+  }
+  .card-button {
+    width: 88px;
   }
 </style>
