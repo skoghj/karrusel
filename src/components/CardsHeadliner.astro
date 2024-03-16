@@ -12,7 +12,6 @@ import Buttons from "./Buttons.astro";
       <img src="/public/webp/lineup/satori-artist-card.webp" alt="card" />
       <div class="navn">
         <h2 class="name">{name}</h2>
-
         <a href="#"><Buttons class="card-button"> See more </Buttons></a>
       </div>
       <div class="date_land">
@@ -31,8 +30,12 @@ import Buttons from "./Buttons.astro";
     position: relative;
     height: auto;
     gap: 20px;
+    transition: 1s;
   }
-
+  .card-container:hover {
+    transform: scale(1.1);
+    z-index: 2;
+  }
   img {
     display: flex;
     position: relative;
@@ -54,20 +57,29 @@ import Buttons from "./Buttons.astro";
 
   .name {
     inline-size: 250px;
+    justify-content: center;
     overflow-wrap: break-word;
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 50px;
+    font-weight: 800;
+    color: #1a0202;
   }
   .date_land {
     display: flex;
     color: #fff3ec;
     position: absolute;
+    font-size: 20px;
     font-family: "Alumni Sans Pinstripe", sans-serif;
     font-weight: 600;
   }
   .date {
-    transform: translate(13px, 6px);
+    transform: translate(20px, 6px);
   }
   .land {
-    transform: translate(196px, 6px);
+    transform: translate(209px, 6px);
   }
   .card-button {
     width: 88px;

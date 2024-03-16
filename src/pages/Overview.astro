@@ -5,6 +5,11 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Cards from "../components/Cards.astro";
 import CardsHeadliner from "../components/CardsHeadliner.astro";
+const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artist", {
+  method: "GET",
+  headers: { apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xemd6YWVldnVvbG5laXhndWF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA2MDQyNDQsImV4cCI6MjAyNjE4MDI0NH0.Qbj4-BVvOnlAroDN44rKnJaPILmiSdhtvARYZEbJrkA" },
+}).then((res) => res.json());
+console.log(data);
 ---
 
 <html lang="en">
@@ -85,9 +90,9 @@ import CardsHeadliner from "../components/CardsHeadliner.astro";
         <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
       </section>
     </main>
+    <Footer />
   </body>
 </html>
-<Footer />
 
 <style>
   .headline_bgr {
@@ -126,8 +131,8 @@ import CardsHeadliner from "../components/CardsHeadliner.astro";
     margin: auto;
     justify-content: center;
     gap: 40px;
-    padding: 40px;
-    transform: translateX(-502px);
+    padding: 50px;
+    transform: translateX(-470px);
   }
   .festival_overblik {
     display: flex;
