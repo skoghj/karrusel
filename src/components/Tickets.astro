@@ -5,9 +5,9 @@
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 </head>
-<div class="ticket">
+<article class="ticket">
   <div class="earlybird">
-    <img src="/public/Ticket_earlybird.svg" alt="earlybird ticket" />
+    <img src="/public/svg/Ticket_earlybird.svg" alt="earlybird ticket" />
     <h1 class="buy_now"><a href="https://www.ticketmaster.dk/event/542817">BUY NOW</a></h1>
     <h1 class="earlybirdpass">EARLYBIRD <br /> PASS</h1>
     <p class="sale">on sale until 1 April</p>
@@ -15,106 +15,105 @@
     <p class="agelimit">AGE LIMIT 18+</p>
   </div>
   <div class="oneday">
-    <img src="/public/Ticket_oneday.svg" alt="oneday ticket" />
+    <img src="/public/svg/Ticket_oneday.svg" alt="oneday ticket" />
     <h1 class="comingsoon"><a href="https://www.ticketmaster.dk/event/542817">COMING SOON</a></h1>
     <h1 class="onedaypass">ONEDAY <br /> PASS</h1>
     <p class="sale">on sale until 1 April</p>
     <h1 class="price_soon">Coming Soon</h1>
     <p class="agelimit">AGE LIMIT 18+</p>
   </div>
+</article>
+<style>
+  .buy_now,
+  .comingsoon,
+  .price,
+  .price_soon,
+  .earlybirdpass,
+  .onedaypass {
+    font-family: "Alumni Sans", sans-serif;
+    color: #2b0303;
+  }
+  .buy_now,
+  .comingsoon {
+    font-size: 55px;
+  }
+  .price_soon {
+    font-size: 43px;
+  }
+  .earlybirdpass,
+  .onedaypass,
+  .price {
+    font-size: 50px;
+  }
+  .sale,
+  .agelimit {
+    font-family: "Alumni Sans", sans-serif;
+    color: #2b0303;
+    font-size: 20px;
+    font-weight: bold;
+  }
 
-  <style>
-    .buy_now,
-    .comingsoon,
-    .price,
-    .price_soon,
-    .earlybirdpass,
-    .onedaypass {
-      font-family: "Alumni Sans", sans-serif;
+  .ticket {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 40px;
+    align-items: flex-end;
+  }
+  .earlybird,
+  .oneday {
+    display: grid;
+    place-items: center;
+  }
 
-      color: #2b0303;
-    }
-    .buy_now,
-    .comingsoon {
-      font-size: 55px;
-    }
-    .price_soon {
-      font-size: 43px;
-    }
-    .earlybirdpass,
-    .onedaypass,
-    .price {
-      font-size: 50px;
-    }
-    .sale,
-    .agelimit {
-      font-family: "Alumni Sans", sans-serif;
-      color: #2b0303;
-      font-size: 20px;
-      font-weight: bold;
-    }
+  img,
+  .buy_now,
+  .comingsoon,
+  .earlybirdpass,
+  .sale,
+  .price,
+  .price_soon,
+  .agelimit {
+    grid-area: 1 / 1;
+  }
 
-    .ticket {
-      display: flex;
-      flex-flow: column wrap;
-      gap: 40px;
-    }
-    .earlybird,
-    .oneday {
-      display: grid;
-      place-items: center;
-    }
-
-    img,
-    .buy_now,
-    .comingsoon,
-    .earlybirdpass,
-    .sale,
-    .price,
-    .price_soon,
-    .agelimit {
-      grid-area: 1 / 1;
-    }
-
-    .buy_now {
-      color: white;
-      transform: translate(-196px, 78px);
-    }
-    .buy_now a:hover,
-    .comingsoon a:hover {
-      color: #f84104;
-    }
-    .comingsoon a,
-    .buy_now a {
-      color: white;
-      text-decoration: none;
-    }
-    .comingsoon {
-      transform: translate(-154px, 78px);
-    }
-    .earlybirdpass,
-    .onedaypass {
-      color: #2b0303;
-      font-weight: 800;
-      line-height: 1;
-    }
-    .earlybirdpass {
-      transform: translate(123px, -47px);
-    }
-    .onedaypass {
-      transform: translate(102px, -206px);
-    }
-    .price {
-      transform: translate(103px, 60px);
-    }
-    .price_soon {
-      transform: translate(127px, 60px);
-    }
-    .sale {
-      transform: translate(103px, 10px);
-    }
-    .agelimit {
-      transform: translate(87px, 90px);
-    }
-  </style>
-</div>
+  .buy_now {
+    color: white;
+    transform: translate(-196px, 78px);
+  }
+  .buy_now a:hover,
+  .comingsoon a:hover {
+    color: #f84104;
+  }
+  .comingsoon a,
+  .buy_now a {
+    color: white;
+    text-decoration: none;
+  }
+  .comingsoon {
+    transform: translate(-154px, 78px);
+  }
+  .earlybirdpass,
+  .onedaypass {
+    color: #2b0303;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .earlybirdpass {
+    transform: translate(123px, -47px);
+  }
+  .onedaypass {
+    transform: translate(102px, -206px);
+  }
+  .price {
+    transform: translate(103px, 60px);
+  }
+  .price_soon {
+    transform: translate(127px, 60px);
+  }
+  .sale {
+    transform: translate(103px, 10px);
+  }
+  .agelimit {
+    transform: translate(87px, 90px);
+  }
+</style>
