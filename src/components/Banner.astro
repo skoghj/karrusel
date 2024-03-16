@@ -1,0 +1,43 @@
+---
+
+---
+
+<logo-slider>
+  <div>
+    <p>Acid Pauli · Âme · FJAAK · HAAi · Kölsch · Mira · Narciss · Richie Hawtin · Satori · Skin On Skin · SPFDJ · VTSS</p>
+  </div>
+</logo-slider>
+
+<style>
+  logo-slider {
+    overflow: hidden;
+    max-width: 1920px;
+    min-width: 320px;
+    width: 100%;
+    display: flex;
+    padding-block: 5px;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(120%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    animation: marquee 20s linear infinite;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  div p {
+    color: #000;
+    font-size: 25px;
+    font-family: "Amarante";
+  }
+</style>

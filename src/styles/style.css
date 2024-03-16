@@ -15,6 +15,11 @@ footer {
   background-color: #2e0404;
 }
 
+.banner_container {
+  background-color: #ffc4a8;
+  border: #ffc4a8 15px solid;
+}
+
 h1 {
   font-family: "Amarante";
   color: #f2f2f2;
