@@ -9,10 +9,11 @@ import Buttons from "./Buttons.astro";
 <body>
   <article>
     <div class="card-container">
-      <img src="/public/webp/lineup/artist.webp" alt="card" />
+      <img src="/public/webp/lineup/satori-artist-card.webp" alt="card" />
       <div class="navn">
         <h2 class="name">{name}</h2>
-        <div class="card_button"><a href="#" class="card-button"><Buttons> See more </Buttons></a></div>
+
+        <a href="#"><Buttons class="card-button"> See more </Buttons></a>
       </div>
       <div class="date_land">
         <div class="date">{date}</div>
@@ -47,9 +48,8 @@ import Buttons from "./Buttons.astro";
     bottom: 0;
     width: 300px;
     border-radius: 0 0 20px 20px;
-    padding: 10px 20px;
+    padding: 0 20px 10px 20px;
     align-items: center;
-    background-color: #fff3ec;
   }
 
   .name {
@@ -68,5 +68,8 @@ import Buttons from "./Buttons.astro";
   }
   .land {
     transform: translate(196px, 6px);
+  }
+  .card-button {
+    width: 88px;
   }
 </style>
