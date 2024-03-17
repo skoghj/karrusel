@@ -21,13 +21,13 @@ import "../styles/style.css";
       <div class="container">
         <img src="public/webp/frontpage_image.webp" alt="front-page image" />
         <div class="centered">
-          <h1>KARRUSEL FESTIVAL</h1>
+          <h1 class="h1_text">KARRUSEL <span class="festival">FESTIVAL</span></h1>
           <br />
           <p>3 days of house, disco and techno in the woods.</p>
           <br />
           <br />
           <Buttons><a href="/ticket_side/">BUY TICKETS</a></Buttons>
-          <Buttons><a href="/overview/">GO TO LINEUP</a></Buttons>
+          <Buttons><a href="/Overview/">GO TO LINEUP</a></Buttons>
           <h1 class="countdown" id="demo"></h1>
         </div>
         <div class="banner_container"><Banner /></div>
@@ -65,22 +65,37 @@ import "../styles/style.css";
     }
 
     .centered {
-      text-align: center;
       color: #ffffff;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -75%);
+      transform: translate(-50%, -111%);
     }
 
     .centered h1 {
       background-image: url(../public/webp/mask_image.webp);
+      filter: brightness(180%) contrast(100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       --webkit-background-repeat: no-repeat;
       background-size: cover;
+      padding-top: 18.5px;
     }
 
+    .festival {
+      display: flex;
+      justify-content: end;
+    }
+
+    .h1_text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .centered p {
+      font-size: 15px;
+      text-align: center;
+    }
     .info_boxes {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -112,11 +127,11 @@ import "../styles/style.css";
     }
 
     .countdown {
-      transform: translate(-0px, -130px);
-      padding-top: 180px;
+      transform: translate(-0px, 15px);
       font-size: 25px;
       font-family: "Lato";
       color: #f2f2f2;
+      text-align: center;
     }
   </style>
 
