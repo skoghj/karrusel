@@ -48,14 +48,14 @@ console.log("data", data);
         <div class="headline_bgr">
           <img src="/public/webp/lineup/headlineup_bgr.webp" alt="background_img" />
           <div class="headliner_list">
-            <div class="headliner">
-              <CardsHeadliner name="Satori" date="Thursday" land="DK" />
-            </div>
+            <section class="headliner">
+              <CardsHeadliner name="SKIN ON SKIN" date="THURSDAY" land="AU" imgPath=../public/webp/lineup/skin-on-skin-artist-card.webp />
+            </section>
             <div class="head_2">
-              <CardsHeadliner name="Satori" date="Thursday" land="DK" />
+              <CardsHeadliner name="HAAi" date="FRIDAY" land="AU" imgPath=../public/webp/lineup/haai-artist-card.webp />
             </div>
             <div class="head_3">
-              <CardsHeadliner name="Satori" date="Thursday" land="DK" />
+              <CardsHeadliner name="ACID PAULI" date="SATURDAY" land="DE" imgPath=../public/webp/lineup/acid-pauli-artist-card.webp />
             </div>
           </div>
         </div>
@@ -66,35 +66,11 @@ console.log("data", data);
         <ButtonOverview variant="secondary"> TECHNO </ButtonOverview>
       </div>
       <section class="list">
-        <!--{
+        {
           data.map((artists) => {
-            return <Cards data={artists} />;
+            return <Cards name="COCKWHORE" date="Thursday" land="DK" data={artists} />;
           })
-        }-->
-
-        <Cards name="COCKWHORE" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE     " date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-
-        <Cards name="COCKWHORE     " date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-
-        <Cards name="COCKWHORE     " date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-
-        <Cards name="COCKWHORE     " date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
-        <Cards name="COCKWHORE & MACHO" date="Thursday" land="DK" />
+        }
       </section>
     </main>
   </body>

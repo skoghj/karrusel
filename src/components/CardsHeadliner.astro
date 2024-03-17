@@ -1,5 +1,5 @@
 ---
-const { name, date, land } = Astro.props;
+const { name, date, land, imgPath } = Astro.props;
 import ButtonOverview from "./ButtonOverview.astro";
 ---
 
@@ -9,10 +9,12 @@ import ButtonOverview from "./ButtonOverview.astro";
 <body>
   <article>
     <div class="card-container">
-      <img src="/public/webp/lineup/satori-artist-card.webp" alt="card" />
+      <img src={imgPath} alt="" />
       <div class="navn">
         <h2 class="name">{name}</h2>
-        <a href="#"><ButtonOverview variant="secondary"> See more </ButtonOverview></a>
+        <div class="button_list">
+          <a href="#"><ButtonOverview variant="secondary"> See more </ButtonOverview></a>
+        </div>
       </div>
       <div class="date_land">
         <div class="date">{date}</div>
@@ -32,6 +34,7 @@ import ButtonOverview from "./ButtonOverview.astro";
     gap: 20px;
     transition: 1s;
   }
+
   .card-container:hover {
     transform: scale(1.1);
     z-index: 2;
@@ -53,10 +56,11 @@ import ButtonOverview from "./ButtonOverview.astro";
     border-radius: 0 0 20px 20px;
     padding: 0 20px 10px 20px;
     align-items: center;
+    font-family: "Alumni Sans", sans-serif;
   }
 
   .name {
-    inline-size: 187px;
+    inline-size: 185px;
     justify-content: center;
     overflow-wrap: break-word;
     font-family: "Alumni Sans", sans-serif;
@@ -65,23 +69,21 @@ import ButtonOverview from "./ButtonOverview.astro";
     font-style: normal;
     font-size: 50px;
     font-weight: 800;
-    color: #1a0202;
+    color: #9f2e09;
   }
   .date_land {
     display: flex;
-    color: #fff3ec;
+    color: #2e2828;
     position: absolute;
     font-size: 20px;
-    font-family: "Alumni Sans Pinstripe", sans-serif;
+    font-family: "Alumni Sans", sans-serif;
     font-weight: 600;
+    justify-content: space-between;
+    width: 298px;
+    padding: 10px 20px;
   }
-  .date {
-    transform: translate(20px, 6px);
-  }
-  .land {
-    transform: translate(209px, 6px);
-  }
-  .card-button {
-    width: 88px;
+  .button_list {
+    align-self: flex-end;
+    padding-bottom: 15px;
   }
 </style>
