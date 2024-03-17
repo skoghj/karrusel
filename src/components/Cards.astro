@@ -1,6 +1,7 @@
 ---
+const { data } = Astro.props;
 const { name, date, land } = Astro.props;
-import Buttons from "./Buttons.astro";
+import ButtonOverview from "../components/ButtonOverview.astro";
 ---
 
 <head>
@@ -12,7 +13,7 @@ import Buttons from "./Buttons.astro";
       <img src="/public/webp/lineup/artist.webp" alt="card" />
       <div class="navn">
         <h2 class="name">{name}</h2>
-        <a href="#" class="card-button"><Buttons> See more </Buttons></a>
+        <div class="button_list"><ButtonOverview variant="primary"> See more </ButtonOverview></div>
       </div>
       <div class="date_land">
         <div class="date">{date}</div>
@@ -55,11 +56,13 @@ import Buttons from "./Buttons.astro";
     padding: 10px 20px;
     align-items: center;
     background-color: #fff3ec;
-    font-family: "Alumni Sans Pinstripe", sans-serif;
+    font-family: "Alumni Sans", sans-serif;
   }
-
+  .button_list {
+    align-self: flex-end;
+  }
   .name {
-    inline-size: 200px;
+    inline-size: 187px;
     justify-content: center;
     overflow-wrap: break-word;
     font-family: "Alumni Sans", sans-serif;

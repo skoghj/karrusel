@@ -1,0 +1,54 @@
+---
+const { variant = "primary" } = Astro.props;
+---
+
+<button class="custom-button" data-variant={variant}>
+  <a href="#" class="button-link">
+    <slot />
+  </a>
+</button>
+
+<style>
+  /* Common styles for all buttons */
+  .custom-button {
+    width: 90px;
+    padding: 10px;
+    border-radius: 20px;
+    display: inline-block;
+    min-width: auto;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .custom-button:hover {
+    cursor: pointer;
+  }
+
+  .button-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Variant specific styles */
+  [data-variant="secondary"] {
+    border: 2px solid orangered;
+    background-color: transparent;
+    color: orangered;
+  }
+
+  [data-variant="secondary"]:hover {
+    background-color: orangered;
+    color: black;
+  }
+
+  [data-variant="primary"] {
+    border: 2px solid #7000ff;
+    background-color: transparent;
+    color: #7000ff;
+  }
+
+  [data-variant="primary"]:hover {
+    background-color: #7000ff;
+    color: white;
+  }
+</style>
