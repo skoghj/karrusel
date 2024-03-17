@@ -3,215 +3,127 @@
 ---
 
 <div class="carrousel_gallery1">
-  <div class="carousel">
-    <ul class="slides">
-      <input type="radio" name="radio-buttons" id="img-1" checked />
-      <li class="slide-container">
-        <div class="slide-image">
-          <img src="public/webp/section_image1.webp" alt="carousel-image" />
-        </div>
-        <div class="carousel-controls">
-          <label for="img-5" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-2" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-2" />
-      <li class="slide-container">
-        <div class="slide-image">
-          <img src="public/webp/section_image2.webp" alt="carousel-image" />
-        </div>
-        <div class="carousel-controls">
-          <label for="img-1" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-3" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-3" />
-      <li class="slide-container">
-        <div class="slide-image">
-          <img src="public/webp/section_image3.webp" alt="carousel-image" />
-        </div>
-        <div class="carousel-controls">
-          <label for="img-2" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-4" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-4" />
-      <li class="slide-container">
-        <div class="slide-image">
-          <img src="images/frontpage-2.jpg" alt="carousel-image" />
-        </div>
-        <div class="carousel-controls">
-          <label for="img-3" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-5" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <input type="radio" name="radio-buttons" id="img-5" />
-      <li class="slide-container">
-        <div class="slide-image">
-          <img src="images/sankested_strand-squashed.jpg" alt="carousel-image" />
-        </div>
-        <div class="carousel-controls">
-          <label for="img-4" class="prev-slide">
-            <span>&lsaquo;</span>
-          </label>
-          <label for="img-1" class="next-slide">
-            <span>&rsaquo;</span>
-          </label>
-        </div>
-      </li>
-      <div class="carousel-dots">
-        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-        <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
-        <label for="img-4" class="carousel-dot" id="img-dot-4"></label>
-        <label for="img-5" class="carousel-dot" id="img-dot-5"></label>
-      </div>
-    </ul>
-  </div>
+  <body>
+    <input type="radio" name="position" checked />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <main id="carousel">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <main></main>
+
+      <style>
+        /*carousel (kode lånt fra: https://freefrontend.com/css-carousels)*/
+
+        .carrousel_gallery1 {
+          height: 450px;
+          display: grid;
+          grid-template-rows: 400px 10px;
+          grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+          align-items: start;
+          justify-items: center;
+        }
+
+        main#carousel {
+          grid-row: 1 / 2;
+          grid-column: 1 / 8;
+          width: 100vw;
+          height: 500px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          overflow: hidden;
+          transform-style: preserve-3d;
+          perspective: 600px;
+          --items: 5;
+          --middle: 3;
+          --position: 1;
+          pointer-events: none;
+          margin-top: 30px;
+        }
+
+        div.item {
+          position: absolute;
+          width: 600px;
+          height: 300px;
+          --r: calc(var(--position) - var(--offset));
+          --abs: max(calc(var(--r) * -1), var(--r));
+          transition: all 0.25s linear;
+          transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+          z-index: calc((var(--position) - var(--abs)));
+        }
+
+        div.item:nth-of-type(1) {
+          --offset: 1;
+          background-image: url(../public/webp/section_image7.webp);
+          background-repeat: no-repeat;
+        }
+        div.item:nth-of-type(2) {
+          --offset: 2;
+          background-image: url(../public/webp/section_image8.webp);
+          background-repeat: no-repeat;
+        }
+        div.item:nth-of-type(3) {
+          --offset: 3;
+          background-image: url(../public/webp/section_image9.webp);
+          background-repeat: no-repeat;
+        }
+        div.item:nth-of-type(4) {
+          --offset: 4;
+          background-image: url(../public/webp/section_image10.webp);
+          background-repeat: no-repeat;
+        }
+        div.item:nth-of-type(5) {
+          --offset: 5;
+          background-image: url(../public/webp/section_image11.webp);
+          background-repeat: no-repeat;
+        }
+
+        input:nth-of-type(1) {
+          grid-column: 2 / 3;
+          grid-row: 2 / 3;
+        }
+        input:nth-of-type(1):checked ~ main#carousel {
+          --position: 1;
+        }
+
+        input:nth-of-type(2) {
+          grid-column: 3 / 4;
+          grid-row: 2 / 3;
+        }
+        input:nth-of-type(2):checked ~ main#carousel {
+          --position: 2;
+        }
+
+        input:nth-of-type(3) {
+          grid-column: 4 /5;
+          grid-row: 2 / 3;
+        }
+        input:nth-of-type(3):checked ~ main#carousel {
+          --position: 3;
+        }
+
+        input:nth-of-type(4) {
+          grid-column: 5 / 6;
+          grid-row: 2 / 3;
+        }
+        input:nth-of-type(4):checked ~ main#carousel {
+          --position: 4;
+        }
+
+        input:nth-of-type(5) {
+          grid-column: 6 / 7;
+          grid-row: 2 / 3;
+        }
+        input:nth-of-type(5):checked ~ main#carousel {
+          --position: 5;
+        }
+      </style>
+    </main>
+  </body>
 </div>
-
-<style>
-  /*carousel (kode lånt fra: https://devsnap.me/css-carousels | punkt 10)*/
-
-  ul.slides {
-    display: block;
-    position: relative;
-    height: 600px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    list-style: none;
-  }
-
-  .slides * {
-    user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-  }
-
-  ul.slides input {
-    display: none;
-  }
-
-  .slide-container {
-    display: block;
-  }
-
-  .slide-image {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    opacity: 0;
-    transition: all 0.7s ease-in-out;
-  }
-
-  .slide-image img {
-    height: 250px;
-    width: 70%;
-    object-fit: cover;
-    border-radius: 10px;
-    filter: brightness(110%) contrast(100%);
-  }
-
-  .carousel-controls {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    font-size: 100px;
-    line-height: 600px;
-    color: #fff;
-  }
-
-  .carousel-controls label {
-    display: none;
-    position: absolute;
-    padding: 0 20px;
-    opacity: 0;
-    transition: opacity 0.2s;
-    cursor: pointer;
-  }
-
-  .slide-image:hover + .carousel-controls label {
-    opacity: 0.5;
-  }
-
-  .carousel-controls label:hover {
-    opacity: 1;
-  }
-
-  .carousel-controls .prev-slide {
-    width: 49%;
-    text-align: left;
-    left: 0;
-  }
-
-  .carousel-controls .next-slide {
-    width: 49%;
-    text-align: right;
-    right: 0;
-  }
-
-  .carousel-dots {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 50px;
-    z-index: 999;
-    text-align: center;
-  }
-
-  .carousel-dots .carousel-dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.5;
-    margin: 10px;
-  }
-
-  input:checked + .slide-container .slide-image {
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity 1s ease-in-out;
-  }
-
-  input:checked + .slide-container .carousel-controls label {
-    display: block;
-  }
-
-  input#img-1:checked ~ .carousel-dots label#img-dot-1,
-  input#img-2:checked ~ .carousel-dots label#img-dot-2,
-  input#img-3:checked ~ .carousel-dots label#img-dot-3,
-  input#img-4:checked ~ .carousel-dots label#img-dot-4,
-  input#img-5:checked ~ .carousel-dots label#img-dot-5,
-  input#img-6:checked ~ .carousel-dots label#img-dot-6 {
-    opacity: 1;
-  }
-
-  input:checked + .slide-container .nav label {
-    display: block;
-  }
-</style>

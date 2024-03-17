@@ -9,7 +9,7 @@ import "../styles/style.css";
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="public/svg/logo_footer.svg" type="image/svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Gallery</title>
@@ -19,6 +19,11 @@ import "../styles/style.css";
 
     <main>
       <h1>GALLERY</h1>
+      <h2>2023</h2>
+      <Carrousel />
+      <h2>2022</h2>
+      <Carrousel />
+      <h2>2021</h2>
       <Carrousel />
     </main>
     <Footer />
@@ -26,11 +31,19 @@ import "../styles/style.css";
   <style>
     main h1 {
       text-align: center;
-      padding-top: 10px;
+      padding: 30px;
       background-image: url(../public/webp/mask_image.webp);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       --webkit-background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    main h2 {
+      text-align: center;
+      font-family: "Amarante";
+      color: #f2f2f2;
+      padding-top: 80px;
     }
   </style>
 </html>
