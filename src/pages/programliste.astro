@@ -4,59 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Carrousel from "../components/Carrousel.astro";
 import Programlist from "../components/Programlist.astro";
-import Button from "../components/Buttons.astro"
-
-// Initially, show only Thursday elements
-filterSelection("Thursday");
-
-// Function to filter elements based on category
-function filterSelection(category) {
-  var elements, i;
-  elements = document.getElementsByClassName("filterDiv");
-
-  // Loop through all elements
-  for (i = 0; i < elements.length; i++) {
-    // Hide elements not matching the category
-    if (elements[i].className.indexOf(category) === -1) {
-      elements[i].style.display = "none";
-    } else {
-      // Show elements matching the category
-      elements[i].style.display = "grid";
-    }
-  }
-}
-
-// Function to add a class to an element
-function addClass(element, name) {
-  var classes = element.className.split(" ");
-  if (classes.indexOf(name) === -1) {
-    element.className += " " + name;
-  }
-}
-
-// Function to remove a class from an element
-function removeClass(element, name) {
-  var classes = element.className.split(" ");
-  while (classes.indexOf(name) !== -1) {
-    classes.splice(classes.indexOf(name), 1);
-  }
-  element.className = classes.join(" ");
-}
-
-// Add active class to the clicked button
-var buttonContainer = document.getElementById("myBtnContainer");
-var buttons = buttonContainer.getElementsByClassName("btn");
-for (var i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function () {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-
-    // Filter elements based on the clicked button's category
-    filterSelection(this.getAttribute("data-category"));
-  });
-}
-
+import Button from "../components/Buttons.astro";
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +12,8 @@ for (var i = 0; i < buttons.length; i++) {
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <title>program</title>
@@ -94,12 +44,13 @@ for (var i = 0; i < buttons.length; i++) {
         <div>
           <h1 class="map_text">3 DAYS OF TECHNO, HOUSE AND DISCO IN THE WOODS</h1>
         </div>
-      </article>y
+      </article>
 
     </article>
   </main>
+  <footer>
   <Footer />
-  <!-- Script for scroll-to-bottom button -->
+</footer>
 </body>
 </html>
 
@@ -181,11 +132,4 @@ cursor: pointer;
 }
     </style> 
 
-<script>
-    document.getElementById('scrollToBottomBtn').addEventListener('click', function() {
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-      });
-    });
-  </script>
+
