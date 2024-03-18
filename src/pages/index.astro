@@ -3,7 +3,7 @@ import Buttons from "../components/Buttons.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
-import "../styles/style.css";
+import "/styles/style.css";
 ---
 
 <html lang="en">
@@ -63,6 +63,7 @@ import "../styles/style.css";
   </body>
 
   <style>
+    /*Frontpage - desktop*/
     body {
       background-image: url(../svg/background_image1.svg);
       background-repeat: no-repeat;
@@ -161,6 +162,23 @@ import "../styles/style.css";
     .map img:hover {
       opacity: 70%;
       cursor: pointer;
+    }
+
+    /*Frontpage - mobile*/
+    @media only screen and (max-width: 600px) {
+      .info_boxes {
+        grid-template-columns: 1fr;
+      }
+
+      .info_box1,
+      .info_box2,
+      .info_box3 {
+        margin-top: 20px;
+      }
+
+      .map {
+        margin: 50px;
+      }
     }
   </style>
 
