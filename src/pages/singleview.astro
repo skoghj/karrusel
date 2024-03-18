@@ -6,14 +6,14 @@ import Icons from "../components/Icons.astro";
 
 
 export async function getStaticPaths() {
-const url = ""
+const url = "https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artist";
 
-const options ={
-    headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxoemhwdnZsb215c3dibGVoeWJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc4MzIzOTgsImV4cCI6MjAyMzQwODM5OH0.t2Pxr9GZCPjNkKkI0Gg11I9Dyxb6VL50DMZmHE44Ma4"
-        },
+const options =  {
+headers: { 
+apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xemd6YWVldnVvbG5laXhndWF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA2MDQyNDQsImV4cCI6MjAyNjE4MDI0NH0.Qbj4-BVvOnlAroDN44rKnJaPILmiSdhtvARYZEbJrkA" },
+};
 
-        const data = await fetch(url, options).then(response => response.json());
+  const data = await fetch(url, options).then(response => response.json());
 
         return data.map((ret) => {
             return{
@@ -23,7 +23,8 @@ const options ={
 
         });
 }
-const {ret} = Astro.props
+const { name, description, music, img_singview } = Astro.props
+const { ret } = Astro.props
 
 ---
 
@@ -60,7 +61,7 @@ const {ret} = Astro.props
             </div>
 
             <div class="single-text_1">
-                <h1> </h1>
+                <h1>{ret.name}</h1>
                 <br>
                 <p class="description"></p>
 

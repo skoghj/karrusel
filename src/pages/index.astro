@@ -52,11 +52,22 @@ import "../styles/style.css";
           <Buttons variant="secondary">GO TO GALLERY..</Buttons>
         </div>
       </div>
+      <div class="map">
+        <img src="../public/svg/map.svg" alt="map" />
+        <br />
+        <Buttons variant="secondary" class="map">GO TO MAP</Buttons><div class="map_image"></div>
+      </div>
+
       <Footer />
     </main>
   </body>
 
   <style>
+    body {
+      background-image: url(../public/svg/background_image1.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
     .container img {
       height: 350px;
       width: 100%;
@@ -69,7 +80,7 @@ import "../styles/style.css";
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -111%);
+      transform: translate(-50%, -108.5%);
     }
 
     .centered h1 {
@@ -134,6 +145,22 @@ import "../styles/style.css";
       font-family: "Lato";
       color: #f2f2f2;
       text-align: center;
+    }
+
+    .map {
+      display: grid;
+      justify-content: end;
+      margin: 85px;
+    }
+
+    .map img {
+      width: 80%;
+      height: auto;
+    }
+
+    .map img:hover {
+      opacity: 70%;
+      cursor: pointer;
     }
   </style>
 
