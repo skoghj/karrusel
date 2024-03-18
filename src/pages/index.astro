@@ -3,7 +3,7 @@ import Buttons from "../components/Buttons.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
-import "../styles/style.css";
+import "/styles/style.css";
 ---
 
 <html lang="en">
@@ -19,7 +19,7 @@ import "../styles/style.css";
     <Header />
     <main>
       <div class="container">
-        <img src="public/webp/frontpage_image.webp" alt="front-page image" />
+        <img src="/webp/frontpage_image.webp" alt="front-page image" />
         <div class="centered">
           <h1 class="h1_text">KARRUSEL <span class="festival">FESTIVAL</span></h1>
           <br />
@@ -34,26 +34,26 @@ import "../styles/style.css";
       </div>
       <div class="info_boxes">
         <div class="info_box1">
-          <img src="/webp/section_image1.webp" alt="section image" />
+          <img src="../webp/section_image1.webp" alt="section image" />
           <h2>PROGRAM</h2>
           <br />
           <Buttons variant="secondary">GO TO PROGRAM..</Buttons>
         </div>
         <div class="info_box2">
-          <img src="/webp/section_image2.webp" alt="section image" />
+          <img src="../webp/section_image2.webp" alt="section image" />
           <h2>ABOUT US</h2>
           <br />
           <Buttons variant="secondary">LEARN MORE..</Buttons>
         </div>
         <div class="info_box3">
-          <img src="/webp/section_image3.webp" alt="section image" />
+          <img src="../webp/section_image3.webp" alt="section image" />
           <h2>GALLERY</h2>
           <br />
           <Buttons variant="secondary">GO TO GALLERY..</Buttons>
         </div>
       </div>
       <div class="map">
-        <img src="/svg/map.svg" alt="map" />
+        <img src="../svg/map.svg" alt="map" />
         <br />
         <Buttons variant="secondary" class="map">GO TO MAP</Buttons><div class="map_image"></div>
       </div>
