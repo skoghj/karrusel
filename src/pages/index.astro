@@ -3,7 +3,7 @@ import Buttons from "../components/Buttons.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
-import "/styles/style.css";
+import "public/styles/style.css";
 ---
 
 <html lang="en">
@@ -165,7 +165,7 @@ import "/styles/style.css";
     }
 
     /*Frontpage - mobile*/
-    @media only screen and (max-width: 600px) {
+    @media screen and (min-width: 780px) {
       .info_boxes {
         grid-template-columns: 1fr;
       }
