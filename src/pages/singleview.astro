@@ -1,29 +1,235 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Icons from "../components/Icons.astro";
+
+
+export async function getStaticPaths() {
+const url = ""
+
+const options ={
+    headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxoemhwdnZsb215c3dibGVoeWJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc4MzIzOTgsImV4cCI6MjAyMzQwODM5OH0.t2Pxr9GZCPjNkKkI0Gg11I9Dyxb6VL50DMZmHE44Ma4"
+        },
+
+        const data = await fetch(url, options).then(response => response.json());
+
+        return data.map((ret) => {
+            return{
+                params: {slug: ret.slug},
+                props: {ret},
+            };
+
+        });
+}
+const {ret} = Astro.props
 
 ---
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="singleview.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Singleview</title>
+    <title>Artist Singleview</title>
 </head>
+
 <body>
     <header>
-
+        <Header />
     </header>
 
 
     <main>
+        <ul class="breadcrumb">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">LINEUP</a></li>
+            <li><a href="#" class="breadcrumb_link">#</a></li>
+        </ul>
+
+
+        <section class="single-1_1">
+            <div class="single-img">
+                <img src="" alt="" class="artist_img">
+            </div>
+
+            <div class="single-text_1">
+                <h1> </h1>
+                <br>
+                <p class="description"></p>
+
+                <div class="single_icons">
+                    <Icons />
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="single-1_1">
+            <div class="single-text_1">
+                <h2>WANNA KNOW MORE?</h2>
+                <br>
+                <p>
+                    Opdag de fortryllende lyde på SoundCloud og dyk ned i den fængslende verden af denne musikgenre.
+                </p>
+                <br>
+                <p> Forbind med dem på Facebook og Instagram for at lære mere om dem og deres musik. </p>
+                <br>
+                <p> Hold dig opdateret om deres seneste musikudgivelser og få indsigt bag kulisserne i deres kreative
+                    proces.
+                </p>
+            </div>
+
+            <div class="single-sound">
+                <iframe src="#" frameborder="0" class="soundCloud"></iframe>
+            </div>
+        </section>
 
     </main>
 
 
     <footer>
-        
+        <Footer />
     </footer>
+
 </body>
+
 </html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* BREADCRUMB */
+    ul.breadcrumb {
+        list-style: none;
+    }
+
+    ul.breadcrumb li {
+        display: inline;
+        font-size: 18px;
+    }
+
+    /* SLASH SYMBOL (/) */
+    ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: #ffc4a8;
+        content: "/\00a0";
+    }
+
+    ul.breadcrumb li a {
+        color: #ffc4a8;
+        text-decoration: none;
+    }
+
+    ul.breadcrumb li a:hover {
+        color: #f84104;
+    }
+
+    /******** MOBIL FORMAT ********/
+
+    main {
+        margin: 8%;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .single-1_1 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2%;
+    }
+
+    .single-1_1 img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 6%;
+    }
+
+    .single-text_1 {
+        font-size: 16px;
+        margin-bottom: 6%;
+    }
+
+    /******** TABLET FORMAT ********/
+
+    @media (min-width: 768px) {
+        main {
+            margin: 10%;
+        }
+
+        h1 {
+            margin-bottom: 8%;
+        }
+
+        .single-1_1 {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2%;
+        }
+
+        .single-1_1 img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 8%;
+        }
+
+        .single-text_1 {
+            font-size: 16px;
+            margin-bottom: 8%;
+        }
+    }
+
+    /******** DESKTOP FORMAT ********/
+
+    @media (min-width: 1024px) {
+        main {
+            margin: 5% 10%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .single-1_1 {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 80px;
+            margin-top: 2%;
+            margin-bottom: 6%;
+            align-items: flex-start;
+        }
+
+        .single-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .single-text_1 {
+            font-size: 20px;
+        }
+
+        .single-text_1 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .single-text_1>div {
+            flex: 1;
+        }
+    }
+</style>
+
