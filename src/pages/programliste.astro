@@ -2,8 +2,8 @@
 import "../styles/style.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Carrousel from "../components/Carrousel.astro";
-import Button from "../components/Buttons.astro";
+import Buttons from "../components/Buttons.astro";
+import Stagetime from "../components/Stagetime.astro";
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -25,89 +25,47 @@ import Button from "../components/Buttons.astro";
 
     <article class="program_background">
       <h1 class="program_title">MUSIC PROGRAM</h1>
-    </article>
-    <div id="myBtnContainer">
-      <button class="btn" onclick="filterSelection('Thursday')" data-category="Thursday">Thursday</button>
-      <button class="btn" onclick="filterSelection('Friday')" data-category="Friday">Friday</button>
-      <button class="btn" onclick="filterSelection('Saturday')" data-category="Saturday">Saturday</button>
-    </div>
     
-    <div class="container">
-      <div class="filterDiv Thursday">
-        <div class="manege">
-          <div>
-            <h2>MANEGE</h2>
-            <hr>
+      <div id="myBtnContainer">
+        <button class="btn" onclick="filterSelection('Thursday')" data-category="Thursday">Thursday</button>
+        <button class="btn" onclick="filterSelection('Friday')" data-category="Friday">Friday</button>
+        <button class="btn" onclick="filterSelection('Saturday')" data-category="Saturday">Saturday</button>
+      </div>
+    
+      <div class="container">
+        <div class="filterDiv Thursday">
+          <div class="manege">
+            <div>
+              <h2>MANEGE</h2>
+              <hr>
+            </div>
+            <Stagetime artist="MCADAM" time="18:00-19:30"/>
+            <Stagetime artist="SCHAARUP" time="19:30-21:00"/>
+            <Stagetime artist="ÄME" time="21:00-23:00"/>
+            <Stagetime artist="KÖLSCH" time="23:00-01:00"/>
           </div>
-
-          <div class="stagetime">
-            <p>MCADAM</p>
-            <p>18:00-19:30</p>
-          </div>
-          <div class="stagetime">
-            <p>SCHAARUP</p>
-            <p>19:30-21:00</p>
-          </div>
-          <div class="stagetime">
-            <p>ÄME</p>
-            <p>21:00-23:00</p>
-          </div>
-          <div class="stagetime">
-            <p>KÖLSCH</p>
-            <p>23:00-01:00</p>
-          </div>
-        </div>
         <div class="tribune">
           <div>
             <h2>TRIBUNE</h2>
             <hr>
           </div>
-          <div class="stagetime">
-            <p>SCHOWFDROSSEL</p>
-            <p>18:00-19:30</p>
-          </div>
-          <div class="stagetime">
-            <p>MADS LORENTSEN</p>
-            <p>19:30-21:00</p>
-          </div>
-          <div class="stagetime">
-            <p>HAENSEN & GRETHEL</p>
-            <p>21:00-23:00</p>
-          </div>
-          <div class="stagetime">
-            <p>MIRA</p>
-            <p>23:00-01:00</p>
-          </div>
+          <Stagetime artist="SCHOWFDROSEEL" time="18:00-19:30"/>
+          <Stagetime artist="MADS LORENTSEN" time="19:30-21:00"/>
+          <Stagetime artist="HAENSEN & GRETHEL" time="21:00-23:00"/>
+          <Stagetime artist="MIRA" time="23:00-01:00"/>
         </div>
         <div class="balcony">
           <div>
             <h2>BALCONY</h2>
             <hr>
           </div>
-          <div class="stagetime">
-            <p>BOOGIE ROOKIE</p>
-
-          </div>
-          <div class="stagetime">
-            <p>FUTTE RICO</p>
-
-          </div>
-          <div class="stagetime">
-            <p>MORTEN MCCOY</p>
-
-          </div>
-          <div class="stagetime">
-            <p>NAYAN</p>
-          </div>
-          <div class="stagetime">
-            <p>SEB DALMAR</p>
-          </div>
-          <div class="stagetime">
-            <p>STORM</p>
-          </div>
-          <div class="stagetime">
-            <p>SØREN SKOV</p>
-          </div>
+          <Stagetime artist="BOOGIE ROOKIE"/>
+          <Stagetime artist="FUTTE RICO"/>
+          <Stagetime artist="MORTEN MCCOY"/>
+          <Stagetime artist="NAYAN"/>
+          <Stagetime artist="SEB DALMAR"/>
+          <Stagetime artist="STORM"/>
+          <Stagetime artist="SØREN SKOV"/>
         </div>
       </div>
 
@@ -117,66 +75,31 @@ import Button from "../components/Buttons.astro";
             <h2>MANEGE</h2>
             <hr>
           </div>
-
-          <div class="stagetime">
-            <p>VIXEN</p>
-            <p>18:00-19:30</p>
-          </div>
-          <div class="stagetime">
-            <p>NARCISS</p>
-            <p>19:30-21:00</p>
-          </div>
-          <div class="stagetime">
-            <p>HAAI</p>
-            <p>21:00-23:00</p>
-          </div>
-          <div class="stagetime">
-            <p>VTSS</p>
-            <p>23:00-01:00</p>
-          </div>
+          <Stagetime artist="VIXEN" time="18:00-19:30"/>
+          <Stagetime artist="NARCISS" time="19:30-21:00"/>
+          <Stagetime artist="HAII" time="21:00-23:00"/>
+          <Stagetime artist="VTSS" time="23:00-01:00"/>
         </div>
         <div class="tribune">
           <div>
             <h2>TRIBUNE</h2>
             <hr>
           </div>
-          <div class="stagetime">
-            <p>VÄM</p>
-            <p>18:00-19:30</p>
-          </div>
-          <div class="stagetime">
-            <p>ESKII</p>
-            <p>19:30-21:00</p>
-          </div>
-          <div class="stagetime">
-            <p>DJUMA SOUNDSYSTEM</p>
-            <p>21:00-23:00</p>
-          </div>
-          <div class="stagetime">
-            <p>SATORI LIVE</p>
-            <p>23:00-01:00</p>
-          </div>
+          <Stagetime artist="VÄM" time="18:00-19:30"/>
+          <Stagetime artist="ESKII" time="19:30-21:00"/>
+          <Stagetime artist="DJUMA SOUNDSYSTEM" time="21:00-23:00"/>
+          <Stagetime artist="SATORI LIVE" time="23:00-01:00"/>
+        
         </div>
         <div class="balcony">
           <div>
             <h2>BALCONY</h2>
             <hr>
           </div>
-          <div class="stagetime">
-            <p>COCKWHORE & MACHO</p>
-
-          </div>
-          <div class="stagetime">
-            <p>HARRISON HEAT, TIGHT CHERRY</p>
-
-          </div>
-          <div class="stagetime">
-            <p>SIOFRA</p>
-
-          </div>
-          <div class="stagetime">
-            <p>LUCKY CUBE</p>
-          </div>
+          <Stagetime artist="COCKWHORE & MACHO"/>
+          <Stagetime artist="HARRISON HEAT, TIGHT CHERRY"/>
+          <Stagetime artist="SIOFRA"/>
+          <Stagetime artist="LUCKY CUBE"/>
         </div>
       </div>
       <div class="filterDiv Saturday ">
@@ -185,69 +108,33 @@ import Button from "../components/Buttons.astro";
             <h2>MANEGE</h2>
             <hr>
           </div>
-
-          <div class="stagetime">
-            <p>ANNA LOGIC</p>
-            <p>18:00-19:30</p>
-          </div>
-          <div class="stagetime">
-            <p>DJ SEAVIEW</p>
-            <p>19:30-21:00</p>
-          </div>
-          <div class="stagetime">
-            <p>SPFDJ</p>
-            <p>21:00-23:00</p>
-          </div>
-          <div class="stagetime">
-            <p>RICHIE HAWTIN</p>
-            <p>23:00-01:00</p>
-          </div>
+          <Stagetime artist="ANNA LOGIC" time="18:00-19:30"/>
+          <Stagetime artist="DJ SEAVIEW" time="19:30-21:00"/>
+          <Stagetime artist="SPFDJ" time="21:00-23:00"/>
+          <Stagetime artist="RICHIE HAWTIN" time="23:00-01:00"/>
         </div>
         <div class="tribune">
           <div>
             <h2>TRIBUNE</h2>
             <hr>
           </div>
-          <div class="stagetime">
-            <p>POWERSTRANGER</p>
-            <p>18:00-19:30</p>
-          </div>
-          <div class="stagetime">
-            <p>KATZ-K</p>
-            <p>19:30-21:00</p>
-          </div>
-          <div class="stagetime">
-            <p>JUDITH VAN WANDERKANT</p>
-            <p>21:00-23:00</p>
-          </div>
-          <div class="stagetime">
-            <p>RSS DISCO</p>
-            <p>23:00-01:00</p>
-          </div>
+          <Stagetime artist="POWERSTRANGER" time="18:00-19:30"/>
+          <Stagetime artist="KATZ-K" time="19:30-21:00"/>
+          <Stagetime artist="JUDITH VAN WANDERKANT" time="21:00-23:00"/>
+          <Stagetime artist="RSS DISCO" time="23:00-01:00"/>
         </div>
         <div class="balcony">
           <div>
             <h2>BALCONY</h2>
             <hr>
           </div>
-
-          <div class="stagetime">
-            <p>DEE BROWN, OKINE</p>
-            <p>18:00-19:30</p>
+          <Stagetime artist="DEE BROWN, OKINE" time="18:00-19:30"/>
+          <Stagetime artist="MARSHMELLO" time="19:30-21:00"/>
+          <Stagetime artist="DEE BROWN, OKINE" time="21:00-23:00"/>
           </div>
-          <div class="stagetime">
-            <p>MARSHMELLO</p>
-            <p>18:00-19:30</p>
-
-          </div>
-          <div class="stagetime">
-            <p>DEE BROWN, OKINE</p>
-            <p>18:00-19:30</p>
-          </div>
-
         </div>
       </div>
-    </div>
+  </article>
     <article class="padding_map">
       <div class="location">
         <img src="/public/svg/location-marker.svg" alt="location marker">
@@ -257,9 +144,7 @@ import Button from "../components/Buttons.astro";
         <div class="map">   
           <img class="map_image" src="/public/webp/map_image.webp" alt="map">
           <div class="btn_map">
-            <Button>
-              <a href="#">See map</a>
-            </Button>
+            <Buttons />
           </div>
         </div>
         <div>
@@ -287,6 +172,7 @@ import Button from "../components/Buttons.astro";
         text-align: center;
         margin: 20px;
         padding: 20px;
+        height:600px;
         display: none;
 
     }
@@ -296,21 +182,13 @@ import Button from "../components/Buttons.astro";
         margin: auto;
     }
 
-    Sara Ringkow Petersen
-h1 {
+
+.program_title {
       background-image: url(../public/webp/mask_image.webp);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       --webkit-background-repeat: no-repeat;
       background-size: cover;
-    }
-
-    .stagetime {
-        padding: 25px;
-    }
-
-    .stagetime p:first-child {
-        color: rgb(221, 177, 136);
     }
 
     /* The "show" class is added to the filtered elements */
@@ -337,8 +215,8 @@ h1 {
 
     /* Add a dark background to the active button */
     .btn.active {
-        background-color: #666;
-        color: white;
+        background-color: orangered;
+        color: black;
     }
     #myBtnContainer{
         margin-left: 20px;
@@ -364,6 +242,7 @@ cursor: pointer;
         height: auto;
         width: 100%;
     }
+
     .map_text{
         text-align: center;
         margin-bottom: 20px;

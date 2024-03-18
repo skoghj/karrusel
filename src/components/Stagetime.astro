@@ -1,8 +1,19 @@
 ---
+const artist = Astro.props.artist;
+const time = Astro.props.time;
 
 ---
-
 <div class="stagetime">
-    <p>MCADAM</p>
-    <p>18:00-19:30</p>
+    <p>{artist}</p>
+    <p>{time}</p>
 </div>
+
+<style>
+        .stagetime {
+        padding: 25px;
+    }
+
+    .stagetime p:first-child {
+        color: rgb(221, 177, 136);
+    }
+</style>
