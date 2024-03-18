@@ -1,29 +1,251 @@
 ---
-
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Icons from "../components/Icons.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="../styles/style.css">
-    <title>About Us</title>
+    <title>About</title>
 </head>
-<body>
-    <header>
 
+<body>
+
+    <header>
+        <Header />
     </header>
 
 
-    <main>
+    <h1>ABOUT</h1>
+    <section class="about-1_1">
+        <div class="about-img">
+            <img src="img1.webp" alt="">
+        </div>
+        <div class="about-text_1">
+            <h2>FESTIVAL 2024</h2>
+            <br>
+            <p><b>Lets meet again!</b></p>
 
-    </main>
+            <p> Karrusel, Copenhagen, Refshaleøen
+                22-24 August 2024
+                <br>
+                3 days of house, disco, and techno in the magical forest. Karrusel takes place at a secluded green
+                spot on
+                Refshaleøen in central Copenhagen.
+            </p>
+            <br>
+            <p>
+                <b>Address:</b> Refshalevej 193, 1432 Copenhagen.
+            </p>
+            <br>
+            <p>
+                <b>Tickets:</b>
+                <a href="https://www.ticketmaster.dk/event/542817">Early Bird Festival Passes on sale now until 1
+                    April.</a>
+            </p>
+            <br>
+            <p>
+                <b>Terms:</b>
+                18+ event. Karrusel takes place rain or shine. Artists subject to change.
+            </p>
+        </div>
+    </section>
+
+
+    <section class="about-2_1">
+        <div class="about-text_1">
+            <h2>THE FESTIVAL EXPERIENCE</h2>
+            <br>
+            <p>Karrusel believes in the right to a harassment-free festival experience. We believe in the right of
+                everyone to express themselves. </p>
+
+            <p> Karrusel welcomes everybody - all with their different orientations, experiences, histories and
+                backgrounds. <br> Karrusel only exists if everyone takes care of each other, respects their own and
+                others boundaries, embraces diversity and acts as a part of the community.</p>
+
+            <p>If you feel unsafe, please reach out to our awareness team. They will be wearing a pink vests and
+                walk around the site and be at their base. Ask any festival staff and they will
+                guide you to the them.</p>
+            <br>
+            <p><b>Take responsibility for your own actions</b></p>
+            <br>
+            <p><b>Respect your own and others boundaries</b></p>
+            <br>
+            <p><b>Speak up rather than look the other way</b></p>
+        </div>
+        <div class="about-img">
+            <img src="img2.webp" alt="">
+        </div>
+    </section>
+
+
+    <section class="about-1_2">
+        <div class="about-text_1">
+            <h2>SUSTAINABILITY</h2>
+            <br>
+            <p>Karrusel is committed to becoming more sustainable. In order to save resources and reduce waste we
+                use left over materials and timber for stage designs and installations. </p>
+            <br>
+            <p> We will re-use production and print materials when possible year after year. Beverages are served in
+                reusable or sustainable materials. <br>Straws are not being used. </p>
+            <br>
+            <p><b>How you can help:</b> </p>
+            <br>
+            <p>Take a bike or public transport to the festival. </p>
+            <p> Dont bring confetti or glitter to the festival. </p>
+            <p>There will be free tap water stations during the festival. </p>
+            <p>Please bring an empty cup or bottle and drink nice free tap water.</p>
+        </div>
+        <div class="about-text_1">
+            <h2>HISTORY</h2>
+            <br>
+            <p>2024 marks the 5th edition of Karrusel. Karrusel is a circus themed rave presenting some of the
+                world's leading electronic artists.</p>
+            <br>
+            <p><b> Past editions include performances by: </b></p>
+            <br>
+            <p> Acid Pauli, Amelie Lens, Dixon, FJAAK, Folamour, Hunee, Job Jobse, Kölsch, Mall Grab, Nastia,
+                Partiboi69, Peggy Gou, Richie Hawtin, Skin On Skin, The Blessed Madonna, Victor Ruiz and VTSS. </p>
+            <br>
+            <p>The festival is open air and takes place on secluded green spot at the abandoned shipyard of
+                Refshaleøen in central Copenhagen.</p>
+        </div>
+
+    </section>
+
+
+    <section class="about-1_1">
+        <div class="about-img">
+            <img src="img3.webp" alt="">
+        </div>
+        <div class="about-text_1">
+            <h2>CONTACT</h2>
+            <br>
+            <p><b>Contact: </b><a href="info@nusnus.dk">info@nusnus.dk</a>. </p>
+            <br>
+            <p> Karrusel is organized by <a href="https://www.nusnus.dk/"> Nus Nus</a>. </p>
+            <br>
+            <p><b> Resident Advisor event: </b> <a href="https://ra.co/events/1768065">ra.co/events</a>
+            </p>
+            <br>
+            <h2>THANKS!</h2>
+            <br>
+            <p>
+                Special thanks to each and every volunteer, Heineken Silver for supporting new and wild ideas and
+                Refshaleøen for meeting our housing needs.
+            </p>
+
+        </div>
+    </section>
 
 
     <footer>
-        
+        <Footer />
     </footer>
+
 </body>
+
 </html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /******** MOBIL FORMAT ********/
+
+    h1 {
+        margin-top: 4%;
+        margin-bottom: 4%;
+        padding: 2% 10%;
+    }
+
+    .about-1_1,
+    .about-1_2,
+    .about-2_1 {
+        display: flex;
+        flex-direction: column;
+        padding: 2% 10%;
+    }
+
+    .about-2_1 {
+        background-color: #2b0303;
+        width: 100%;
+    }
+
+    .about-1_1 img,
+    .about-1_2 img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 6%;
+    }
+
+    .about-text_1 {
+        font-size: 16px;
+        margin-bottom: 6%;
+    }
+
+    /******** TABLET FORMAT ********/
+
+    @media (min-width: 768px) {
+
+        .about-1_1 img,
+        .about-1_2 img {
+            margin-bottom: 4%;
+        }
+
+        .about-text_1 {
+            margin-bottom: 4%;
+        }
+    }
+
+    /******** DESKTOP FORMAT ********/
+
+    @media (min-width: 1024px) {
+        h1 {
+            margin-top: 2%;
+            margin-bottom: 0%;
+            padding: 0% 10%;
+        }
+
+        .about-1_1,
+        .about-1_2,
+        .about-2_1 {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 80px;
+            align-items: flex-start;
+            padding: 2% 10%;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text_1 {
+            font-size: 20px;
+        }
+
+        .about-text_1 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-text_1>div {
+            flex: 1;
+        }
+    }
+</style>
