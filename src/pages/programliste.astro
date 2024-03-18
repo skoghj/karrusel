@@ -1,0 +1,135 @@
+---
+import "../styles/style.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Carrousel from "../components/Carrousel.astro";
+import Programlist from "../components/Programlist.astro";
+import Button from "../components/Buttons.astro";
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>program</title>
+</head>
+<body>
+  <Header />
+  <main>
+    <a id="scrollToBottomBtn">Click here to find map!</a>
+    <article class="program_background">
+      <h1 class="program_title">MUSIC PROGRAM</h1>
+      <Programlist />
+    </article>
+
+    <article class="padding_map">
+      <div class="location">
+        <img src="/public/svg/location-marker.svg" alt="location marker">
+        <p>COPENHAGEN, REFSHALEØEN</p>
+      </div>
+      <article class="check_map">
+        <div class="map">   
+          <img class="map_image" src="/public/webp/map_image.webp" alt="map">
+          <div class="btn_map">
+            <Button>
+              <a href="#">See map</a>
+            </Button>
+          </div>
+        </div>
+        <div>
+          <h1 class="map_text">3 DAYS OF TECHNO, HOUSE AND DISCO IN THE WOODS</h1>
+        </div>
+      </article>
+
+    </article>
+  </main>
+  <footer>
+  <Footer />
+</footer>
+</body>
+</html>
+
+<style>
+
+#scrollToBottomBtn{
+    position: fixed;
+    top: 20%;
+    left: 89%;
+    overflow-wrap: break-word;
+    width: 100px;
+    color: orangered;
+}
+#scrollToBottomBtn:hover{
+color: orange;
+cursor: pointer;
+}
+    .program_background {
+   background-image: url("/public/webp/program_background.webp");
+   padding: 50px;
+    }
+
+    .map_image{
+        height: auto;
+        width: 100%;
+    }
+    .map_text{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .location{
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+    }
+    .padding_map{
+        width:80%;
+        margin: auto;
+    }
+    .map{
+        position:relative;
+        margin-bottom: 20px;
+    }
+    .btn_map{
+        position: absolute;
+        bottom: 20%;
+    }
+
+    
+    .program_title{
+        margin-left: 20px;
+    }
+    @media screen and (min-width: 780px) {
+    .program_title{ 
+        margin-left: 200px;
+    }
+    .check_map{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-left: 50px;
+    margin-right: 50px;
+    }
+    .location{
+        margin-left: 80px;
+    }
+
+    .btn_map{
+        position: absolute;
+        bottom: 25%;
+        left: 7%;
+    }
+
+    .map_text{
+        font-size: 4.5vw;
+        text-align: left;
+        padding-left: 15px;
+    }
+}
+    </style> 
+
+
