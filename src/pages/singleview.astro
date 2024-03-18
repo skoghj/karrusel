@@ -1,18 +1,19 @@
 ---
+import "../styles/styles.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Icons from "../components/Icons.astro";
 
 
 export async function getStaticPaths() {
-const url = ""
+const url = "https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artist";
 
-const options ={
-    headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxoemhwdnZsb215c3dibGVoeWJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc4MzIzOTgsImV4cCI6MjAyMzQwODM5OH0.t2Pxr9GZCPjNkKkI0Gg11I9Dyxb6VL50DMZmHE44Ma4"
-        },
+const options =  {
+headers: { 
+apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xemd6YWVldnVvbG5laXhndWF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA2MDQyNDQsImV4cCI6MjAyNjE4MDI0NH0.Qbj4-BVvOnlAroDN44rKnJaPILmiSdhtvARYZEbJrkA" },
+};
 
-        const data = await fetch(url, options).then(response => response.json());
+  const data = await fetch(url, options).then(response => response.json());
 
         return data.map((ret) => {
             return{
@@ -22,7 +23,8 @@ const options ={
 
         });
 }
-const {ret} = Astro.props
+const { name, description, music, img_singview } = Astro.props
+const { ret } = Astro.props
 
 ---
 
@@ -30,12 +32,12 @@ const {ret} = Astro.props
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="singleview.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
     <title>Artist Singleview</title>
 </head>
 
@@ -59,7 +61,7 @@ const {ret} = Astro.props
             </div>
 
             <div class="single-text_1">
-                <h1> </h1>
+                <h1>{ret.name}</h1>
                 <br>
                 <p class="description"></p>
 
