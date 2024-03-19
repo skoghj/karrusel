@@ -5,7 +5,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Cards from "../components/Cards.astro";
 import CardsHeadliner from "../components/CardsHeadliner.astro";
-import Scroll from "../components/Scroll.astro";
 
 const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artist", {
   method: "GET",
@@ -21,7 +20,6 @@ console.log("data", data);
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Alumni+Sans+Pinstripe:ital@0;1&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
-    <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
@@ -47,52 +45,36 @@ console.log("data", data);
           <span class="slash">/</span>
           <br /> 44 <span class="days">artists</span>
         </div>
-        <div class="stage_2">
-          3 <span class="days">days</span>
-          <span class="slash">/</span> 3 <span class="days">stages</span>
-          <span class="slash">/</span> 44 <span class="days">artists </span>
-        </div>
         <div class="headline_bgr">
-          <img src="/webp/lineup/headlineup_bgr.webp" alt="background_img" />
-          <section class="headliner_list">
-            <div class="headliner">
-              <CardsHeadliner name="SKIN ON SKIN" date="THURSDAY" land="AU" imgPath="../webp/lineup/skin-on-skin-artist-card.webp" />
-            </div>
+          <img src="/public/webp/lineup/headlineup_bgr.webp" alt="background_img" />
+          <div class="headliner_list">
+            <section class="headliner">
+              <CardsHeadliner name="SKIN ON SKIN" date="THURSDAY" land="AU" imgPath="../public/webp/lineup/skin-on-skin-artist-card.webp" />
+            </section>
             <div class="head_2">
-              <CardsHeadliner name="HAAi" date="FRIDAY" land="AU" imgPath="../webp/lineup/haai-artist-card.webp" />
+              <CardsHeadliner name="HAAi" date="FRIDAY" land="AU" imgPath="../public/webp/lineup/haai-artist-card.webp" />
             </div>
             <div class="head_3">
-              <CardsHeadliner name="ACID PAULI" date="SATURDAY" land="DE" imgPath="../webp/lineup/acid-pauli-artist-card.webp" />
+              <CardsHeadliner name="ACID PAULI" date="SATURDAY" land="DE" imgPath="../public/webp/lineup/acid-pauli-artist-card.webp" />
             </div>
-          </section>
-          <section class="headliner_list_2">
-            <CardsHeadliner name="SKIN ON SKIN" date="THURSDAY" land="AU" imgPath="../webp/lineup/skin-on-skin-artist-card.webp" />
-
-            <CardsHeadliner name="HAAi" date="FRIDAY" land="AU" imgPath="../webp/lineup/haai-artist-card.webp" />
-
-            <CardsHeadliner name="ACID PAULI" date="SATURDAY" land="DE" imgPath="../webp/lineup/acid-pauli-artist-card.webp" />
-          </section>
+          </div>
         </div>
       </section>
       <div class="filtering">
-        <ButtonOverview variant="secondary" class="disco"> DISCO </ButtonOverview>
-        <ButtonOverview variant="secondary" class="house"> HOUSE </ButtonOverview>
-        <ButtonOverview variant="secondary" class="techno"> TECHNO </ButtonOverview>
+        <ButtonOverview variant="secondary"> DISCO </ButtonOverview>
+        <ButtonOverview variant="secondary"> HOUSE </ButtonOverview>
+        <ButtonOverview variant="secondary"> TECHNO </ButtonOverview>
       </div>
       <section class="list">
         {
-          /*data.map((artists) => {
+          data.map((artists) => {
             return <Cards name="COCKWHORE" date="Thursday" land="DK" data={artists} />;
-          })*/
-          data.map((ret) => <Cards data={ret} />)
+          })
         }
       </section>
-      <Scroll />
     </main>
-    <footer>
-      <Footer />
-    </footer>
   </body>
+  <Footer />
 </html>
 
 <style>
@@ -106,9 +88,6 @@ console.log("data", data);
     position: absolute;
     top: 0;
     transform: translate(-260px, 190px);
-  }
-  .headliner_list_2 {
-    display: none;
   }
   .head_2 {
     position: absolute;
@@ -148,7 +127,7 @@ console.log("data", data);
     position: relative;
   }
   h1 {
-    background-image: url(../webp/lineup/mask_artist.webp);
+    background-image: url(../public/webp/lineup/mask_artist.webp);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     --webkit-background-repeat: no-repeat;
@@ -169,9 +148,6 @@ console.log("data", data);
     position: absolute;
     top: 160px;
   }
-  .stage_2 {
-    display: none;
-  }
   .days {
     font-size: 20px;
   }
@@ -179,63 +155,4 @@ console.log("data", data);
     color: #7000ff;
     font-size: 25px;
   }
-  @media (max-width: 800px) {
-    .festival_overblik {
-      padding: 80px 0 40px 0;
-    }
-    .stage {
-      display: none;
-    }
-    .stage_2 {
-      color: #f84104;
-      font-family: "Abhaya Libre", serif;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 40px;
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-      padding-bottom: 20px;
-    }
-
-    .headliner_list {
-      display: none;
-    }
-    .headline_bgr {
-      position: relative;
-      padding-bottom: 100px;
-    }
-
-    .headliner_list_2 {
-      display: flex;
-      flex-flow: wrap;
-      justify-content: center;
-      place-items: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      padding: 20px;
-      gap: 20px;
-    }
-    @media (max-width: 661px) {
-      .headliner_list {
-        display: none;
-      }
-      .headline_bgr {
-        position: relative;
-        padding-bottom: 100px;
-        width: 100vw;
-        height: 200vh;
-      }
-      html,
-      body {
-        margin: 0px;
-        overflow-x: hidden;
-      }
-    }
-  }
 </style>
-<script></script>

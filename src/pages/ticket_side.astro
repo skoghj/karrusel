@@ -36,8 +36,7 @@ import Tickets from "../components/Tickets.astro";
           Address: Refshalevej 193, 1432 Copenhagen.
         </p>
         <div class="img_ticket">
-          <img class="ticket_karrusel" src="/webp/ticket/ticketside.webp" alt="Karrusel" />
-          <img class="logo_ticket" src="/svg/logo_footer.svg" alt="logo" />
+          <img src="/webp/ticket/ticketside.webp" alt="Karrusel" />
         </div>
       </section>
 
@@ -45,7 +44,7 @@ import Tickets from "../components/Tickets.astro";
         <div class="background_img">
           <div class="lineup">
             <img class="headliner" src="/webp/ticket/karrusel-lineup-1x1.webp" alt="lineup" />
-            <img src="/public/webp/ticket/stage-lineup-poster.webp" alt="lineup" />
+            <img src="/webp/ticket/stage-lineup-poster.webp" alt="lineup" />
           </div>
           <div class="form">
             <h2>DON’T MISS OUT ON ANYTHING!</h2>
@@ -64,94 +63,41 @@ import Tickets from "../components/Tickets.astro";
     <Footer />
   </body>
 </html>
+
 <style>
-  .overskrift,
+  .overskrift {
+    text-align: center;
+    padding: 40px;
+  }
   .tickets,
   .ticket_section2,
-  .lineup {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .overskrift {
-    margin-top: 100px;
-  }
-
-  h1 {
-    background-image: url(../public/webp/ticket/mask_ticket.webp);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    --webkit-background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .tickets {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    width: 100%;
-    gap: 60px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  .pass {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-  }
-  .om_pass p {
-    line-height: 30px;
-  }
+  .ticket_section3,
   .countdown {
-    padding-top: 180px;
-    font-size: 50px;
-    font-family: "Alumni Sans", sans-serif;
-    font-weight: 600;
-    background-image: url(../public/webp/ticket/countdown_mask.webp);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    --webkit-background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .ticket_section2 {
+    flex-flow: column wrap;
+    margin: 0 auto;
     display: flex;
+    align-items: center;
+    padding: 20px 20px 0 20px;
+  }
+  .lineup img,
+  .img_ticket {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    gap: 60px;
-    justify-content: center;
+    padding: 20px 20px;
   }
   .ticket_section2 p {
-    display: flex;
-    flex-flow: column wrap;
-    line-height: 30px;
-    padding-top: 40px;
-    width: 100%;
+    padding: 20px;
   }
-
-  .img_ticket {
-    display: grid;
-    place-items: center;
-    width: 50%;
+  .om_pass p {
+    padding: 20px;
   }
-
-  .ticket_karrusel,
-  .logo_ticket {
-    grid-area: 1 / 1;
-  }
-  .logo_ticket {
-    width: 250px;
-  }
-
-  .lineup {
-    display: flex;
-    width: 100%;
-    gap: 80px;
-    justify-content: center;
-    margin-top: 100px;
-  }
-  .lineup img {
-    width: 50%;
-    height: 600px;
-  }
-  .headliner {
-    align-items: flex-end;
+  h1 {
+    background-image: url(../webp/ticket/mask_ticket_mobil.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
   }
   .form {
     max-width: 1200px;
@@ -171,13 +117,15 @@ import Tickets from "../components/Tickets.astro";
 
   .input-group {
     position: relative;
+    display: flex;
   }
 
   .emailform {
-    width: calc(100% - 40px); /* Juster bredden etter behov */
+    width: calc(100% - 40px);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px 0px 0px 5px;
+    flex: 1;
   }
 
   .email-icon {
@@ -198,15 +146,21 @@ import Tickets from "../components/Tickets.astro";
     line-height: 40px;
     text-align: center;
   }
+
   .background_img {
     margin: 0;
     padding: 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-size: cover;
   }
   .gradient {
+    display: flex;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, #1a0202, transparent), url(/public/webp/ticket/ticketside_background.webp);
+    background-image: linear-gradient(to bottom, #1a0202, transparent), url(/webp/ticket/ticketside_background.webp);
     opacity: 0.3;
     position: absolute;
     top: 0;
@@ -214,6 +168,106 @@ import Tickets from "../components/Tickets.astro";
     background-size: cover;
     background-position: center;
     z-index: -1;
+  }
+
+  @media (min-width: 653px) {
+    .tickets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      width: 100%;
+      gap: 60px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .pass {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    .om_pass p {
+      line-height: 30px;
+      padding-bottom: 100px;
+    }
+    .countdown {
+      font-size: 50px;
+      font-family: "Alumni Sans", sans-serif;
+      font-weight: 600;
+      background-image: url(../webp/ticket/mask_ticket.webp);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      --webkit-background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .ticket_section2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      width: 100%;
+      gap: 60px;
+      justify-content: center;
+      margin-top: 20px;
+      padding: 0 60px;
+    }
+
+    .ticket_section2 p {
+      display: flex;
+      flex-flow: column wrap;
+      line-height: 30px;
+      align-items: flex-end;
+    }
+
+    .img_ticket {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .img_ticket img {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+    .lineup {
+      height: auto;
+      justify-content: center;
+      margin-top: 30px;
+      display: flex;
+      width: 59%;
+      align-self: center;
+      height: auto;
+    }
+    .lineup img {
+      width: 100%;
+      height: auto;
+    }
+    .headliner {
+      align-items: flex-end;
+    }
+
+    .background_img {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      padding: 0 80px 0 80px;
+    }
+    .gradient {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, #1a0202, transparent), url(/webp/ticket/ticketside_background.webp);
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+
+    html,
+    body {
+      margin: 0px;
+      overflow-x: hidden;
+    }
   }
 </style>
 

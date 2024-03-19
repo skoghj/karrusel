@@ -72,8 +72,14 @@ import Icons from "../components/Icons.astro";
     gap: 20px;
   }
 
-  .footer-social-img1 img,
-  .footer-social-img2 img {
-    width: 40px;
+  @media screen and (max-width: 780px) {
+    .footer-social {
+      justify-content: center;
+    }
+
+    .column1 li a,
+    .column2 li a {
+      font-size: 12px;
+    }
   }
 </style>
