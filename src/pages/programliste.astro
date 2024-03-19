@@ -10,9 +10,11 @@ import Stagetime from "../components/Stagetime.astro";
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
+
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <title>program</title>
@@ -137,12 +139,12 @@ import Stagetime from "../components/Stagetime.astro";
   </article>
     <article class="padding_map">
       <div class="location">
-        <img src="/public/svg/location-marker.svg" alt="location marker">
+        <img src="/svg/location-marker.svg" alt="location marker">
         <p>COPENHAGEN, REFSHALEØEN</p>
       </div>
       <article class="check_map">
         <div class="map">   
-          <img class="map_image" src="/public/webp/map_image.webp" alt="map">
+          <img class="map_image" src="/webp/map_image.webp" alt="map">
           <div class="btn_map">
             <Buttons />
           </div>
@@ -184,7 +186,7 @@ import Stagetime from "../components/Stagetime.astro";
 
 
 .program_title {
-      background-image: url(../public/webp/mask_image.webp);
+      background-image: url(/webp/mask_image.webp);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       --webkit-background-repeat: no-repeat;
@@ -205,6 +207,9 @@ import Stagetime from "../components/Stagetime.astro";
         border-radius: 20px;
     }
 
+    h1, h2{
+      font-family: "Amarante", serif;
+    }
 
     /* Add a light grey background on mouse-over */
     .btn:hover {

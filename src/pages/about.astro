@@ -67,11 +67,10 @@ import Icons from "../components/Icons.astro";
             <br>
             <p>Karrusel believes in the right to a harassment-free festival experience. We believe in the right of
                 everyone to express themselves. </p>
-
+<br>
             <p> Karrusel welcomes everybody - all with their different orientations, experiences, histories and
                 backgrounds. <br> Karrusel only exists if everyone takes care of each other, respects their own and
                 others boundaries, embraces diversity and acts as a part of the community.</p>
-
             <p>If you feel unsafe, please reach out to our awareness team. They will be wearing a pink vests and
                 walk around the site and be at their base. Ask any festival staff and they will
                 guide you to the them.</p>
@@ -136,6 +135,9 @@ import Icons from "../components/Icons.astro";
             <br>
             <p><b> Resident Advisor event: </b> <a href="https://ra.co/events/1768065">ra.co/events</a>
             </p>
+            <div class="single_icons">
+                <Icons />
+            </div>
             <br>
             <h2>THANKS!</h2>
             <br>
@@ -143,8 +145,8 @@ import Icons from "../components/Icons.astro";
                 Special thanks to each and every volunteer, Heineken Silver for supporting new and wild ideas and
                 Refshaleøen for meeting our housing needs.
             </p>
-
         </div>
+
     </section>
 
 
@@ -164,17 +166,40 @@ import Icons from "../components/Icons.astro";
     }
 
     /******** MOBIL FORMAT ********/
+a{
+    color: #7000FF;
+}
+
+    .single_icons{
+padding-top: 20px;
+padding-bottom: 20px;
+    }
+
     h2 {
   font-family: "Amarante";
   color: #f2f2f2;
-  font-weight: 400
-}
+  font-weight: 400;
+  background-image: url(../webp/mask_image.webp);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      --webkit-background-repeat: no-repeat;
+      background-size: cover;
+      filter: brightness(180%) contrast(100%);
+        }
+
     h1 {
         margin-top: 4%;
         margin-bottom: 4%;
         padding: 2% 10%;
         font-weight: 400;
-    }
+        background-image: url(../webp/mask_image.webp);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      --webkit-background-repeat: no-repeat;
+      background-size: cover;
+      filter: brightness(180%) contrast(100%);
+        }
+    
 
     .about-1_1,
     .about-1_2,

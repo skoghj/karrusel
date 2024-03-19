@@ -1,9 +1,13 @@
 ---
+import Buttons1 from "../components/buttons_frontpage/Buttons1.astro";
+import Buttons2 from "../components/buttons_frontpage/Buttons2.astro";
+import Buttons3 from "../components/buttons_frontpage/Buttons3.astro";
+import Buttons4 from "../components/buttons_frontpage/Buttons4.astro";
+import Buttons5 from "../components/buttons_frontpage/Buttons5.astro";
 import Buttons from "../components/Buttons.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
-import Scroll from "../components/Scroll.astro";
 import "../styles/style.css";
 ---
 
@@ -20,6 +24,7 @@ import "../styles/style.css";
   </head>
   <body>
     <Header />
+
     <main>
       <div class="container">
         <img src="../webp/frontpage_image.webp" alt="front-page image" />
@@ -30,8 +35,8 @@ import "../styles/style.css";
           <br />
           <br />
           <div class="btn_container">
-            <Buttons variant="secondary">BUY TICKETS</Buttons>
-            <Buttons variant="secondary">GO TO LINEUP</Buttons>
+            <Buttons1 variant="secondary">BUY TICKETS</Buttons1>
+            <Buttons2 variant="secondary">GO TO LINEUP</Buttons2>
           </div>
           <h1 class="countdown" id="demo"></h1>
         </div>
@@ -42,21 +47,20 @@ import "../styles/style.css";
           <img src="../webp/section_image1.webp" alt="section image" />
           <h2>PROGRAM</h2>
           <br />
-          <Buttons variant="secondary">GO TO PROGRAM..</Buttons>
+          <Buttons3 variant="secondary">GO TO PROGRAM..</Buttons3>
         </div>
         <div class="info_box2">
           <img src="../webp/section_image2.webp" alt="section image" />
           <h2>ABOUT US</h2>
           <br />
-          <Buttons variant="secondary">LEARN MORE..</Buttons>
+          <Buttons4 variant="secondary">LEARN MORE..</Buttons4>
         </div>
         <div class="info_box3">
           <img src="../webp/section_image3.webp" alt="section image" />
           <h2>GALLERY</h2>
           <br />
-          <Buttons variant="secondary">GO TO GALLERY..</Buttons>
+          <Buttons5 variant="secondary">GO TO GALLERY..</Buttons5>
         </div>
-        <Scroll />
       </div>
       <div class="map">
         <img src="../svg/map.svg" alt="map" />
