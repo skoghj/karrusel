@@ -12,7 +12,7 @@ import ButtonOverview from "../components/ButtonOverview.astro";
       <img src={data.image} alt={data.name} />
       <div class="navn">
         <h2 class="name">{data.name}</h2>
-        <a href=`artists/${data.id}`>
+        <a href={`../artists/${data.slug}`}>
           <div class="button_list">
             <ButtonOverview variant="primary"> See more </ButtonOverview>
           </div>
