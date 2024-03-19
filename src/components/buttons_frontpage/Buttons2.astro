@@ -3,7 +3,7 @@ const { variant = "primary" } = Astro.props;
 ---
 
 <button class="custom-button" data-variant={variant}>
-  <a href={"/pages/{$slug}"} class="button-link">
+  <a href="/lineup/" class="button-link">
     <slot />
   </a>
 </button>
@@ -11,13 +11,12 @@ const { variant = "primary" } = Astro.props;
 <style>
   /* Common styles for all buttons */
   .custom-button {
-    width: 86px;
+    width: 145px;
     padding: 10px;
     border-radius: 20px;
     display: inline-block;
     min-width: auto;
     text-align: center;
-    font-weight: bold;
   }
 
   .custom-button:hover {
@@ -27,6 +26,7 @@ const { variant = "primary" } = Astro.props;
   .button-link {
     text-decoration: none;
     color: inherit;
+    font-size: 12.5px;
   }
 
   /* Variant specific styles */
@@ -39,16 +39,5 @@ const { variant = "primary" } = Astro.props;
   [data-variant="secondary"]:hover {
     background-color: orangered;
     color: black;
-  }
-
-  [data-variant="primary"] {
-    border: 2px solid #7000ff;
-    background-color: transparent;
-    color: #7000ff;
-  }
-
-  [data-variant="primary"]:hover {
-    background-color: #7000ff;
-    color: white;
   }
 </style>

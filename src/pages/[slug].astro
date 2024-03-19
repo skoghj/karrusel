@@ -15,16 +15,15 @@ apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im
 
   const data = await fetch(url, options).then(response => response.json());
 
-        return data.map((ret) => {
+        return data.map((artist) => {
             return{
-                params: {slug: ret.slug},
-                props: {ret},
+                params: {slug: artist.id},
+                props: {artist},
             };
-
         });
 }
-const { name, description, music, img_singview } = Astro.props
-const { ret } = Astro.props
+//const { name, description, music, img_singview } = Astro.props
+const { artist } = Astro.props
 
 ---
 
@@ -57,13 +56,13 @@ const { ret } = Astro.props
 
         <section class="single-1_1">
             <div class="single-img">
-                <img src="" alt="" class="artist_img">
+                <img src={artist.singview} alt="" class="artist_img">
             </div>
 
             <div class="single-text_1">
-                <h1></h1>
+                <h1>{artist.name}</h1>
                 <br>
-                <p class="description"></p>
+                <p class="description">{artist.description}</p>
 
                 <div class="single_icons">
                     <Icons />
