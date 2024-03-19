@@ -1,166 +1,145 @@
 ---
 import "../styles/style.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import MainLayout from "../components/layouts/MainLayout.astro"
 import Buttons from "../components/Buttons.astro";
 import Stagetime from "../components/Stagetime.astro";
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-  <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
 
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
-  <title>program</title>
-</head>
-<body>
-  <Header />
-  <main>
+<MainLayout title="MUSIK PROGRAM">
+  <a id="scrollToBottomBtn">Click here to find map!</a>
 
-    <a id="scrollToBottomBtn">Click here to find map!</a>
-
-    <article class="program_background">
-      <h1 class="program_title">MUSIC PROGRAM</h1>
-    
-      <div id="myBtnContainer">
-        <button class="btn" onclick="filterSelection('Thursday')" data-category="Thursday">Thursday</button>
-        <button class="btn" onclick="filterSelection('Friday')" data-category="Friday">Friday</button>
-        <button class="btn" onclick="filterSelection('Saturday')" data-category="Saturday">Saturday</button>
-      </div>
-    
-      <div class="container">
-        <div class="filterDiv Thursday">
-          <div class="manege">
-            <div>
-              <h2>MANEGE</h2>
-              <hr>
-            </div>
-            <Stagetime artist="MCADAM" time="18:00-19:30"/>
-            <Stagetime artist="SCHAARUP" time="19:30-21:00"/>
-            <Stagetime artist="ÄME" time="21:00-23:00"/>
-            <Stagetime artist="KÖLSCH" time="23:00-01:00"/>
-          </div>
-        <div class="tribune">
-          <div>
-            <h2>TRIBUNE</h2>
-            <hr>
-          </div>
-          <Stagetime artist="SCHOWFDROSEEL" time="18:00-19:30"/>
-          <Stagetime artist="MADS LORENTSEN" time="19:30-21:00"/>
-          <Stagetime artist="HAENSEN & GRETHEL" time="21:00-23:00"/>
-          <Stagetime artist="MIRA" time="23:00-01:00"/>
-        </div>
-        <div class="balcony">
-          <div>
-            <h2>BALCONY</h2>
-            <hr>
-          </div>
-          <Stagetime artist="BOOGIE ROOKIE"/>
-          <Stagetime artist="FUTTE RICO"/>
-          <Stagetime artist="MORTEN MCCOY"/>
-          <Stagetime artist="NAYAN"/>
-          <Stagetime artist="SEB DALMAR"/>
-          <Stagetime artist="STORM"/>
-          <Stagetime artist="SØREN SKOV"/>
-        </div>
-      </div>
-
-      <div class="filterDiv  Friday">
+  <article class="program_background">
+    <div id="myBtnContainer">
+      <button class="btn" onclick="filterSelection('Thursday')" data-category="Thursday">Thursday</button>
+      <button class="btn" onclick="filterSelection('Friday')" data-category="Friday">Friday</button>
+      <button class="btn" onclick="filterSelection('Saturday')" data-category="Saturday">Saturday</button>
+    </div>
+  
+    <div class="container">
+      <div class="filterDiv Thursday">
         <div class="manege">
           <div>
             <h2>MANEGE</h2>
             <hr>
           </div>
-          <Stagetime artist="VIXEN" time="18:00-19:30"/>
-          <Stagetime artist="NARCISS" time="19:30-21:00"/>
-          <Stagetime artist="HAII" time="21:00-23:00"/>
-          <Stagetime artist="VTSS" time="23:00-01:00"/>
+          <Stagetime artist="MCADAM" time="18:00-19:30"/>
+          <Stagetime artist="SCHAARUP" time="19:30-21:00"/>
+          <Stagetime artist="ÄME" time="21:00-23:00"/>
+          <Stagetime artist="KÖLSCH" time="23:00-01:00"/>
         </div>
-        <div class="tribune">
-          <div>
-            <h2>TRIBUNE</h2>
-            <hr>
-          </div>
-          <Stagetime artist="VÄM" time="18:00-19:30"/>
-          <Stagetime artist="ESKII" time="19:30-21:00"/>
-          <Stagetime artist="DJUMA SOUNDSYSTEM" time="21:00-23:00"/>
-          <Stagetime artist="SATORI LIVE" time="23:00-01:00"/>
-        
-        </div>
-        <div class="balcony">
-          <div>
-            <h2>BALCONY</h2>
-            <hr>
-          </div>
-          <Stagetime artist="COCKWHORE & MACHO"/>
-          <Stagetime artist="HARRISON HEAT, TIGHT CHERRY"/>
-          <Stagetime artist="SIOFRA"/>
-          <Stagetime artist="LUCKY CUBE"/>
-        </div>
-      </div>
-      <div class="filterDiv Saturday ">
-        <div class="manege">
-          <div>
-            <h2>MANEGE</h2>
-            <hr>
-          </div>
-          <Stagetime artist="ANNA LOGIC" time="18:00-19:30"/>
-          <Stagetime artist="DJ SEAVIEW" time="19:30-21:00"/>
-          <Stagetime artist="SPFDJ" time="21:00-23:00"/>
-          <Stagetime artist="RICHIE HAWTIN" time="23:00-01:00"/>
-        </div>
-        <div class="tribune">
-          <div>
-            <h2>TRIBUNE</h2>
-            <hr>
-          </div>
-          <Stagetime artist="POWERSTRANGER" time="18:00-19:30"/>
-          <Stagetime artist="KATZ-K" time="19:30-21:00"/>
-          <Stagetime artist="JUDITH VAN WANDERKANT" time="21:00-23:00"/>
-          <Stagetime artist="RSS DISCO" time="23:00-01:00"/>
-        </div>
-        <div class="balcony">
-          <div>
-            <h2>BALCONY</h2>
-            <hr>
-          </div>
-          <Stagetime artist="DEE BROWN, OKINE" time="18:00-19:30"/>
-          <Stagetime artist="MARSHMELLO" time="19:30-21:00"/>
-          <Stagetime artist="DEE BROWN, OKINE" time="21:00-23:00"/>
-          </div>
-        </div>
-      </div>
-  </article>
-    <article class="padding_map">
-      <div class="location">
-        <img src="/svg/location-marker.svg" alt="location marker">
-        <p>COPENHAGEN, REFSHALEØEN</p>
-      </div>
-      <article class="check_map">
-        <div class="map">   
-          <img class="map_image" src="/webp/map_image.webp" alt="map">
-          <div class="btn_map">
-            <Buttons />
-          </div>
-        </div>
+      <div class="tribune">
         <div>
-          <h1 class="map_text">3 DAYS OF TECHNO, HOUSE AND DISCO IN THE WOODS</h1>
+          <h2>TRIBUNE</h2>
+          <hr>
         </div>
-      </article>
+        <Stagetime artist="SCHOWFDROSEEL" time="18:00-19:30"/>
+        <Stagetime artist="MADS LORENTSEN" time="19:30-21:00"/>
+        <Stagetime artist="HAENSEN & GRETHEL" time="21:00-23:00"/>
+        <Stagetime artist="MIRA" time="23:00-01:00"/>
+      </div>
+      <div class="balcony">
+        <div>
+          <h2>BALCONY</h2>
+          <hr>
+        </div>
+        <Stagetime artist="BOOGIE ROOKIE"/>
+        <Stagetime artist="FUTTE RICO"/>
+        <Stagetime artist="MORTEN MCCOY"/>
+        <Stagetime artist="NAYAN"/>
+        <Stagetime artist="SEB DALMAR"/>
+        <Stagetime artist="STORM"/>
+        <Stagetime artist="SØREN SKOV"/>
+      </div>
+    </div>
 
+    <div class="filterDiv  Friday">
+      <div class="manege">
+        <div>
+          <h2>MANEGE</h2>
+          <hr>
+        </div>
+        <Stagetime artist="VIXEN" time="18:00-19:30"/>
+        <Stagetime artist="NARCISS" time="19:30-21:00"/>
+        <Stagetime artist="HAII" time="21:00-23:00"/>
+        <Stagetime artist="VTSS" time="23:00-01:00"/>
+      </div>
+      <div class="tribune">
+        <div>
+          <h2>TRIBUNE</h2>
+          <hr>
+        </div>
+        <Stagetime artist="VÄM" time="18:00-19:30"/>
+        <Stagetime artist="ESKII" time="19:30-21:00"/>
+        <Stagetime artist="DJUMA SOUNDSYSTEM" time="21:00-23:00"/>
+        <Stagetime artist="SATORI LIVE" time="23:00-01:00"/>
+      
+      </div>
+      <div class="balcony">
+        <div>
+          <h2>BALCONY</h2>
+          <hr>
+        </div>
+        <Stagetime artist="COCKWHORE & MACHO"/>
+        <Stagetime artist="HARRISON HEAT, TIGHT CHERRY"/>
+        <Stagetime artist="SIOFRA"/>
+        <Stagetime artist="LUCKY CUBE"/>
+      </div>
+    </div>
+    <div class="filterDiv Saturday ">
+      <div class="manege">
+        <div>
+          <h2>MANEGE</h2>
+          <hr>
+        </div>
+        <Stagetime artist="ANNA LOGIC" time="18:00-19:30"/>
+        <Stagetime artist="DJ SEAVIEW" time="19:30-21:00"/>
+        <Stagetime artist="SPFDJ" time="21:00-23:00"/>
+        <Stagetime artist="RICHIE HAWTIN" time="23:00-01:00"/>
+      </div>
+      <div class="tribune">
+        <div>
+          <h2>TRIBUNE</h2>
+          <hr>
+        </div>
+        <Stagetime artist="POWERSTRANGER" time="18:00-19:30"/>
+        <Stagetime artist="KATZ-K" time="19:30-21:00"/>
+        <Stagetime artist="JUDITH VAN WANDERKANT" time="21:00-23:00"/>
+        <Stagetime artist="RSS DISCO" time="23:00-01:00"/>
+      </div>
+      <div class="balcony">
+        <div>
+          <h2>BALCONY</h2>
+          <hr>
+        </div>
+        <Stagetime artist="DEE BROWN, OKINE" time="18:00-19:30"/>
+        <Stagetime artist="MARSHMELLO" time="19:30-21:00"/>
+        <Stagetime artist="DEE BROWN, OKINE" time="21:00-23:00"/>
+        </div>
+      </div>
+    </div>
+</article>
+  <article class="padding_map">
+    <div class="location">
+      <img src="/svg/location-marker.svg" alt="location marker">
+      <p>COPENHAGEN, REFSHALEØEN</p>
+    </div>
+    <article class="check_map">
+      <div class="map">   
+        <img class="map_image" src="/webp/map_image.webp" alt="map">
+        <div class="btn_map">
+          <Buttons />
+        </div>
+      </div>
+      <div>
+        <h1 class="map_text">3 DAYS OF TECHNO, HOUSE AND DISCO IN THE WOODS</h1>
+      </div>
     </article>
-  </main>
-  <footer>
-  <Footer />
-</footer>
-</body>
-</html>
+
+  </article>
+
+</MainLayout>
+
+
 
 <style>
     .container {
