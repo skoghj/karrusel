@@ -5,264 +5,244 @@ import Buttons3 from "../components/buttons_frontpage/Buttons3.astro";
 import Buttons4 from "../components/buttons_frontpage/Buttons4.astro";
 import Buttons5 from "../components/buttons_frontpage/Buttons5.astro";
 import Buttons from "../components/Buttons.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import MainLayout from "../components/layouts/MainLayout.astro";
 import Banner from "../components/Banner.astro";
 import "../styles/style.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="/svg/logo_footer.svg" type="image/svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
-    <title>Home</title>
-  </head>
-  <body>
-    <Header />
-
-    <main>
-      <div class="container">
-        <img src="../webp/frontpage_image.webp" alt="front-page image" />
-        <div class="centered">
-          <h1 class="h1_text">KARRUSEL <span class="festival">FESTIVAL</span></h1>
-          <br />
-          <p>3 days of house, disco and techno in the woods.</p>
-          <br />
-          <br />
-          <div class="btn_container">
-            <Buttons1 variant="secondary">BUY TICKETS</Buttons1>
-            <Buttons2 variant="secondary">GO TO LINEUP</Buttons2>
-          </div>
-          <h1 class="countdown" id="demo"></h1>
-        </div>
-        <div class="banner_container"><Banner /></div>
+<MainLayout>
+  <div class="container">
+    <img src="../webp/frontpage_image.webp" alt="front-page image" />
+    <div class="centered">
+      <h1 class="h1_text">KARRUSEL <span class="festival">FESTIVAL</span></h1>
+      <br />
+      <p>3 days of house, disco and techno in the woods.</p>
+      <br />
+      <br />
+      <div class="btn_container">
+        <Buttons1 variant="secondary">BUY TICKETS</Buttons1>
+        <Buttons2 variant="secondary">GO TO LINEUP</Buttons2>
       </div>
-      <div class="info_boxes">
-        <div class="info_box1">
-          <img src="../webp/section_image1.webp" alt="section image" />
-          <h2>PROGRAM</h2>
-          <br />
-          <Buttons3 variant="secondary">GO TO PROGRAM..</Buttons3>
-        </div>
-        <div class="info_box2">
-          <img src="../webp/section_image2.webp" alt="section image" />
-          <h2>ABOUT US</h2>
-          <br />
-          <Buttons4 variant="secondary">LEARN MORE..</Buttons4>
-        </div>
-        <div class="info_box3">
-          <img src="../webp/section_image3.webp" alt="section image" />
-          <h2>GALLERY</h2>
-          <br />
-          <Buttons5 variant="secondary">GO TO GALLERY..</Buttons5>
-        </div>
-      </div>
-      <div class="map">
-        <img src="../svg/map.svg" alt="map" />
-        <br />
-        <Buttons variant="secondary" class="map">GO TO MAP</Buttons><div class="map_image"></div>
-      </div>
+      <h1 class="countdown" id="demo"></h1>
+    </div>
+    <div class="banner_container"><Banner /></div>
+  </div>
+  <div class="info_boxes">
+    <div class="info_box1">
+      <img src="../webp/section_image1.webp" alt="section image" />
+      <h2>PROGRAM</h2>
+      <br />
+      <Buttons3 variant="secondary">GO TO PROGRAM..</Buttons3>
+    </div>
+    <div class="info_box2">
+      <img src="../webp/section_image2.webp" alt="section image" />
+      <h2>ABOUT US</h2>
+      <br />
+      <Buttons4 variant="secondary">LEARN MORE..</Buttons4>
+    </div>
+    <div class="info_box3">
+      <img src="../webp/section_image3.webp" alt="section image" />
+      <h2>GALLERY</h2>
+      <br />
+      <Buttons5 variant="secondary">GO TO GALLERY..</Buttons5>
+    </div>
+  </div>
+  <div class="map">
+    <img src="../svg/map.svg" alt="map" />
+    <br />
+    <Buttons variant="secondary" class="map">GO TO MAP</Buttons><div class="map_image"></div>
+  </div>
+</MainLayout>
+<style>
+  /*Frontpage - desktop*/
+  body {
+    background-image: url(../svg/background_image1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .container img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(15%) contrast(100%) sepia(70%);
+  }
 
-      <Footer />
-    </main>
-  </body>
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -108.5%);
+    padding-top: 20px;
+  }
 
-  <style>
-    /*Frontpage - desktop*/
-    body {
-      background-image: url(../svg/background_image1.svg);
-      background-repeat: no-repeat;
-      background-size: cover;
+  .h1_text {
+    font-family: "Amarante";
+    background-image: url(/public/webp/mask_image.webp);
+    filter: brightness(180%) contrast(100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .festival {
+    display: flex;
+    justify-content: end;
+  }
+
+  .h1_text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .centered p {
+    font-size: 15px;
+    text-align: center;
+  }
+  .info_boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 40px;
+  }
+
+  .info_box1 img,
+  .info_box2 img,
+  .info_box3 img {
+    height: 250px;
+    width: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(90%) contrast(100%) sepia(50%);
+  }
+
+  .info_box1,
+  .info_box2,
+  .info_box3 {
+    display: grid;
+    text-align: center;
+    justify-items: center;
+    color: #f2f2f2;
+  }
+
+  .info_box2 {
+    margin-top: 40px;
+  }
+  h2 {
+    font-family: "Amarante";
+    font-size: 30px;
+  }
+  .countdown {
+    font-size: 28px;
+    font-family: "Lato";
+    color: #f2f2f2;
+    background-image: url(../webp/mask_image.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .map {
+    display: grid;
+    justify-content: end;
+    margin: 85px;
+  }
+
+  .map img {
+    width: 80%;
+    height: auto;
+  }
+
+  .map img:hover {
+    opacity: 0.6;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  /*Frontpage - mobile*/
+  @media screen and (max-width: 780px) {
+    .info_boxes {
+      grid-template-columns: 1fr;
     }
-    .container img {
-      height: 350px;
+
+    .info_box1,
+    .info_box2,
+    .info_box3 {
+      margin-top: 20px;
+    }
+
+    .map {
+      display: grid;
+      justify-items: center;
+      margin: 50px;
+    }
+
+    .map img {
       width: 100%;
-      object-fit: cover;
-      filter: brightness(15%) contrast(100%) sepia(70%);
+      height: auto;
+    }
+
+    .btn_container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .banner_container {
+      display: none;
     }
 
     .centered {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -108.5%);
-      padding-top: 20px;
-    }
-
-    .h1_text {
-      font-family: "Amarante";
-      background-image: url(/public/webp/mask_image.webp);
-      filter: brightness(180%) contrast(100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      --webkit-background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    .festival {
-      display: flex;
-      justify-content: end;
-    }
-
-    .h1_text {
-      display: flex;
-      flex-direction: column;
+      transform: translate(-50%, -104%);
     }
 
     .centered p {
-      font-size: 15px;
-      text-align: center;
-    }
-    .info_boxes {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin: 40px;
-    }
-
-    .info_box1 img,
-    .info_box2 img,
-    .info_box3 img {
-      height: 250px;
-      width: 70%;
-      object-fit: cover;
-      border-radius: 10px;
-      filter: brightness(90%) contrast(100%) sepia(50%);
-    }
-
-    .info_box1,
-    .info_box2,
-    .info_box3 {
-      display: grid;
-      text-align: center;
-      justify-items: center;
-      color: #f2f2f2;
-    }
-
-    .info_box2 {
-      margin-top: 40px;
-    }
-    h2 {
-      font-family: "Amarante";
-      font-size: 30px;
+      font-size: 14.5px;
     }
     .countdown {
-      font-size: 28px;
-      font-family: "Lato";
-      color: #f2f2f2;
-      background-image: url(../webp/mask_image.webp);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-align: center;
-      padding-top: 30px;
+      font-size: 22px;
     }
+  }
+</style>
 
-    button {
-      display: flex;
-      justify-content: center;
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Aug 22, 2024 18:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Definer en variabel for days, hours, minutes og seconds som strenge
+    let days: string;
+    let hours: string;
+    let minutes: string;
+    let seconds: string;
+
+    // Konverter numeriske værdier til strenge før tildeling
+    days = String(Math.floor(distance / (1000 * 60 * 60 * 24)));
+    hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+    seconds = String(Math.floor((distance % (1000 * 60)) / 1000));
+
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "D " + hours + "H " + minutes + "M " + seconds + "S ";
+
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
     }
-
-    .map {
-      display: grid;
-      justify-content: end;
-      margin: 85px;
-    }
-
-    .map img {
-      width: 80%;
-      height: auto;
-    }
-
-    .map img:hover {
-      opacity: 0.6;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    /*Frontpage - mobile*/
-    @media screen and (max-width: 780px) {
-      .info_boxes {
-        grid-template-columns: 1fr;
-      }
-
-      .info_box1,
-      .info_box2,
-      .info_box3 {
-        margin-top: 20px;
-      }
-
-      .map {
-        display: grid;
-        justify-items: center;
-        margin: 50px;
-      }
-
-      .map img {
-        width: 100%;
-        height: auto;
-      }
-
-      .btn_container {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-      }
-
-      .banner_container {
-        display: none;
-      }
-
-      .centered {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -104%);
-      }
-
-      .centered p {
-        font-size: 14.5px;
-      }
-      .countdown {
-        font-size: 22px;
-      }
-    }
-  </style>
-
-  <script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("Aug 22, 2024 18:00:00").getTime();
-
-    // Update the count down every 1 second
-    var x = setInterval(function () {
-      // Get today's date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-
-      // Definer en variabel for days, hours, minutes og seconds som strenge
-      let days: string;
-      let hours: string;
-      let minutes: string;
-      let seconds: string;
-
-      // Konverter numeriske værdier til strenge før tildeling
-      days = String(Math.floor(distance / (1000 * 60 * 60 * 24)));
-      hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-      minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-      seconds = String(Math.floor((distance % (1000 * 60)) / 1000));
-
-      // Output the result in an element with id="demo"
-      document.getElementById("demo").innerHTML = days + "D " + hours + "H " + minutes + "M " + seconds + "S ";
-
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-      }
-    }, 1000);
-  </script>
-</html>
+  }, 1000);
+</script>

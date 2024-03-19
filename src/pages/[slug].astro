@@ -6,26 +6,24 @@ import Icons from "../components/Icons.astro";
 
 
 export async function getStaticPaths() {
-const url = "https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artist";
-
-const options =  {
-headers: { 
-apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xemd6YWVldnVvbG5laXhndWF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA2MDQyNDQsImV4cCI6MjAyNjE4MDI0NH0.Qbj4-BVvOnlAroDN44rKnJaPILmiSdhtvARYZEbJrkA" },
-};
-
-  const data = await fetch(url, options).then(response => response.json());
-
-        return data.map((artist) => {
-            return{
-                params: {slug: artist.id},
-                props: {artist},
-            };
-        });
+  const url = "https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artist";
+  const options = {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xemd6YWVldnVvbG5laXhndWF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA2MDQyNDQsImV4cCI6MjAyNjE4MDI0NH0.Qbj4-BVvOnlAroDN44rKnJaPILmiSdhtvARYZEbJrkA",
+    },
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data.map((artist) => {
+    return {
+      params: { slug: artist.id },
+      props: { artist },
+    };
+  });
 }
-//const { name, description, music, img_singview } = Astro.props
-const { artist } = Astro.props
-
+const { artist } = Astro.props;
 ---
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,18 +75,17 @@ const { artist } = Astro.props
                 <h2>WANNA KNOW MORE?</h2>
                 <br>
                 <p>
-                    Opdag de fortryllende lyde på SoundCloud og dyk ned i den fængslende verden af denne musikgenre.
+                    Discover their mesmerizing sounds on SoundCloud and delve into the captivating realm of their music genre.
                 </p>
                 <br>
-                <p> Forbind med dem på Facebook og Instagram for at lære mere om dem og deres musik. </p>
+                <p> Connect with them on Facebook and Instagram to learn more about the artists.</p>
                 <br>
-                <p> Hold dig opdateret om deres seneste musikudgivelser og få indsigt bag kulisserne i deres kreative
-                    proces.
+                <p> Stay updated on their latest music releases and get behind-the-scenes insights into their creative process.
                 </p>
             </div>
-
+        
             <div class="single-sound">
-                <iframe src="#" frameborder="0" class="soundCloud"></iframe>
+                <iframe src={artist.music} frameborder="0" class="soundCloud"></iframe>
             </div>
         </section>
 
