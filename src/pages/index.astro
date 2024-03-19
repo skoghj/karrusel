@@ -10,7 +10,7 @@ import Banner from "../components/Banner.astro";
 import "../styles/style.css";
 ---
 
-<MainLayout>
+<MainLayout title="KARRUSEL FESTIVAL">
   <div class="container">
     <img src="../webp/frontpage_image.webp" alt="front-page image" />
     <div class="centered">
@@ -138,13 +138,14 @@ import "../styles/style.css";
     background-image: url(../webp/mask_image.webp);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: brightness(180%) contrast(100%);
     text-align: center;
     padding-top: 30px;
   }
 
-  button {
+  .btn_container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .map {
