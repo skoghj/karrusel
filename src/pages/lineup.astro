@@ -12,7 +12,6 @@ const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artis
   method: "GET",
   headers: { apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xemd6YWVldnVvbG5laXhndWF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA2MDQyNDQsImV4cCI6MjAyNjE4MDI0NH0.Qbj4-BVvOnlAroDN44rKnJaPILmiSdhtvARYZEbJrkA" },
 }).then((res) => res.json());
-console.log("data", data);
 ---
 
 <MainLayout>
@@ -62,11 +61,12 @@ console.log("data", data);
       </section>
     </div>
   </section>
+  <!-- 
   <div class="filtering">
     <ButtonOverview variant="secondary" class="disco"> DISCO </ButtonOverview>
     <ButtonOverview variant="secondary" class="house"> HOUSE </ButtonOverview>
     <ButtonOverview variant="secondary" class="techno"> TECHNO </ButtonOverview>
-  </div>
+  </div> -->
   <section class="list">
     {
       /*data.map((artists) => {

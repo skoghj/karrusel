@@ -1,0 +1,212 @@
+---
+import "../../styles/style.css";
+import Icons from "../../components/Icons.astro";
+import MainLayout from "../../components/layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const url = "https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artist";
+  const options = {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xemd6YWVldnVvbG5laXhndWF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA2MDQyNDQsImV4cCI6MjAyNjE4MDI0NH0.Qbj4-BVvOnlAroDN44rKnJaPILmiSdhtvARYZEbJrkA",
+    },
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data.map((artist) => {
+    return {
+      params: { slug: artist.slug },
+      props: { artist },
+    };
+  });
+}
+const { artist } = Astro.props;
+---
+
+<MainLayout title="SINGLEVIEW">
+  <ul class="breadcrumb">
+    <li><a href="#">HOME</a></li>
+    <li><a href="#">LINEUP</a></li>
+    <li><a href="#" class="breadcrumb_link">#</a></li>
+  </ul>
+
+  <section class="single-1_1">
+    <div class="single-img">
+      <img src={artist.singview} alt="" class="artist_img" />
+    </div>
+
+    <div class="single-text_1">
+      <h1>{artist.name}</h1>
+      <br />
+      <p class="description">{artist.description}</p>
+
+      <div class="single_icons">
+        <Icons />
+      </div>
+    </div>
+  </section>
+
+  <section class="single-1_1">
+    <div class="single-text_1">
+      <h2>WANNA KNOW MORE?</h2>
+      <br />
+      <p>Discover their mesmerizing sounds on SoundCloud and delve into the captivating realm of their music genre.</p>
+      <br />
+      <p>Connect with them on Facebook and Instagram to learn more about the artists.</p>
+      <br />
+      <p>Stay updated on their latest music releases and get behind-the-scenes insights into their creative process.</p>
+    </div>
+
+    <div class="single-sound">
+      <iframe src={artist.music} frameborder="0" class="soundCloud"></iframe>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* BREADCRUMB */
+  ul.breadcrumb {
+    list-style: none;
+  }
+
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+
+  /* SLASH SYMBOL (/) */
+  ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: #ffc4a8;
+    content: "/\00a0";
+  }
+
+  ul.breadcrumb li a {
+    color: #ffc4a8;
+    text-decoration: none;
+  }
+
+  ul.breadcrumb li a:hover {
+    color: #f84104;
+  }
+
+  /******** MOBIL FORMAT ********/
+
+  main {
+    margin: 8%;
+  }
+
+  h1 {
+    font-family: "Amarante";
+    margin-bottom: 20px;
+    background-image: url(../webp/mask_image.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(180%) contrast(100%);
+  }
+
+  h2 {
+    font-family: "Amarante";
+    font-weight: 400;
+    background-image: url(../webp/mask_image.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(180%) contrast(100%);
+  }
+
+  .single-1_1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+  }
+
+  .single-1_1 img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 6%;
+  }
+
+  .single-text_1 {
+    font-size: 16px;
+    margin-bottom: 6%;
+  }
+
+  /******** TABLET FORMAT ********/
+
+  @media (min-width: 768px) {
+    main {
+      margin: 10%;
+    }
+
+    h1 {
+      margin-bottom: 8%;
+    }
+
+    .single-1_1 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2%;
+    }
+
+    .single-1_1 img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 8%;
+    }
+
+    .single-text_1 {
+      font-size: 16px;
+      margin-bottom: 8%;
+    }
+  }
+
+  /******** DESKTOP FORMAT ********/
+
+  @media (min-width: 1024px) {
+    main {
+      margin: 5% 10%;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .single-1_1 {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 80px;
+      margin-top: 2%;
+      margin-bottom: 6%;
+      align-items: flex-start;
+    }
+
+    .single-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .single-text_1 {
+      font-size: 20px;
+    }
+
+    .single-text_1 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .single-text_1 > div {
+      flex: 1;
+    }
+  }
+</style>

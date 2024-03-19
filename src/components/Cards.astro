@@ -1,7 +1,5 @@
 ---
-const { name, date, land } = Astro.props;
 const { data } = Astro.props;
-console.log(data);
 import ButtonOverview from "../components/ButtonOverview.astro";
 ---
 
@@ -14,7 +12,11 @@ import ButtonOverview from "../components/ButtonOverview.astro";
       <img src={data.image} alt={data.name} />
       <div class="navn">
         <h2 class="name">{data.name}</h2>
-        <a href="single/${data.slug}"><div class="button_list"><ButtonOverview variant="primary"> See more </ButtonOverview></div></a>
+        <a href={`../artists/${data.slug}`}>
+          <div class="button_list">
+            <ButtonOverview variant="primary"> See more </ButtonOverview>
+          </div>
+        </a>
       </div>
       <div class="date_land">
         <div class="date">{data.date}</div>
