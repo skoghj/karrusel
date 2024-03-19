@@ -5,25 +5,126 @@
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 </head>
+
 <article class="ticket">
-  <div class="earlybird">
-    <img src="/public/svg/Ticket_earlybird.svg" alt="earlybird ticket" />
+  <div class="earlybird_ticket">
+    <img class="earlybird" src="/public/svg/Ticket_earlybird.svg" alt="earlybird ticket" />
     <h1 class="buy_now"><a href="https://www.ticketmaster.dk/event/542817">BUY NOW</a></h1>
-    <h1 class="earlybirdpass">EARLYBIRD <br /> PASS</h1>
+    <!--<h1 class="earlybirdpass">EARLYBIRD <br /> PASS</h1>
     <p class="sale">on sale until 1 April</p>
     <h1 class="price">800DKK</h1>
-    <p class="agelimit">AGE LIMIT 18+</p>
+    <p class="agelimit">AGE LIMIT 18+</p> -->
   </div>
-  <div class="oneday">
-    <img src="/public/svg/Ticket_oneday.svg" alt="oneday ticket" />
+  <div class="oneday_ticket">
+    <img class="oneday"src="/public/svg/Ticket_oneday.svg" alt="oneday ticket" />
     <h1 class="comingsoon"><a href="https://www.ticketmaster.dk/event/542817">COMING SOON</a></h1>
-    <h1 class="onedaypass">ONEDAY <br /> PASS</h1>
+    <!--<h1 class="onedaypass">ONEDAY <br /> PASS</h1>
     <p class="sale">on sale until 1 April</p>
     <h1 class="price_soon">Coming Soon</h1>
-    <p class="agelimit">AGE LIMIT 18+</p>
+    <p class="agelimit">AGE LIMIT 18+</p>-->
   </div>
 </article>
 <style>
+  .ticket{display: flex;
+  flex-flow: column wrap;
+  gap:40px;}
+  .earlybird,.oneday {
+    width: 100%;
+    height: auto;
+    position: relative;
+     }
+  .earlybird_ticket, .oneday_ticket{
+    position: relative;
+    display: flex;
+  }
+  .buy_now,.comingsoon{position: absolute; display: flex;
+  font-family: "Alumni Sans", sans-serif;
+font-size: 50px;}
+
+.earlybird_ticket .buy_now {
+  top: 87%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+}
+ .oneday_ticket .comingsoon {
+  top: 87%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+  .buy_now a:hover,
+  .comingsoon a:hover {
+    color: #f84104;
+  }
+  .comingsoon a,
+  .buy_now a {
+    color: white;
+    text-decoration: none;
+  }
+  @media (max-width:500px) {
+  .earlybird_ticket .buy_now {
+    top: 87%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+}
+  .oneday_ticket .comingsoon {
+  top: 87%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}}
+ @media (max-width:440px) {
+  .earlybird_ticket .buy_now {
+  top: 87%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}
+ .oneday_ticket .comingsoon {
+  top: 87%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+} }
+ @media (max-width:300px) {
+  .earlybird_ticket .buy_now {
+  top: 87%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}
+ .oneday_ticket .comingsoon {
+  top: 87%;
+ left: 27%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}}
+ @media (max-width:274px) {
+  .earlybird_ticket .buy_now {
+  top: 87%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+ .oneday_ticket .comingsoon {
+  top: 87%;
+ left: 27%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}}
+
+  /*
+  .buy_now,
+  .earlybirdpass,
+  .sale,
+  .price,
+  .agelimit,
+  .comingsoon,
+  .onedaypass,
+  .sale,
+  .price_soon,
+  .agelimit {
+    position: absolute;
+  }
+
   .buy_now,
   .comingsoon,
   .price,
@@ -35,7 +136,7 @@
   }
   .buy_now,
   .comingsoon {
-    font-size: 55px;
+    font-size: 50px;
   }
   .price_soon {
     font-size: 43px;
@@ -63,6 +164,7 @@
   .oneday {
     display: grid;
     place-items: center;
+    position: relative;
   }
 
   img,
@@ -78,6 +180,7 @@
 
   .buy_now {
     color: white;
+    position: absolute;
     transform: translate(-196px, 78px);
   }
   .buy_now a:hover,
@@ -102,7 +205,7 @@
     transform: translate(123px, -47px);
   }
   .onedaypass {
-    transform: translate(102px, -206px);
+    transform: translate(99px, -50px);
   }
   .price {
     transform: translate(103px, 60px);
@@ -116,4 +219,22 @@
   .agelimit {
     transform: translate(87px, 90px);
   }
+
+  @media (min-width: 600px;) {
+    .buy_now,
+    .comingsoon {
+      font-size: 40px;
+    }
+    .price_soon {
+      font-size: 33px;
+    }
+    .earlybirdpass,
+    .onedaypass,
+    .price {
+      font-size: 40px;
+    }
+  }
 </style>
+-->
+  </div>
+</article>
