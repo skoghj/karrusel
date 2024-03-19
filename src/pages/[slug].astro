@@ -1,8 +1,7 @@
 ---
 import "../styles/style.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import Icons from "../components/Icons.astro";
+import MainLayout from "../components/layouts/MainLayout.astro"
 
 
 export async function getStaticPaths() {
@@ -24,81 +23,52 @@ export async function getStaticPaths() {
 const { artist } = Astro.props;
 ---
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
-    <title>Artist Singleview</title>
-</head>
-
-<body>
-    <header>
-        <Header />
-    </header>
+<MainLayout title="SINGLEVIEW">
+    <ul class="breadcrumb">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">LINEUP</a></li>
+        <li><a href="#" class="breadcrumb_link">#</a></li>
+    </ul>
 
 
-    <main>
-        <ul class="breadcrumb">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">LINEUP</a></li>
-            <li><a href="#" class="breadcrumb_link">#</a></li>
-        </ul>
+    <section class="single-1_1">
+        <div class="single-img">
+            <img src={artist.singview} alt="" class="artist_img">
+        </div>
 
+        <div class="single-text_1">
+            <h1>{artist.name}</h1>
+            <br>
+            <p class="description">{artist.description}</p>
 
-        <section class="single-1_1">
-            <div class="single-img">
-                <img src={artist.singview} alt="" class="artist_img">
+            <div class="single_icons">
+                <Icons />
             </div>
+        </div>
 
-            <div class="single-text_1">
-                <h1>{artist.name}</h1>
-                <br>
-                <p class="description">{artist.description}</p>
-
-                <div class="single_icons">
-                    <Icons />
-                </div>
-            </div>
-
-        </section>
+    </section>
 
 
-        <section class="single-1_1">
-            <div class="single-text_1">
-                <h2>WANNA KNOW MORE?</h2>
-                <br>
-                <p>
-                    Discover their mesmerizing sounds on SoundCloud and delve into the captivating realm of their music genre.
-                </p>
-                <br>
-                <p> Connect with them on Facebook and Instagram to learn more about the artists.</p>
-                <br>
-                <p> Stay updated on their latest music releases and get behind-the-scenes insights into their creative process.
-                </p>
-            </div>
-        
-            <div class="single-sound">
-                <iframe src={artist.music} frameborder="0" class="soundCloud"></iframe>
-            </div>
-        </section>
+    <section class="single-1_1">
+        <div class="single-text_1">
+            <h2>WANNA KNOW MORE?</h2>
+            <br>
+            <p>
+                Discover their mesmerizing sounds on SoundCloud and delve into the captivating realm of their music genre.
+            </p>
+            <br>
+            <p> Connect with them on Facebook and Instagram to learn more about the artists.</p>
+            <br>
+            <p> Stay updated on their latest music releases and get behind-the-scenes insights into their creative process.
+            </p>
+        </div>
+    
+        <div class="single-sound">
+            <iframe src={artist.music} frameborder="0" class="soundCloud"></iframe>
+        </div>
+    </section>
 
-    </main>
-
-
-    <footer>
-        <Footer />
-    </footer>
-
-</body>
-
-</html>
+</MainLayout>
 
 <style>
     * {
