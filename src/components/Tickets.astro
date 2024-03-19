@@ -16,7 +16,7 @@
     <p class="agelimit">AGE LIMIT 18+</p> -->
   </div>
   <div class="oneday_ticket">
-    <img class="oneday"src="/svg/Ticket_oneday.svg" alt="oneday ticket" />
+    <img class="oneday" src="/svg/Ticket_oneday.svg" alt="oneday ticket" />
     <h1 class="comingsoon"><a href="https://www.ticketmaster.dk/event/542817">COMING SOON</a></h1>
     <!--<h1 class="onedaypass">ONEDAY <br /> PASS</h1>
     <p class="sale">on sale until 1 April</p>
@@ -25,163 +25,39 @@
   </div>
 </article>
 <style>
-  .ticket{display: flex;
-  flex-flow: column wrap;
-  gap:40px;}
-  .earlybird,.oneday {
-    width: 100%;
-    height: auto;
-    position: relative;
-     }
-  .earlybird_ticket, .oneday_ticket{
-    position: relative;
-    display: flex;
-  }
-  .buy_now,.comingsoon{position: absolute; display: flex;
-  font-family: "Alumni Sans", sans-serif;
-font-size: 50px;}
-
-.earlybird_ticket .buy_now {
-  top: 87%;
-    left: 15%;
-    transform: translate(-50%, -50%);
-}
- .oneday_ticket .comingsoon {
-  top: 87%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-}
-  .buy_now a:hover,
-  .comingsoon a:hover {
-    color: #f84104;
-  }
-  .comingsoon a,
-  .buy_now a {
-    color: white;
-    text-decoration: none;
-  }
-  @media (max-width:500px) {
-  .earlybird_ticket .buy_now {
-    top: 87%;
-    left: 18%;
-    transform: translate(-50%, -50%);
-}
-  .oneday_ticket .comingsoon {
-  top: 87%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-}}
- @media (max-width:440px) {
-  .earlybird_ticket .buy_now {
-  top: 87%;
-  left: 18%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
-}
- .oneday_ticket .comingsoon {
-  top: 87%;
-  left: 22%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
-} }
- @media (max-width:300px) {
-  .earlybird_ticket .buy_now {
-  top: 87%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
-}
- .oneday_ticket .comingsoon {
-  top: 87%;
- left: 27%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
-}}
- @media (max-width:274px) {
-  .earlybird_ticket .buy_now {
-  top: 87%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-}
- .oneday_ticket .comingsoon {
-  top: 87%;
- left: 27%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-}}
-
-  /*
-  .buy_now,
-  .earlybirdpass,
-  .sale,
-  .price,
-  .agelimit,
-  .comingsoon,
-  .onedaypass,
-  .sale,
-  .price_soon,
-  .agelimit {
-    position: absolute;
-  }
-
-  .buy_now,
-  .comingsoon,
-  .price,
-  .price_soon,
-  .earlybirdpass,
-  .onedaypass {
-    font-family: "Alumni Sans", sans-serif;
-    color: #2b0303;
-  }
-  .buy_now,
-  .comingsoon {
-    font-size: 50px;
-  }
-  .price_soon {
-    font-size: 43px;
-  }
-  .earlybirdpass,
-  .onedaypass,
-  .price {
-    font-size: 50px;
-  }
-  .sale,
-  .agelimit {
-    font-family: "Alumni Sans", sans-serif;
-    color: #2b0303;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
   .ticket {
     display: flex;
     flex-flow: column wrap;
     gap: 40px;
-    align-items: flex-end;
   }
   .earlybird,
   .oneday {
-    display: grid;
-    place-items: center;
+    width: 100%;
+    height: auto;
     position: relative;
   }
-
-  img,
+  .earlybird_ticket,
+  .oneday_ticket {
+    position: relative;
+    display: flex;
+  }
   .buy_now,
-  .comingsoon,
-  .earlybirdpass,
-  .sale,
-  .price,
-  .price_soon,
-  .agelimit {
-    grid-area: 1 / 1;
+  .comingsoon {
+    position: absolute;
+    display: flex;
+    font-family: "Alumni Sans", sans-serif;
+    font-size: 50px;
   }
 
-  .buy_now {
-    color: white;
-    position: absolute;
-    transform: translate(-196px, 78px);
+  .earlybird_ticket .buy_now {
+    top: 87%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+  }
+  .oneday_ticket .comingsoon {
+    top: 87%;
+    left: 20%;
+    transform: translate(-50%, -50%);
   }
   .buy_now a:hover,
   .comingsoon a:hover {
@@ -192,49 +68,58 @@ font-size: 50px;}
     color: white;
     text-decoration: none;
   }
-  .comingsoon {
-    transform: translate(-154px, 78px);
-  }
-  .earlybirdpass,
-  .onedaypass {
-    color: #2b0303;
-    font-weight: 800;
-    line-height: 1;
-  }
-  .earlybirdpass {
-    transform: translate(123px, -47px);
-  }
-  .onedaypass {
-    transform: translate(99px, -50px);
-  }
-  .price {
-    transform: translate(103px, 60px);
-  }
-  .price_soon {
-    transform: translate(127px, 60px);
-  }
-  .sale {
-    transform: translate(103px, 10px);
-  }
-  .agelimit {
-    transform: translate(87px, 90px);
-  }
-
-  @media (min-width: 600px;) {
-    .buy_now,
-    .comingsoon {
-      font-size: 40px;
+  @media (max-width: 500px) {
+    .earlybird_ticket .buy_now {
+      top: 87%;
+      left: 18%;
+      transform: translate(-50%, -50%);
     }
-    .price_soon {
-      font-size: 33px;
+    .oneday_ticket .comingsoon {
+      top: 87%;
+      left: 25%;
+      transform: translate(-50%, -50%);
     }
-    .earlybirdpass,
-    .onedaypass,
-    .price {
-      font-size: 40px;
+  }
+  @media (max-width: 440px) {
+    .earlybird_ticket .buy_now {
+      top: 87%;
+      left: 18%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+    }
+    .oneday_ticket .comingsoon {
+      top: 87%;
+      left: 22%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 300px) {
+    .earlybird_ticket .buy_now {
+      top: 87%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+    }
+    .oneday_ticket .comingsoon {
+      top: 87%;
+      left: 27%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 274px) {
+    .earlybird_ticket .buy_now {
+      top: 87%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+    }
+    .oneday_ticket .comingsoon {
+      top: 87%;
+      left: 27%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
     }
   }
 </style>
--->
-  </div>
-</article>
