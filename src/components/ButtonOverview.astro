@@ -1,11 +1,9 @@
 ---
-const { variant = "primary" } = Astro.props;
+const { variant } = Astro.props;
 ---
 
 <button class="custom-button" data-variant={variant}>
-  <a href={"/pages/{$slug}"} class="button-link">
-    <slot />
-  </a>
+  <slot />
 </button>
 
 <style>
