@@ -4,7 +4,7 @@ import Icons from "../components/Icons.astro";
 
 <footer>
   <div class="footer-logo">
-    <a href="/"><img src="../public/svg/logo_footer.svg" alt="footer logo" /></a>
+    <a href="/"><img src="../svg/logo_footer.svg" alt="footer logo" /></a>
   </div>
   <div class="footer-nav">
     <ul class="footer-nav-list">
@@ -72,8 +72,14 @@ import Icons from "../components/Icons.astro";
     gap: 20px;
   }
 
-  .footer-social-img1 img,
-  .footer-social-img2 img {
-    width: 40px;
+  @media screen and (max-width: 780px) {
+    .footer-social {
+      justify-content: center;
+    }
+
+    .column1 li a,
+    .column2 li a {
+      font-size: 12px;
+    }
   }
 </style>

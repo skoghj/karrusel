@@ -9,51 +9,55 @@ import "../styles/style.css";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="public/svg/logo_footer.svg" type="image/svg" />
+    <link rel="shortcut icon" href="/svg/logo_footer.svg" type="image/svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
     <title>Home</title>
   </head>
   <body>
     <Header />
     <main>
       <div class="container">
-        <img src="public/webp/frontpage_image.webp" alt="front-page image" />
+        <img src="../webp/frontpage_image.webp" alt="front-page image" />
         <div class="centered">
           <h1 class="h1_text">KARRUSEL <span class="festival">FESTIVAL</span></h1>
           <br />
           <p>3 days of house, disco and techno in the woods.</p>
           <br />
           <br />
-          <Buttons variant="secondary">BUY TICKETS</Buttons>
-          <Buttons variant="secondary">GO TO LINEUP</Buttons>
+          <div class="btn_container">
+            <Buttons variant="secondary">BUY TICKETS</Buttons>
+            <Buttons variant="secondary">GO TO LINEUP</Buttons>
+          </div>
           <h1 class="countdown" id="demo"></h1>
         </div>
         <div class="banner_container"><Banner /></div>
       </div>
       <div class="info_boxes">
         <div class="info_box1">
-          <img src="public/webp/section_image1.webp" alt="section image" />
+          <img src="../webp/section_image1.webp" alt="section image" />
           <h2>PROGRAM</h2>
           <br />
           <Buttons variant="secondary">GO TO PROGRAM..</Buttons>
         </div>
         <div class="info_box2">
-          <img src="public/webp/section_image2.webp" alt="section image" />
+          <img src="../webp/section_image2.webp" alt="section image" />
           <h2>ABOUT US</h2>
           <br />
           <Buttons variant="secondary">LEARN MORE..</Buttons>
         </div>
         <div class="info_box3">
-          <img src="public/webp/section_image3.webp" alt="section image" />
+          <img src="../webp/section_image3.webp" alt="section image" />
           <h2>GALLERY</h2>
           <br />
           <Buttons variant="secondary">GO TO GALLERY..</Buttons>
         </div>
       </div>
       <div class="map">
-        <img src="../public/svg/map.svg" alt="map" />
+        <img src="../svg/map.svg" alt="map" />
         <br />
         <Buttons variant="secondary" class="map">GO TO MAP</Buttons><div class="map_image"></div>
       </div>
@@ -63,8 +67,9 @@ import "../styles/style.css";
   </body>
 
   <style>
+    /*Frontpage - desktop*/
     body {
-      background-image: url(../public/svg/background_image1.svg);
+      background-image: url(../svg/background_image1.svg);
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -76,21 +81,21 @@ import "../styles/style.css";
     }
 
     .centered {
-      color: #ffffff;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -108.5%);
+      padding-top: 20px;
     }
 
-    .centered h1 {
-      background-image: url(../public/webp/mask_image.webp);
+    .h1_text {
+      font-family: "Amarante";
+      background-image: url(/public/webp/mask_image.webp);
       filter: brightness(180%) contrast(100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       --webkit-background-repeat: no-repeat;
       background-size: cover;
-      padding-top: 18.5px;
     }
 
     .festival {
@@ -140,11 +145,19 @@ import "../styles/style.css";
       font-size: 30px;
     }
     .countdown {
-      transform: translate(-0px, 15px);
-      font-size: 25px;
+      font-size: 28px;
       font-family: "Lato";
       color: #f2f2f2;
+      background-image: url(../webp/mask_image.webp);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       text-align: center;
+      padding-top: 30px;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
     }
 
     .map {
@@ -159,8 +172,57 @@ import "../styles/style.css";
     }
 
     .map img:hover {
-      opacity: 70%;
+      opacity: 0.6;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    /*Frontpage - mobile*/
+    @media screen and (max-width: 780px) {
+      .info_boxes {
+        grid-template-columns: 1fr;
+      }
+
+      .info_box1,
+      .info_box2,
+      .info_box3 {
+        margin-top: 20px;
+      }
+
+      .map {
+        display: grid;
+        justify-items: center;
+        margin: 50px;
+      }
+
+      .map img {
+        width: 100%;
+        height: auto;
+      }
+
+      .btn_container {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .banner_container {
+        display: none;
+      }
+
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -104%);
+      }
+
+      .centered p {
+        font-size: 14.5px;
+      }
+      .countdown {
+        font-size: 22px;
+      }
     }
   </style>
 

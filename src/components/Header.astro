@@ -4,7 +4,7 @@
 
 <header>
   <div class="logo">
-    <a href="/"><img src="../public/svg/logo_header.svg" alt="logo" /></a>
+    <a href="/"><img src="../svg/logo_header.svg" alt="logo" /></a>
   </div>
   <nav class="nav">
     <ul class="nav-list">
@@ -63,5 +63,17 @@
     display: flex;
     justify-content: space-evenly;
     gap: 15px;
+  }
+
+  @media screen and (max-width: 780px) {
+    .logo {
+      display: none;
+    }
+
+    .nav-list li a {
+      font-size: 12px;
+      text-align: center;
+      margin-left: 0px;
+    }
   }
 </style>
