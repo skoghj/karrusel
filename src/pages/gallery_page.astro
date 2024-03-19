@@ -1,6 +1,5 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import MainLayout from "../components/layouts/MainLayout.astro";
 import Carrousel from "../components/carrousel/Carrousel.astro";
 import Carrousel2 from "../components/carrousel/Carrousel2.astro";
 import Carrousel3 from "../components/carrousel/Carrousel3.astro";
@@ -8,63 +7,48 @@ import Carrousel4 from "../components/carrousel/Carrousel4.astro";
 import "../styles/style.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link rel="shortcut icon" href="/public/svg/logo_footer.svg" type="image/svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Gallery</title>
-  </head>
-  <body>
-    <Header />
+<MainLayout>
+  <h1>GALLERY</h1>
+  <p class="text">Are you curious to experience the vibe at Karrusel? Let yourself be inspired by the stunning photos from last year's events and gain insight into the atmosphere and energy of the place. Click on the dot for the first image of the corresponding year to activate the image-slider!</p>
+  <h2>2023</h2>
+  <Carrousel />
+  <h2>2022</h2>
+  <Carrousel2 />
+  <h2>2021</h2>
+  <Carrousel3 />
+  <h2>2019</h2>
+  <Carrousel4 />
+</MainLayout>
+<style>
+  body {
+    background-image: url(../svg/background_image.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-    <main>
-      <h1>GALLERY</h1>
-      <p class="text">Are you curious to experience the vibe at Karrusel? Let yourself be inspired by the stunning photos from last year's events and gain insight into the atmosphere and energy of the place. Click on the dot for the first image of the corresponding year to activate the image-slider!</p>
-      <h2>2023</h2>
-      <Carrousel />
-      <h2>2022</h2>
-      <Carrousel2 />
-      <h2>2021</h2>
-      <Carrousel3 />
-      <h2>2019</h2>
-      <Carrousel4 />
-    </main>
-    <Footer />
-  </body>
-  <style>
-    body {
-      background-image: url(../svg/background_image.svg);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+  h1 {
+    text-align: center;
+    padding: 30px;
+    background-image: url(../webp/mask_image.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-    main h1 {
-      text-align: center;
-      padding: 30px;
-      background-image: url(../webp/mask_image.webp);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      --webkit-background-repeat: no-repeat;
-      background-size: cover;
-    }
+  main h2 {
+    text-align: center;
+    font-family: "Amarante";
+    color: #f2f2f2;
+    padding-top: 80px;
+  }
 
-    main h2 {
-      text-align: center;
-      font-family: "Amarante";
-      color: #f2f2f2;
-      padding-top: 80px;
-    }
-
-    .text {
-      width: 50%;
-      line-height: 20px;
-      padding-top: 20px;
-      margin: 0 auto;
-      text-align: center;
-      color: #f2f2f2;
-    }
-  </style>
-</html>
+  .text {
+    width: 50%;
+    line-height: 20px;
+    padding-top: 20px;
+    margin: 0 auto;
+    text-align: center;
+    color: #f2f2f2;
+  }
+</style>
