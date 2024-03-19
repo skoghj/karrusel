@@ -136,6 +136,9 @@ import Icons from "../components/Icons.astro";
             <br>
             <p><b> Resident Advisor event: </b> <a href="https://ra.co/events/1768065">ra.co/events</a>
             </p>
+            <div class="single_icons">
+                <Icons />
+            </div>
             <br>
             <h2>THANKS!</h2>
             <br>
@@ -143,8 +146,8 @@ import Icons from "../components/Icons.astro";
                 Special thanks to each and every volunteer, Heineken Silver for supporting new and wild ideas and
                 Refshaleøen for meeting our housing needs.
             </p>
-
         </div>
+
     </section>
 
 
@@ -164,17 +167,40 @@ import Icons from "../components/Icons.astro";
     }
 
     /******** MOBIL FORMAT ********/
+a{
+    color: #7000FF;
+}
+
+    .single_icons{
+padding-top: 20px;
+padding-bottom: 20px;
+    }
+
     h2 {
   font-family: "Amarante";
   color: #f2f2f2;
-  font-weight: 400
-}
+  font-weight: 400;
+  background-image: url(../public/webp/mask_image.webp);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      --webkit-background-repeat: no-repeat;
+      background-size: cover;
+      filter: brightness(180%) contrast(100%);
+        }
+
     h1 {
         margin-top: 4%;
         margin-bottom: 4%;
         padding: 2% 10%;
         font-weight: 400;
-    }
+        background-image: url(../public/webp/mask_image.webp);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      --webkit-background-repeat: no-repeat;
+      background-size: cover;
+      filter: brightness(180%) contrast(100%);
+        }
+    
 
     .about-1_1,
     .about-1_2,
