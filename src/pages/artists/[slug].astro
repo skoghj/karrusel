@@ -1,7 +1,7 @@
 ---
 import "../../styles/style.css";
 import Icons from "../../components/Icons.astro";
-import MainLayout from "../../components/layouts/MainLayout.astro";
+import SingleviewLayout from "../../components/layouts/SingleviewLayout.astro";
 
 export async function getStaticPaths() {
   const url = "https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artist";
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 const { artist } = Astro.props;
 ---
 
-<MainLayout title="SINGLEVIEW">
+<SingleviewLayout title="SINGLEVIEW">
   <ul class="breadcrumb">
     <li><a href="#">HOME</a></li>
     <li><a href="#">LINEUP</a></li>
@@ -60,7 +60,7 @@ const { artist } = Astro.props;
       <iframe src={artist.music} frameborder="0" class="soundCloud"></iframe>
     </div>
   </section>
-</MainLayout>
+</SingleviewLayout>
 
 <style>
   * {
@@ -68,6 +68,7 @@ const { artist } = Astro.props;
     padding: 0;
     box-sizing: border-box;
   }
+
 
   /* BREADCRUMB */
   ul.breadcrumb {
@@ -97,13 +98,10 @@ const { artist } = Astro.props;
 
   /******** MOBIL FORMAT ********/
 
-  main {
-    margin: 8%;
-  }
-
+ 
   h1 {
     font-family: "Amarante";
-    margin-bottom: 20px;
+    font-weight: 400;
     background-image: url(../webp/mask_image.webp);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -140,53 +138,40 @@ const { artist } = Astro.props;
     margin-bottom: 6%;
   }
 
+  .single_icons{
+    padding-top: 20px;
+  }
+
   /******** TABLET FORMAT ********/
 
   @media (min-width: 768px) {
-    main {
-      margin: 10%;
-    }
 
-    h1 {
-      margin-bottom: 8%;
-    }
 
     .single-1_1 {
       display: flex;
       flex-direction: column;
-      margin-top: 2%;
     }
 
     .single-1_1 img {
       width: 100%;
       height: auto;
-      margin-bottom: 8%;
     }
 
     .single-text_1 {
       font-size: 16px;
-      margin-bottom: 8%;
     }
   }
 
   /******** DESKTOP FORMAT ********/
 
   @media (min-width: 1024px) {
-    main {
-      margin: 5% 10%;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-    }
+  
 
     .single-1_1 {
       display: grid;
       align-items: center;
       grid-template-columns: 1fr 1fr;
       column-gap: 80px;
-      margin-top: 2%;
-      margin-bottom: 6%;
       align-items: flex-start;
     }
 

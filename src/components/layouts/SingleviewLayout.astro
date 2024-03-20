@@ -1,0 +1,70 @@
+---
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+import ScrollToTop from "../ScrollToTop.astro";
+const { title } = Astro.props;
+---
+
+
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/svg/logo_footer.svg" type="image/svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Alumni+Sans+Pinstripe:ital@0;1&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+    <ScrollToTop />
+  </body>
+</html>
+
+
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+  
+    /******** MOBIL FORMAT ********/
+  
+    main {
+      margin: 8%;
+    }
+  
+  
+    /******** TABLET FORMAT ********/
+  
+    @media (min-width: 768px) {
+      main {
+        margin: 10%;
+      }
+    }
+  
+    /******** DESKTOP FORMAT ********/
+  
+    @media (min-width: 1024px) {
+      main {
+        margin: 5% 15%;
+      }
+  
+    }
+  </style>
+  
