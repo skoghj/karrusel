@@ -7,7 +7,7 @@ import MainLayout from "../components/layouts/MainLayout.astro";
 import AboutLayout from "../components/layouts/AboutLayout.astro";
 ---
 
-<AboutLayout title="Tickets">
+<MainLayout title="Tickets">
   <h1 class="overskrift">Festival Pass</h1>
   <section class="tickets">
     <div class="pass"><Tickets /></div>
@@ -18,88 +18,105 @@ import AboutLayout from "../components/layouts/AboutLayout.astro";
   </section>
 
   <section class="ticket_section2">
-    <p>
-      Karrusel, Copenhagen, Refshaleøen <br />
-      22-24 August 2024 <br /><br />
-      3 days of house, disco, and techno in the magical forest. <br />
-      Karrusel takes place at a secluded green spot on Refshaleøen in central Copenhagen. <br /><br />
-      Address: Refshalevej 193, 1432 Copenhagen.
-    </p>
-    <div class="img_ticket">
+    <div class="ticket_section2_tekst">
+      <p>
+        Karrusel, Copenhagen, Refshaleøen <br />
+        22-24 August 2024 <br /><br />
+        3 days of house, disco, and techno in the magical forest. <br />
+        Karrusel takes place at a secluded green spot on Refshaleøen in central Copenhagen. <br /><br />
+        Address: Refshalevej 193, 1432 Copenhagen.
+      </p>
+    </div>
+    <div class="img_karrusel">
       <img src="/webp/ticket/ticketside.webp" alt="Karrusel" />
     </div>
   </section>
-
   <section class="ticket_section3">
-    <div class="background_img">
+    <div class="background_image">
+      <!-- Baggrundsbillede -->
+    </div>
+    <div class="content_wrapper">
       <div class="lineup">
         <img class="headliner" src="/webp/ticket/karrusel-lineup-1x1.webp" alt="lineup" />
-        <img src="/webp/ticket/stage-lineup-poster.webp" alt="lineup" />
+        <img class="lineup_andre" src="/webp/ticket/stage-lineup-poster.webp" alt="lineup" />
       </div>
       <div class="form">
-        <h2>DON’T MISS OUT ON ANYTHING!</h2>
-        <p>Sign up for Karrusel and get amazing offers in your inbox!</p>
+        <div>
+          <h2>DON’T MISS OUT ON ANYTHING!</h2>
+          <p>Sign up for Karrusel and get amazing offers in your inbox!</p>
+        </div>
         <form class="email_form" name="email-form">
           <div class="input-group">
-            <input class="emailform" type="email" placeholder="Please enter your emai" required />
+            <input class="emailform" type="email" placeholder="Please enter your email" required />
             <button class="email-icon" type="submit"><i class="fa-regular fa-envelope"></i></button>
           </div>
         </form>
       </div>
-      <div class="gradient"></div>
     </div>
   </section>
-</AboutLayout>
+</MainLayout>
 
 <style>
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
   .overskrift {
     text-align: center;
     padding: 40px;
   }
+
   .tickets,
   .ticket_section2,
-  .ticket_section3,
-  .countdown {
+  .ticket_section3 {
     flex-flow: column wrap;
-    margin: 0 auto;
     display: flex;
-    align-items: center;
     padding: 20px 20px 0 20px;
+    width: 100%;
   }
   .ticket_section2 {
-    display: grid;
+    display: flex;
     gap: 0;
   }
-  .lineup img,
-  .img_ticket {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 20px;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
 
-  .ticket_section2 p {
-    padding: 20px;
+  .lineup img {
+    display: flex;
+    width: 100%;
+  }
+  .lineup_andre,
+  .headliner {
+    padding-top: 40px;
   }
   .om_pass {
     position: relative;
     display: flex;
     flex-flow: column wrap;
-    padding-right: 20%;
-    justify-content: space-between;
     align-items: center;
     gap: 20px;
   }
   .om_pass p {
     padding-top: 40px;
   }
-
+  .countdown {
+    padding-top: 40px;
+    font-size: 50px;
+    font-family: "Alumni Sans", sans-serif;
+    font-weight: 600;
+    background-image: url(../webp/ticket/mask_ticket.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .ticket_section2_tekst,
+  .om_pass p {
+    line-height: 22px;
+  }
+  .img_karrusel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding: 20px 0;
+    order: -2;
+  }
   h1 {
     background-image: url(../webp/ticket/mask_ticket_mobil.webp);
     -webkit-background-clip: text;
@@ -107,11 +124,34 @@ import AboutLayout from "../components/layouts/AboutLayout.astro";
     --webkit-background-repeat: no-repeat;
     background-size: cover;
   }
+  .ticket_section3 {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .background_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #1a0202, transparent), url("../webp/ticket/ticketside_background.webp");
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.3;
+  }
+
+  .content_wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
   .form {
     max-width: 1200px;
     margin: 0 auto;
     color: #f2f2f2;
-    padding: 80px 0 80px 0;
+    padding: 80px 0px;
   }
   .form p {
     padding-top: 10px;
@@ -155,137 +195,52 @@ import AboutLayout from "../components/layouts/AboutLayout.astro";
     text-align: center;
   }
 
-  .background_img {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-size: cover;
-  }
-  .gradient {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, #1a0202, transparent), url(../webp/ticket/ticketside_background.webp);
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-  }
-
-  @media (min-width: 653px) {
-    .tickets {
+  @media (min-width: 800px) {
+    .tickets,
+    .ticket_section2,
+    .lineup {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      width: 100%;
-      gap: 60px;
-      justify-content: center;
-      margin-top: 20px;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 60px;
+      align-items: center;
+      padding: 0 150px;
+      z-index: 2;
     }
     .pass {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      justify-self: end;
+    }
+    .om_pass {
+      grid-column: 2/3;
+      align-items: start;
+    }
+    .countdown {
       display: flex;
-      width: 100%;
-      justify-content: flex-end;
+      justify-content: flex-start;
+      padding: 40px 0;
     }
     .om_pass p {
       line-height: 30px;
     }
-    .om_pass {
-      position: relative;
-      display: flex;
-      flex-flow: column wrap;
-      padding-right: 20%;
-      justify-content: space-between;
+    .img_karrusel {
+      grid-column: 2 / 3;
+      padding-top: 60px;
+      order: 0;
+      width: 30vw;
+    }
+    .ticket_section2_tekst {
+      line-height: 22px;
+      justify-self: end;
       align-items: center;
-      gap: 100px;
+      display: flex;
     }
-
-    .countdown {
-      font-size: 50px;
-      font-family: "Alumni Sans", sans-serif;
-      font-weight: 600;
-      background-image: url(../webp/ticket/mask_ticket.webp);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      --webkit-background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    .ticket_section2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      width: 100%;
-      gap: 60px;
-      justify-content: center;
-      margin-top: 20px;
-      padding: 0 60px;
-    }
-
-    .ticket_section2 p {
+    .form {
       display: flex;
       flex-flow: column wrap;
-      line-height: 30px;
-      align-items: flex-end;
-    }
-
-    .img_ticket {
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    .img_ticket img {
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: center;
-    }
-    .lineup {
-      height: auto;
-      justify-content: center;
-      margin-top: 30px;
-      display: flex;
-      width: 59%;
-      align-self: center;
-      height: auto;
-      gap: 60px;
-    }
-    .lineup img {
-      width: 100%;
-      height: auto;
-    }
-    .headliner {
-      align-items: flex-end;
-      padding-right: 60px;
-    }
-
-    .background_img {
-      margin: 0;
-      padding: 0;
-      position: relative;
-      padding: 0 80px 0 80px;
-    }
-    .gradient {
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(to bottom, #1a0202, transparent), url(../webp/ticket/ticketside_background.webp);
-      opacity: 0.3;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-    }
-
-    html,
-    body {
-      margin: 0px;
-      overflow-x: hidden;
+      align-items: center;
+      padding: 80px 0;
     }
   }
 </style>
