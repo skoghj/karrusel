@@ -1,11 +1,11 @@
 ---
 import "../styles/style.css";
-import MainLayout from "../components/layouts/MainLayout.astro"
+import MainLayout from "../components/layouts/MainLayout.astro";
 import Buttons from "../components/Buttons.astro";
 import Stagetime from "../components/Stagetime.astro";
 ---
 
-<MainLayout title="MUSIK PROGRAM">
+<MainLayout title="MUSIC PROGRAM">
   <a id="scrollToBottomBtn">Click here to find map!</a>
 
   <article class="program_background">
@@ -14,119 +14,118 @@ import Stagetime from "../components/Stagetime.astro";
       <button class="btn" onclick="filterSelection('Friday')" data-category="Friday">Friday</button>
       <button class="btn" onclick="filterSelection('Saturday')" data-category="Saturday">Saturday</button>
     </div>
-  
+
     <div class="container">
-      <h1 class="program_title">MUSIK PROGRAM</h1>
+      <h1 class="program_title">MUSIC PROGRAM</h1>
       <div class="filterDiv Thursday">
         <div class="manege">
           <div>
             <h2>MANEGE</h2>
-            <hr>
+            <hr />
           </div>
-          <Stagetime artist="MCADAM" time="18:00-19:30"/>
-          <Stagetime artist="SCHAARUP" time="19:30-21:00"/>
-          <Stagetime artist="ÄME" time="21:00-23:00"/>
-          <Stagetime artist="KÖLSCH" time="23:00-01:00"/>
+          <Stagetime artist="MCADAM" time="18:00-19:30" />
+          <Stagetime artist="SCHAARUP" time="19:30-21:00" />
+          <Stagetime artist="ÄME" time="21:00-23:00" />
+          <Stagetime artist="KÖLSCH" time="23:00-01:00" />
         </div>
-      <div class="tribune">
-        <div>
-          <h2>TRIBUNE</h2>
-          <hr>
+        <div class="tribune">
+          <div>
+            <h2>TRIBUNE</h2>
+            <hr />
+          </div>
+          <Stagetime artist="SCHOWFDROSEEL" time="18:00-19:30" />
+          <Stagetime artist="MADS LORENTSEN" time="19:30-21:00" />
+          <Stagetime artist="HAENSEN & GRETHEL" time="21:00-23:00" />
+          <Stagetime artist="MIRA" time="23:00-01:00" />
         </div>
-        <Stagetime artist="SCHOWFDROSEEL" time="18:00-19:30"/>
-        <Stagetime artist="MADS LORENTSEN" time="19:30-21:00"/>
-        <Stagetime artist="HAENSEN & GRETHEL" time="21:00-23:00"/>
-        <Stagetime artist="MIRA" time="23:00-01:00"/>
+        <div class="balcony">
+          <div>
+            <h2>BALCONY</h2>
+            <hr />
+          </div>
+          <Stagetime artist="BOOGIE ROOKIE" />
+          <Stagetime artist="FUTTE RICO" />
+          <Stagetime artist="MORTEN MCCOY" />
+          <Stagetime artist="NAYAN" />
+          <Stagetime artist="SEB DALMAR" />
+          <Stagetime artist="STORM" />
+          <Stagetime artist="SØREN SKOV" />
+        </div>
       </div>
-      <div class="balcony">
-        <div>
-          <h2>BALCONY</h2>
-          <hr>
-        </div>
-        <Stagetime artist="BOOGIE ROOKIE"/>
-        <Stagetime artist="FUTTE RICO"/>
-        <Stagetime artist="MORTEN MCCOY"/>
-        <Stagetime artist="NAYAN"/>
-        <Stagetime artist="SEB DALMAR"/>
-        <Stagetime artist="STORM"/>
-        <Stagetime artist="SØREN SKOV"/>
-      </div>
-    </div>
 
-    <div class="filterDiv  Friday">
-      <div class="manege">
-        <div>
-          <h2>MANEGE</h2>
-          <hr>
+      <div class="filterDiv Friday">
+        <div class="manege">
+          <div>
+            <h2>MANEGE</h2>
+            <hr />
+          </div>
+          <Stagetime artist="VIXEN" time="18:00-19:30" />
+          <Stagetime artist="NARCISS" time="19:30-21:00" />
+          <Stagetime artist="HAII" time="21:00-23:00" />
+          <Stagetime artist="VTSS" time="23:00-01:00" />
         </div>
-        <Stagetime artist="VIXEN" time="18:00-19:30"/>
-        <Stagetime artist="NARCISS" time="19:30-21:00"/>
-        <Stagetime artist="HAII" time="21:00-23:00"/>
-        <Stagetime artist="VTSS" time="23:00-01:00"/>
+        <div class="tribune">
+          <div>
+            <h2>TRIBUNE</h2>
+            <hr />
+          </div>
+          <Stagetime artist="VÄM" time="18:00-19:30" />
+          <Stagetime artist="ESKII" time="19:30-21:00" />
+          <Stagetime artist="DJUMA SOUNDSYSTEM" time="21:00-23:00" />
+          <Stagetime artist="SATORI LIVE" time="23:00-01:00" />
+        </div>
+        <div class="balcony">
+          <div>
+            <h2>BALCONY</h2>
+            <hr />
+          </div>
+          <Stagetime artist="COCKWHORE & MACHO" />
+          <Stagetime artist="HARRISON HEAT, TIGHT CHERRY" />
+          <Stagetime artist="SIOFRA" />
+          <Stagetime artist="LUCKY CUBE" />
+        </div>
       </div>
-      <div class="tribune">
-        <div>
-          <h2>TRIBUNE</h2>
-          <hr>
+      <div class="filterDiv Saturday">
+        <div class="manege">
+          <div>
+            <h2>MANEGE</h2>
+            <hr />
+          </div>
+          <Stagetime artist="ANNA LOGIC" time="18:00-19:30" />
+          <Stagetime artist="DJ SEAVIEW" time="19:30-21:00" />
+          <Stagetime artist="SPFDJ" time="21:00-23:00" />
+          <Stagetime artist="RICHIE HAWTIN" time="23:00-01:00" />
         </div>
-        <Stagetime artist="VÄM" time="18:00-19:30"/>
-        <Stagetime artist="ESKII" time="19:30-21:00"/>
-        <Stagetime artist="DJUMA SOUNDSYSTEM" time="21:00-23:00"/>
-        <Stagetime artist="SATORI LIVE" time="23:00-01:00"/>
-      
-      </div>
-      <div class="balcony">
-        <div>
-          <h2>BALCONY</h2>
-          <hr>
+        <div class="tribune">
+          <div>
+            <h2>TRIBUNE</h2>
+            <hr />
+          </div>
+          <Stagetime artist="POWERSTRANGER" time="18:00-19:30" />
+          <Stagetime artist="KATZ-K" time="19:30-21:00" />
+          <Stagetime artist="JUDITH VAN WATERKANT" time="21:00-23:00" />
+          <Stagetime artist="RSS DISCO" time="23:00-01:00" />
         </div>
-        <Stagetime artist="COCKWHORE & MACHO"/>
-        <Stagetime artist="HARRISON HEAT, TIGHT CHERRY"/>
-        <Stagetime artist="SIOFRA"/>
-        <Stagetime artist="LUCKY CUBE"/>
+        <div class="balcony">
+          <div>
+            <h2>BALCONY</h2>
+            <hr />
+          </div>
+          <Stagetime artist="DEE BROWN, OKINE" time="18:00-19:30" />
+          <Stagetime artist="MARSHMELLO" time="19:30-21:00" />
+          <Stagetime artist="DEE BROWN, OKINE" time="21:00-23:00" />
+        </div>
       </div>
     </div>
-    <div class="filterDiv Saturday ">
-      <div class="manege">
-        <div>
-          <h2>MANEGE</h2>
-          <hr>
-        </div>
-        <Stagetime artist="ANNA LOGIC" time="18:00-19:30"/>
-        <Stagetime artist="DJ SEAVIEW" time="19:30-21:00"/>
-        <Stagetime artist="SPFDJ" time="21:00-23:00"/>
-        <Stagetime artist="RICHIE HAWTIN" time="23:00-01:00"/>
-      </div>
-      <div class="tribune">
-        <div>
-          <h2>TRIBUNE</h2>
-          <hr>
-        </div>
-        <Stagetime artist="POWERSTRANGER" time="18:00-19:30"/>
-        <Stagetime artist="KATZ-K" time="19:30-21:00"/>
-        <Stagetime artist="JUDITH VAN WANDERKANT" time="21:00-23:00"/>
-        <Stagetime artist="RSS DISCO" time="23:00-01:00"/>
-      </div>
-      <div class="balcony">
-        <div>
-          <h2>BALCONY</h2>
-          <hr>
-        </div>
-        <Stagetime artist="DEE BROWN, OKINE" time="18:00-19:30"/>
-        <Stagetime artist="MARSHMELLO" time="19:30-21:00"/>
-        <Stagetime artist="DEE BROWN, OKINE" time="21:00-23:00"/>
-        </div>
-      </div>
-    </div>
-</article>
+  </article>
   <article class="padding_map">
     <div class="location">
-      <img src="/svg/location-marker.svg" alt="location marker">
+      <img src="/svg/location-marker.svg" alt="location marker" />
       <p>COPENHAGEN, REFSHALEØEN</p>
     </div>
     <article class="check_map">
-      <div class="map">   
-        <img class="map_image" src="/webp/map_image.webp" alt="map">
+      <div class="map">
+        <img class="map_image" src="/webp/map_image.webp" alt="map" />
         <div class="btn_map">
           <Buttons />
         </div>
@@ -135,219 +134,210 @@ import Stagetime from "../components/Stagetime.astro";
         <h1 class="map_text">3 DAYS OF TECHNO, HOUSE AND DISCO IN THE WOODS</h1>
       </div>
     </article>
-
   </article>
-
 </MainLayout>
 
-
-
 <style>
-    .container {
-        overflow: hidden;
+  .container {
+    overflow: hidden;
+  }
 
-    }
+  .filterDiv {
+    background: rgba(26, 2, 2, 0.7);
+    color: #ffffff;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    height: 600px;
+    display: none;
+  }
 
-    .filterDiv {
-        background: rgba(26, 2, 2, 0.7);
-        color: #ffffff;
-        text-align: center;
-        margin: 20px;
-        padding: 20px;
-        height:600px;
-        display: none;
+  hr {
+    width: 80%;
+    margin: auto;
+  }
 
-    }
+  .program_title {
+    background-image: url(/webp/mask_image.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-    hr {
-        width: 80%;
-        margin: auto;
-    }
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
 
+  /* Style the buttons */
+  .btn {
+    padding: 10px;
+    border: 2px solid orangered;
+    background-color: transparent;
+    color: orangered;
+    border-radius: 20px;
+  }
 
-.program_title {
-      background-image: url(/webp/mask_image.webp);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      --webkit-background-repeat: no-repeat;
-      background-size: cover;
-    }
+  h1,
+  h2 {
+    font-family: "Amarante", serif;
+  }
 
-    /* The "show" class is added to the filtered elements */
-    .show {
-        display: block;
-    }
-
-    /* Style the buttons */
-    .btn {
-        padding: 10px;
-        border: 2px solid orangered;
-        background-color: transparent;
-        color: orangered;
-        border-radius: 20px;
-    }
-
-    h1, h2{
-      font-family: "Amarante", serif;
-    }
-
-    /* Add a light grey background on mouse-over */
-    .btn:hover {
+  /* Add a light grey background on mouse-over */
+  .btn:hover {
     cursor: pointer;
     background-color: orangered;
     color: black;
   }
 
-    /* Add a dark background to the active button */
-    .btn.active {
-        background-color: orangered;
-        color: black;
-    }
-    #myBtnContainer{
-        margin-left: 20px;
-    }
-#scrollToBottomBtn{
+  /* Add a dark background to the active button */
+  .btn.active {
+    background-color: orangered;
+    color: black;
+  }
+  #myBtnContainer {
+    margin-left: 20px;
+  }
+  #scrollToBottomBtn {
     position: fixed;
     top: 20%;
     left: 89%;
     overflow-wrap: break-word;
     width: 100px;
     color: orangered;
-}
-#scrollToBottomBtn:hover{
-color: orange;
-cursor: pointer;
-}
-    .program_background {
-   background-image: url("/public/webp/program_background.webp");
-   padding: 50px;
+  }
+  #scrollToBottomBtn:hover {
+    color: orange;
+    cursor: pointer;
+  }
+  .program_background {
+    background-image: url("/public/webp/program_background.webp");
+    padding: 50px;
+  }
+
+  .map_image {
+    height: auto;
+    width: 100%;
+  }
+
+  .map_text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .location {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+  }
+  .padding_map {
+    width: 80%;
+    margin: auto;
+  }
+  .map {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .btn_map {
+    position: absolute;
+    bottom: 20%;
+  }
+
+  .program_title {
+    margin-left: 20px;
+  }
+  @media screen and (min-width: 780px) {
+    #myBtnContainer {
+      margin-left: 200px;
+      margin-top: 30px;
+    }
+    .Thursday,
+    .Friday,
+    .Saturday {
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .map_image{
-        height: auto;
-        width: 100%;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr, 1fr, 1fr;
     }
 
-    .map_text{
-        text-align: center;
-        margin-bottom: 20px;
+    .filterDiv {
+      margin-left: 200px;
+      margin-right: 200px;
+      padding-top: 50px;
     }
-
-    .location{
-        display: flex;
-        flex-direction: row;
-        margin-top: 50px;
-    }
-    .padding_map{
-        width:80%;
-        margin: auto;
-    }
-    .map{
-        position:relative;
-        margin-bottom: 20px;
-    }
-    .btn_map{
-        position: absolute;
-        bottom: 20%;
-    }
-
-    
-    .program_title{
-        margin-left: 20px;
-    }
-    @media screen and (min-width: 780px) {
-      #myBtnContainer{
-        margin-left: 200px;
-        margin-top: 30px;
-    }
-        .Thursday,
-        .Friday,
-        .Saturday {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: 1fr, 1fr, 1fr;
-        }
-
-        .filterDiv {
-            margin-left: 200px;
-            margin-right: 200px;
-            padding-top: 50px;
-        }
-    }
-    .program_title{ 
-        margin-left: 200px;
-    }
-    .check_map{
+  }
+  .program_title {
+    margin-left: 200px;
+  }
+  .check_map {
     display: grid;
     grid-template-columns: 2fr 1fr;
     margin-left: 50px;
     margin-right: 50px;
-    }
-    .location{
-        margin-left: 80px;
-    }
+  }
+  .location {
+    margin-left: 80px;
+  }
 
-    .btn_map{
-        position: absolute;
-        bottom: 25%;
-        left: 7%;
-    }
+  .btn_map {
+    position: absolute;
+    bottom: 25%;
+    left: 7%;
+  }
 
-    .map_text{
-        font-size: 4.5vw;
-        text-align: left;
-        padding-left: 15px;
-    }
-
-    </style> 
+  .map_text {
+    font-size: 4.5vw;
+    text-align: left;
+    padding-left: 15px;
+  }
+</style>
 
 <script>
-  document.getElementById('scrollToBottomBtn').addEventListener('click', function() {
+  document.getElementById("scrollToBottomBtn").addEventListener("click", function () {
     window.scrollTo({
       top: document.body.scrollHeight,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
 
   // Initially, show only Thursday elements
-filterSelection("Thursday");
+  filterSelection("Thursday");
 
-// Function to filter elements based on category
-function filterSelection(category) {
-    var elements = document.querySelectorAll('.filterDiv');
-    
+  // Function to filter elements based on category
+  function filterSelection(category) {
+    var elements = document.querySelectorAll(".filterDiv");
+
     // Loop through all elements
-    elements.forEach(element => {
-        // Hide elements not matching the category
-        if (!element.classList.contains(category)) {
-            element.style.display = 'none';
-        } else {
-            // Show elements matching the category
-            element.style.display = 'grid';
-        }
+    elements.forEach((element) => {
+      // Hide elements not matching the category
+      if (!element.classList.contains(category)) {
+        element.style.display = "none";
+      } else {
+        // Show elements matching the category
+        element.style.display = "grid";
+      }
     });
 
     // Highlight the active button
-    var buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {
-        if (button.getAttribute('data-category') === category) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active');
-        }
+    var buttons = document.querySelectorAll(".btn");
+    buttons.forEach((button) => {
+      if (button.getAttribute("data-category") === category) {
+        button.classList.add("active");
+      } else {
+        button.classList.remove("active");
+      }
     });
-}
+  }
 
-// Add event listeners to the buttons
-var buttons = document.querySelectorAll('.btn');
-buttons.forEach(button => {
-    button.addEventListener('click', function () {
-        var category = this.getAttribute('data-category');
-        filterSelection(category);
+  // Add event listeners to the buttons
+  var buttons = document.querySelectorAll(".btn");
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      var category = this.getAttribute("data-category");
+      filterSelection(category);
     });
-});
-
+  });
 </script>
