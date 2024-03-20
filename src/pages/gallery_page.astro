@@ -7,7 +7,7 @@ import Carrousel4 from "../components/carrousel/Carrousel4.astro";
 import "../styles/style.css";
 ---
 
-<MainLayout>
+<MainLayout title="GALLERY">
   <h1>GALLERY</h1>
   <p class="text">Are you curious to experience the vibe at Karrusel? Let yourself be inspired by the stunning photos from last year's events and gain insight into the atmosphere and energy of the place. Click on the dot for the first image of the corresponding year to activate the image-slider!</p>
   <h2>2023</h2>
@@ -21,7 +21,7 @@ import "../styles/style.css";
 </MainLayout>
 <style>
   body {
-    background-image: url(../svg/background_image.svg);
+    background-image: url(/svg/background_image.svg);
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -29,14 +29,14 @@ import "../styles/style.css";
   h1 {
     text-align: center;
     padding: 30px;
-    background-image: url(../webp/mask_image.webp);
+    background-image: url(/webp/mask_image.webp);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     --webkit-background-repeat: no-repeat;
     background-size: cover;
   }
 
-  main h2 {
+  h2 {
     text-align: center;
     font-family: "Amarante";
     color: #f2f2f2;
