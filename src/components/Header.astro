@@ -2,7 +2,7 @@
 
 ---
 
-<header>
+<!-- <header>
   <div class="logo">
     <a href="/"><img src="../svg/logo_header.svg" alt="logo" /></a>
   </div>
@@ -14,15 +14,64 @@
       <li><a href="/programliste/">PROGRAM</a></li>
       <li><a href="/about/">ABOUT US</a></li>
     </ul>
-    <div class="burgermenu">
+    <div class="burgermenu" onclick="toggleMenu()">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
   </nav>
+</header>-->
+<header>
+  
+  <a href="#" class="burger" id="burgerIcon"><i class="fa-solid fa-bars"></i></a>
+  
+  <div class="navbar" id="myNavbar">
+    <div class="logo">
+      <a href="/"><img src="../svg/logo_header.svg" alt="logo" /></a>
+    </div>
+    <div class="navbar_menu"></div>
+      <a href="/lineup/">LINEUP</a>
+      <a href="/ticket_side/">TICKETS</a>
+      <a href="/gallery_page/">GALLERY</a>
+      <a href="/programliste/">PROGRAM</a>
+      <a href="/about/">ABOUT US</a>
+      <center>
+	      <div class="switch">
+	        <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+	        <label for="language-toggle"></label>
+	        <span class="on">BN</span>
+	        <span class="off">EN</span>
+  	    </div>
+      </center>
+    </div>
+  </div>
+
 </header>
 
 <style>
+
+   header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+  }
+  .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      gap:10px;
+      width:100%;
+    }
+ .navbar_menu{padding-left: 197px;}
+    .burger {
+      display: none;
+    }
+  .navbar a:hover{color: #F84104}
+  a,.search-icon{text-decoration: none;
+    color: #F2F2F2;}
   .logo {
     margin-top: 20px;
     max-width: 130px;
@@ -33,47 +82,168 @@
   .logo img:hover {
     opacity: 70%;
   }
-  .nav {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
+  .switch {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+}
+.switch > span {
+  position: absolute;
+  top: 14px;
+  pointer-events: none;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+  width: 50%;
+  text-align: center;
+}
+input.check-toggle-round-flat:checked ~ .off {
+  color: #F84104;
+}
 
-  .nav-list {
-    list-style: none;
-    margin: 25px;
-    padding: 10px;
-  }
+input.check-toggle-round-flat:checked ~ .on {
+  color: #fff;
+}
 
-  .nav-list {
-    display: flex;
-  }
+.switch > span.on {
+  left: 0;
+  padding-left: 2px;
+  color: #F84104;
+}
 
-  .nav-list li {
-    margin-right: 25px;
-  }
+.switch > span.off {
+  right: 0;
+  padding-right: 4px;
+  color: #fff;
+}
 
-  .burgermenu {
+.check-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.check-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.check-toggle-round-flat + label {
+  padding: 2px;
+  width: 97px;
+  height: 39px;
+  background-color: #F84104;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.check-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #F84104;
+  -webkit-
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+input.check-toggle-round-flat + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 48px;
+  background-color: #fff;
+  -webkit-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -ms-border-radius: 52px;
+  -o-border-radius: 52px;
+  border-radius: 52px;
+  -webkit-transition: margin 0.2s;
+  -moz-transition: margin 0.2s;
+  -o-transition: margin 0.2s;
+  transition: margin 0.2s;
+}
+
+input.check-toggle-round-flat:checked + label {
+}
+
+input.check-toggle-round-flat:checked + label:after {
+  margin-left: 44px;
+}
+  @media screen and (max-width: 780px) { 
+    .navbar {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
+    width: 100%; 
+  }    
+  .burgermenu{display: flex;
+    flex-direction: column;}
+    .burger {
+    display: block; 
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top:20px;
   }
-
-  header {
+  .logo {
+    margin-top: 20px;
+    max-width: 120px;
+    
+  }
+  .navbar a {
+    color: white;
+    justify-content: space-between;
+    text-decoration: none;
     display: flex;
-    justify-content: space-evenly;
-    gap: 15px;
+    padding-bottom: 20px;
   }
-
-  @media screen and (max-width: 780px) {
-    .logo {
-      display: none;
+  .navbar a:hover {
+    color: #F84104;
+  }
+  .navbar.show {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    z-index: 1;
     }
-
-    .nav-list li a {
-      font-size: 12px;
-      text-align: center;
-      margin-left: 0px;
-    }
+  .navbar {
+    display: none;
+    background-color: #1A0202;
+    padding-right: 60px;
+    padding-bottom: 80px;
+    
+  }
+  a {
+    text-decoration: none;
+    padding: 10px 0;
+  }
+ .switch{margin-top:20px;}
   }
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  //////////////////burgermenu//////////////////
+  document.getElementById("burgerIcon").addEventListener("click", function () {
+    var navbar = document.getElementById("myNavbar");
+    navbar.classList.toggle("show");
+  })});
+</script>
