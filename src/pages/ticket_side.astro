@@ -1,68 +1,54 @@
 ---
 import "../styles/style.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+//import Header from "../components/Header.astro";
+//import Footer from "../components/Footer.astro";
 import Tickets from "../components/Tickets.astro";
+import MainLayout from "../components/layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
-    <title>Tickets</title>
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1 class="overskrift">Festival Pass</h1>
-      <section class="tickets">
-        <div class="pass"><Tickets /></div>
-        <div class="om_pass">
-          <p>Early Bird Festival Passes on sale until 1 April. The Festival Pass provides access to all 3 days at Karrusel from 22–24 August 2024. Day tickets will go on sale later. Terms: Age limit: 18+. You must apply to entrance rules. Artists subject to change. Karrusel will take place rain or shine. Ticket fees apply.</p>
-          <h1 class="countdown" id="demo"></h1>
-        </div>
-      </section>
+<MainLayout title="Tickets">
+  <h1 class="overskrift">Festival Pass</h1>
+  <section class="tickets">
+    <div class="pass"><Tickets /></div>
+    <div class="om_pass">
+      <p>Early Bird Festival Passes on sale until 1 April. The Festival Pass provides access to all 3 days at Karrusel from 22–24 August 2024. Day tickets will go on sale later. Terms: Age limit: 18+. You must apply to entrance rules. Artists subject to change. Karrusel will take place rain or shine. Ticket fees apply.</p>
+      <h1 class="countdown" id="demo"></h1>
+    </div>
+  </section>
 
-      <section class="ticket_section2">
-        <p>
-          Karrusel, Copenhagen, Refshaleøen <br />
-          22-24 August 2024 <br /><br />
-          3 days of house, disco, and techno in the magical forest. <br />
-          Karrusel takes place at a secluded green spot on Refshaleøen in central Copenhagen. <br /><br />
-          Address: Refshalevej 193, 1432 Copenhagen.
-        </p>
-        <div class="img_ticket">
-          <img src="/webp/ticket/ticketside.webp" alt="Karrusel" />
-        </div>
-      </section>
+  <section class="ticket_section2">
+    <p>
+      Karrusel, Copenhagen, Refshaleøen <br />
+      22-24 August 2024 <br /><br />
+      3 days of house, disco, and techno in the magical forest. <br />
+      Karrusel takes place at a secluded green spot on Refshaleøen in central Copenhagen. <br /><br />
+      Address: Refshalevej 193, 1432 Copenhagen.
+    </p>
+    <div class="img_ticket">
+      <img src="/webp/ticket/ticketside.webp" alt="Karrusel" />
+    </div>
+  </section>
 
-      <section class="ticket_section3">
-        <div class="background_img">
-          <div class="lineup">
-            <img class="headliner" src="/webp/ticket/karrusel-lineup-1x1.webp" alt="lineup" />
-            <img src="/webp/ticket/stage-lineup-poster.webp" alt="lineup" />
+  <section class="ticket_section3">
+    <div class="background_img">
+      <div class="lineup">
+        <img class="headliner" src="/webp/ticket/karrusel-lineup-1x1.webp" alt="lineup" />
+        <img src="/webp/ticket/stage-lineup-poster.webp" alt="lineup" />
+      </div>
+      <div class="form">
+        <h2>DON’T MISS OUT ON ANYTHING!</h2>
+        <p>Sign up for Karrusel and get amazing offers in your inbox!</p>
+        <form class="email_form" name="email-form">
+          <div class="input-group">
+            <input class="emailform" type="email" placeholder="Please enter your emai" required />
+            <button class="email-icon" type="submit"><i class="fa-regular fa-envelope"></i></button>
           </div>
-          <div class="form">
-            <h2>DON’T MISS OUT ON ANYTHING!</h2>
-            <p>Sign up for Karrusel and get amazing offers in your inbox!</p>
-            <form class="email_form" name="email-form">
-              <div class="input-group">
-                <input class="emailform" type="email" placeholder="Please enter your emai" required />
-                <button class="email-icon" type="submit"><i class="fa-regular fa-envelope"></i></button>
-              </div>
-            </form>
-          </div>
-          <div class="gradient"></div>
-        </div>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+        </form>
+      </div>
+      <div class="gradient"></div>
+    </div>
+  </section>
+</MainLayout>
 
 <style>
   .overskrift {
@@ -160,7 +146,7 @@ import Tickets from "../components/Tickets.astro";
     display: flex;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, #1a0202, transparent), url(/webp/ticket/ticketside_background.webp);
+    background-image: linear-gradient(to bottom, #1a0202, transparent), url(../webp/ticket/ticketside_background.webp);
     opacity: 0.3;
     position: absolute;
     top: 0;
@@ -253,7 +239,7 @@ import Tickets from "../components/Tickets.astro";
     .gradient {
       width: 100%;
       height: 100%;
-      background-image: linear-gradient(to bottom, #1a0202, transparent), url(/webp/ticket/ticketside_background.webp);
+      background-image: linear-gradient(to bottom, #1a0202, transparent), url(../webp/ticket/ticketside_background.webp);
       opacity: 0.3;
       position: absolute;
       top: 0;
