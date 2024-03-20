@@ -1,34 +1,14 @@
 ---
 import "../styles/style.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import Icons from "../components/Icons.astro";
+import AboutLayout from "../components/layouts/AboutLayout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <script src="https://kit.fontawesome.com/c5d83fc88a.js" crossorigin="anonymous"></script>
-    <title>About</title>
-</head>
-
-<body>
-
-    <header>
-        <Header />
-    </header>
-
-
+<AboutLayout title="ABOUT">
     <h1>ABOUT</h1>
     <section class="about-1_1">
         <div class="about-img">
-            <img src="img1.webp" alt="">
+            <img src="/webp/about/about_1.webp" alt="festival image" />
         </div>
         <div class="about-text_1">
             <h2>FESTIVAL 2024</h2>
@@ -82,7 +62,7 @@ import Icons from "../components/Icons.astro";
             <p><b>Speak up rather than look the other way</b></p>
         </div>
         <div class="about-img">
-            <img src="img2.webp" alt="">
+            <img src="/webp/about/about_2.webp" alt="festival image" />
         </div>
     </section>
 
@@ -124,7 +104,7 @@ import Icons from "../components/Icons.astro";
 
     <section class="about-1_1">
         <div class="about-img">
-            <img src="img3.webp" alt="">
+            <img src="/webp/about/about_3.webp" alt="festival image" />
         </div>
         <div class="about-text_1">
             <h2>CONTACT</h2>
@@ -148,15 +128,7 @@ import Icons from "../components/Icons.astro";
         </div>
 
     </section>
-
-
-    <footer>
-        <Footer />
-    </footer>
-
-</body>
-
-</html>
+</AboutLayout>
 
 <style>
     * {
@@ -244,7 +216,7 @@ padding-bottom: 20px;
 
     @media (min-width: 1024px) {
         h1 {
-            margin-top: 2%;
+            margin-top: 4%;
             margin-bottom: 0%;
             padding: 0% 10%;
         }
@@ -257,7 +229,7 @@ padding-bottom: 20px;
             grid-template-columns: 1fr 1fr;
             column-gap: 80px;
             align-items: flex-start;
-            padding: 2% 10%;
+
         }
 
         .about-img img {
