@@ -1,0 +1,173 @@
+---
+import "../../styles/style.css";
+import Icons from "../../components/Icons.astro";
+import SingleviewLayout from "../../components/layouts/SingleviewLayout.astro";
+---
+
+<SingleviewLayout title="SINGLEVIEW">
+  <ul class="breadcrumb">
+    <li><a href="/">HOME</a></li>
+    <li><a href="/lineup">LINEUP</a></li>
+    <li><a href="#" class="breadcrumb_link">#</a></li>
+  </ul>
+
+  <section class="single-1_1">
+    <div class="single-img">
+      <img src={artist.singview} alt="" class="artist_img" />
+    </div>
+
+    <div class="single-text_1">
+      <h1>{artist.name}</h1>
+      <br />
+      <p class="description">{artist.description}</p>
+
+      <div class="single_icons">
+        <Icons />
+      </div>
+    </div>
+  </section>
+
+  <section class="single-1_1">
+    <div class="single-text_1">
+      <h2>WANNA KNOW MORE?</h2>
+      <br />
+      <p>Discover their mesmerizing sounds on SoundCloud and delve into the captivating realm of their music genre.</p>
+      <br />
+      <p>Connect with them on Facebook and Instagram to learn more about the artists.</p>
+      <br />
+      <p>Stay updated on their latest music releases and get behind-the-scenes insights into their creative process.</p>
+    </div>
+
+    <div class="single-sound">
+      <iframe src={artist.music} frameborder="0" class="soundCloud"></iframe>
+    </div>
+  </section>
+</SingleviewLayout>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* BREADCRUMB */
+  ul.breadcrumb {
+    list-style: none;
+  }
+
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+
+  /* SLASH SYMBOL (/) */
+  ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: #ffc4a8;
+    content: "/\00a0";
+  }
+
+  ul.breadcrumb li a {
+    color: #ffc4a8;
+    text-decoration: none;
+  }
+
+  ul.breadcrumb li a:hover {
+    color: #f84104;
+  }
+
+  /******** MOBIL FORMAT ********/
+
+  h1 {
+    font-family: "Amarante";
+    font-weight: 400;
+    background-image: url(../webp/mask_image.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(180%) contrast(100%);
+  }
+
+  h2 {
+    font-family: "Amarante";
+    font-weight: 400;
+    background-image: url(../webp/mask_image.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(180%) contrast(100%);
+  }
+
+  .single-1_1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+  }
+
+  .single-1_1 img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 6%;
+  }
+
+  .single-text_1 {
+    font-size: 16px;
+    margin-bottom: 6%;
+  }
+
+  .single_icons {
+    padding-top: 20px;
+  }
+
+  /******** TABLET FORMAT ********/
+
+  @media (min-width: 768px) {
+    .single-1_1 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .single-1_1 img {
+      width: 100%;
+      height: auto;
+    }
+
+    .single-text_1 {
+      font-size: 16px;
+    }
+  }
+
+  /******** DESKTOP FORMAT ********/
+
+  @media (min-width: 1024px) {
+    .single-1_1 {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 80px;
+      align-items: flex-start;
+    }
+
+    .single-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .single-text_1 {
+      font-size: 20px;
+    }
+
+    .single-text_1 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .single-text_1 > div {
+      flex: 1;
+    }
+  }
+</style>

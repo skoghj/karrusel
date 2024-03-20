@@ -4,9 +4,10 @@ import "../styles/style.css";
 //import Footer from "../components/Footer.astro";
 import Tickets from "../components/Tickets.astro";
 import MainLayout from "../components/layouts/MainLayout.astro";
+import AboutLayout from "../components/layouts/AboutLayout.astro";
 ---
 
-<MainLayout title="Tickets">
+<AboutLayout title="Tickets">
   <h1 class="overskrift">Festival Pass</h1>
   <section class="tickets">
     <div class="pass"><Tickets /></div>
@@ -48,9 +49,13 @@ import MainLayout from "../components/layouts/MainLayout.astro";
       <div class="gradient"></div>
     </div>
   </section>
-</MainLayout>
+</AboutLayout>
 
 <style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   .overskrift {
     text-align: center;
     padding: 40px;
@@ -65,19 +70,36 @@ import MainLayout from "../components/layouts/MainLayout.astro";
     align-items: center;
     padding: 20px 20px 0 20px;
   }
+  .ticket_section2 {
+    display: grid;
+    gap: 0;
+  }
   .lineup img,
   .img_ticket {
     display: flex;
     flex-direction: column;
-    width: 100%;
     padding: 20px 20px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
+
   .ticket_section2 p {
     padding: 20px;
   }
-  .om_pass p {
-    padding: 20px;
+  .om_pass {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    padding-right: 20%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
   }
+  .om_pass p {
+    padding-top: 40px;
+  }
+
   h1 {
     background-image: url(../webp/ticket/mask_ticket_mobil.webp);
     -webkit-background-clip: text;
@@ -172,8 +194,17 @@ import MainLayout from "../components/layouts/MainLayout.astro";
     }
     .om_pass p {
       line-height: 30px;
-      padding-bottom: 100px;
     }
+    .om_pass {
+      position: relative;
+      display: flex;
+      flex-flow: column wrap;
+      padding-right: 20%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 100px;
+    }
+
     .countdown {
       font-size: 50px;
       font-family: "Alumni Sans", sans-serif;
@@ -221,6 +252,7 @@ import MainLayout from "../components/layouts/MainLayout.astro";
       width: 59%;
       align-self: center;
       height: auto;
+      gap: 60px;
     }
     .lineup img {
       width: 100%;
@@ -228,6 +260,7 @@ import MainLayout from "../components/layouts/MainLayout.astro";
     }
     .headliner {
       align-items: flex-end;
+      padding-right: 60px;
     }
 
     .background_img {
