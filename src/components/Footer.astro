@@ -3,10 +3,10 @@ import Icons from "../components/Icons.astro";
 ---
 
 <footer>
-  <div class="footer-logo">
-    <a href="/"><img src="../svg/logo_footer.svg" alt="footer logo" /></a>
-  </div>
   <div class="footer-nav">
+    <div class="footer-logo">
+      <a href="/"><img src="../svg/logo_footer.svg" alt="footer logo" /></a>
+    </div>
     <ul class="footer-nav-list">
       <div class="column1">
         <li><a href="/lineup/">LINEUP</a></li>
@@ -18,21 +18,22 @@ import Icons from "../components/Icons.astro";
         <li><a href="/about/">ABOUT US</a></li>
       </div>
     </ul>
-  </div>
-
-  <div class="footer-social">
-    <div class="footer-social-img1"><Icons /></div>
+    <div class="footer-social">
+      <div class="footer-social-img1"><Icons /></div>
+    </div>
   </div>
 </footer>
 
 <style>
-  footer {
+  .footer-nav {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
   }
   .footer-logo {
     max-width: 130px;
-    margin: 20px;
+    margin: 25px;
   }
 
   .footer-logo img {
@@ -45,19 +46,12 @@ import Icons from "../components/Icons.astro";
     display: flex;
     justify-content: center; /* Centrerer indholdet vandret */
     text-decoration: none;
+    gap: 70px;
+    margin: 25px;
   }
 
   .footer-nav-list li {
     list-style: none;
-  }
-
-  .column1,
-  .column2 {
-    margin: 25px;
-  }
-
-  .column2 {
-    margin-left: 55px;
   }
 
   .column1 li a,
@@ -68,18 +62,6 @@ import Icons from "../components/Icons.astro";
   .footer-social {
     display: flex;
     justify-items: center;
-    margin: 35px;
-    gap: 20px;
-  }
-
-  @media screen and (max-width: 780px) {
-    .footer-social {
-      justify-content: center;
-    }
-
-    .column1 li a,
-    .column2 li a {
-      font-size: 12px;
-    }
+    margin: 25px;
   }
 </style>
