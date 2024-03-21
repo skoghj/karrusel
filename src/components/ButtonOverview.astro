@@ -1,9 +1,9 @@
 ---
-const { variant } = Astro.props;
+const { variant, category } = Astro.props;
 ---
 
-<button class="custom-button" data-variant={variant}>
-  <slot />
+<button class="custom-button btn" onclick="filterSelection" data-variant={variant} data-category={category}>
+  <slot></slot>
 </button>
 
 <style>
