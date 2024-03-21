@@ -57,12 +57,12 @@ const { artist } = Astro.props;
     </div>
 
     <div class="single-sound">
-      <iframe src={artist.music} frameborder="0" class="soundCloud"></iframe>
+      {artist.music}
     </div>
   </section>
 </SingleviewLayout>
 
-<style>
+<style> 
   * {
     margin: 0;
     padding: 0;
