@@ -1,0 +1,23 @@
+---
+const stage = Astro.props.stage;
+---
+
+<div class="stage">
+    <div>
+      <h2>{stage}</h2>
+      <hr>
+    </div>
+<slot></slot>
+  </div>
+
+
+  <style>
+        hr {
+        width: 80%;
+        margin: auto;
+    }
+
+    h1, h2{
+      font-family: "Amarante", serif;
+    }
+  </style>

@@ -1,0 +1,76 @@
+---
+import Buttons2 from "../components/buttons_frontpage/Buttons2.astro";
+---
+<article class="padding_map">
+    <div class="location">
+      <img src="/svg/location-marker.svg" alt="location marker">
+      <p>COPENHAGEN, REFSHALEØEN</p>
+    </div>
+    <article class="check_map">
+      <div class="map">   
+        <img class="map_image" src="/webp/map_image.webp" alt="map">
+        <div class="btn_map">
+          <Buttons2 variant="secondary">SEE MAP</Buttons2>
+        </div>
+      </div>
+      <div>
+        <h1 class="map_text">3 DAYS OF TECHNO, HOUSE AND DISCO IN THE WOODS</h1>
+      </div>
+    </article>
+
+    <style>
+        
+    .map_image{
+        height: auto;
+        width: 100%;
+    }
+
+    .map_text{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .location{
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+    }
+    .padding_map{
+        width:80%;
+        margin: auto;
+    }
+    .map{
+        position:relative;
+        margin-bottom: 20px;
+    }
+    .btn_map{
+        position: absolute;
+        bottom: 20%;
+    }
+
+    @media screen and (min-width: 780px) {
+
+    .check_map{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-left: 50px;
+    margin-right: 50px;
+    }
+    .location{
+        margin-left: 80px;
+    }
+
+    .btn_map{
+        position: absolute;
+        bottom: 25%;
+        left: 7%;
+    }
+
+    .map_text{
+        font-size: 4.5vw;
+        text-align: left;
+        padding-left: 15px;
+    }
+}
+
+    </style>
