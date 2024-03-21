@@ -41,178 +41,175 @@ const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artis
     </div>
     <div class="headline_bgr">
       <img src="/webp/lineup/headlineup_bgr.webp" alt="background_img" />
-      <section class="headliner_list">
-        <div class="headliner">
-          <CardsHeadliner name="SKIN ON SKIN" date="THURSDAY" land="AU" imgPath="../webp/lineup/skin-on-skin-artist-card.webp" />
-        </div>
-        <div class="head_2">
-          <CardsHeadliner name="HAAi" date="FRIDAY" land="AU" imgPath="../webp/lineup/haai-artist-card.webp" />
-        </div>
-        <div class="head_3">
-          <CardsHeadliner name="ACID PAULI" date="SATURDAY" land="DE" imgPath="../webp/lineup/acid-pauli-artist-card.webp" />
-        </div>
-      </section>
-      <section class="headliner_list_2">
-        <CardsHeadliner name="SKIN ON SKIN" date="THURSDAY" land="AU" imgPath="../webp/lineup/skin-on-skin-artist-card.webp" />
-
-        <CardsHeadliner name="HAAi" date="FRIDAY" land="AU" imgPath="../webp/lineup/haai-artist-card.webp" />
-
-        <CardsHeadliner name="ACID PAULI" date="SATURDAY" land="DE" imgPath="../webp/lineup/acid-pauli-artist-card.webp" />
-      </section>
+      {
+        data.map((artist) => {
+          console.log("Name", artist.name);
+          console.log("headline", artist.headliner);
+          if (artist.headliner) {
+            return <CardsHeadliner data={artist} />;
+          }
+        })
+      }
     </div>
+
+    <div class="filtering">
+      <ButtonOverview variant="secondary" class="disco"> DISCO </ButtonOverview>
+      <ButtonOverview variant="secondary" class="house"> HOUSE </ButtonOverview>
+      <ButtonOverview variant="secondary" class="techno"> TECHNO </ButtonOverview>
+    </div>
+    <section class="list">
+      {
+        data.map((artist) => {
+          if (artist.headliner == false) {
+            return <Cards data={artist} />;
+          }
+        })
+      }
+    </section>
+    <Scroll />
   </section>
 
-  <div class="filtering">
-    <ButtonOverview variant="secondary" class="disco"> DISCO </ButtonOverview>
-    <ButtonOverview variant="secondary" class="house"> HOUSE </ButtonOverview>
-    <ButtonOverview variant="secondary" class="techno"> TECHNO </ButtonOverview>
-  </div>
-  <section class="list">
-    {data.map((artist) => <Cards data={artist} />)}
-  </section>
-  <Scroll />
-</MainLayout>
-
-<style>
-  .headline_bgr {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 100px;
-    position: relative;
-  }
-  .headliner_list {
-    position: absolute;
-    top: 0;
-    transform: translate(-260px, 190px);
-  }
-  .headliner_list_2 {
-    display: none;
-  }
-  .head_2 {
-    position: absolute;
-    top: 0;
-    transform: translate(507px, -126px);
-  }
-  .head_3 {
-    position: absolute;
-    top: 0;
-    transform: translate(447px, 297px);
-  }
-  .list {
-    max-width: 1600px;
-    display: flex;
-    flex-flow: wrap;
-    margin: auto;
-    gap: 40px;
-    justify-content: center;
-    padding-bottom: 100px;
-  }
-  .filtering {
-    display: flex;
-    flex-flow: wrap;
-    margin: auto;
-    justify-content: flex-start;
-    gap: 40px;
-    padding: 50px;
-    max-width: 1300px;
-  }
-  .festival_overblik {
-    display: flex;
-    flex-flow: wrap column;
-    place-content: center;
-    text-align: center;
-    width: 100%;
-    padding: 80px 0;
-    position: relative;
-  }
-  h1 {
-    background-image: url(../webp/lineup/mask_artist.webp);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    --webkit-background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .lineup_beskrivelse {
-    width: 50%;
-    line-height: 20px;
-    padding-top: 20px;
-  }
-  .stage {
-    color: #f84104;
-    font-family: "Abhaya Libre", serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 40px;
-    margin-left: 65px;
-    position: absolute;
-    top: 160px;
-  }
-  .stage_2 {
-    display: none;
-  }
-  .days {
-    font-size: 20px;
-  }
-  .slash {
-    color: #7000ff;
-    font-size: 25px;
-  }
-  @media (max-width: 800px) {
-    .festival_overblik {
-      padding: 80px 0 40px 0;
+  <style>
+    .headline_bgr {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 100px;
+      position: relative;
     }
-    .stage {
+    .headliner_list {
+      position: absolute;
+      top: 0;
+      transform: translate(-260px, 190px);
+    }
+    .headliner_list_2 {
       display: none;
     }
-    .stage_2 {
+    .head_2 {
+      position: absolute;
+      top: 0;
+      transform: translate(507px, -126px);
+    }
+    .head_3 {
+      position: absolute;
+      top: 0;
+      transform: translate(447px, 297px);
+    }
+    .list {
+      max-width: 1600px;
+      display: flex;
+      flex-flow: wrap;
+      margin: auto;
+      gap: 40px;
+      justify-content: center;
+      padding-bottom: 100px;
+    }
+    .filtering {
+      display: flex;
+      flex-flow: wrap;
+      margin: auto;
+      justify-content: flex-start;
+      gap: 40px;
+      padding: 50px;
+      max-width: 1300px;
+    }
+    .festival_overblik {
+      display: flex;
+      flex-flow: wrap column;
+      place-content: center;
+      text-align: center;
+      width: 100%;
+      padding: 80px 0;
+      position: relative;
+    }
+    h1 {
+      background-image: url(../webp/lineup/mask_artist.webp);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      --webkit-background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .lineup_beskrivelse {
+      width: 50%;
+      line-height: 20px;
+      padding-top: 20px;
+    }
+    .stage {
       color: #f84104;
       font-family: "Abhaya Libre", serif;
       font-weight: 600;
       font-style: normal;
       font-size: 40px;
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-      padding-bottom: 20px;
+      margin-left: 65px;
+      position: absolute;
+      top: 160px;
     }
-
-    .headliner_list {
+    .stage_2 {
       display: none;
     }
-    .headline_bgr {
-      position: relative;
-      padding-bottom: 100px;
+    .days {
+      font-size: 20px;
     }
+    .slash {
+      color: #7000ff;
+      font-size: 25px;
+    }
+    @media (max-width: 800px) {
+      .festival_overblik {
+        padding: 80px 0 40px 0;
+      }
+      .stage {
+        display: none;
+      }
+      .stage_2 {
+        color: #f84104;
+        font-family: "Abhaya Libre", serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 40px;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 20px;
+      }
 
-    .headliner_list_2 {
-      display: flex;
-      flex-flow: wrap;
-      justify-content: center;
-      place-items: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      padding: 20px;
-      gap: 20px;
-    }
-    @media (max-width: 661px) {
       .headliner_list {
         display: none;
       }
       .headline_bgr {
         position: relative;
         padding-bottom: 100px;
-        width: 100vw;
-        height: 200vh;
       }
-      html,
-      body {
-        margin: 0px;
-        overflow-x: hidden;
+
+      .headliner_list_2 {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        place-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        padding: 20px;
+        gap: 20px;
+      }
+      @media (max-width: 661px) {
+        .headliner_list {
+          display: none;
+        }
+        .headline_bgr {
+          position: relative;
+          padding-bottom: 100px;
+          width: 100vw;
+          height: 200vh;
+        }
+        html,
+        body {
+          margin: 0px;
+          overflow-x: hidden;
+        }
       }
     }
-  }
-</style>
+  </style>
+</MainLayout>
