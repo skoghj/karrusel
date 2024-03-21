@@ -41,15 +41,17 @@ const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artis
     </div>
     <div class="headline_bgr">
       <img src="/webp/lineup/headlineup_bgr.webp" alt="background_img" />
-      {
-        data.map((artist) => {
-          console.log("Name", artist.name);
-          console.log("headline", artist.headliner);
-          if (artist.headliner) {
-            return <CardsHeadliner data={artist} />;
-          }
-        })
-      }
+      <div class="headline">
+        {
+          data.map((artist) => {
+            console.log("Name", artist.name);
+            console.log("headline", artist.headliner);
+            if (artist.headliner) {
+              return <CardsHeadliner data={artist} />;
+            }
+          })
+        }
+      </div>
     </div>
 
     <div class="filtering">
@@ -72,10 +74,26 @@ const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artis
   <style>
     .headline_bgr {
       display: flex;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      padding-top: 80px;
       padding-bottom: 100px;
       position: relative;
+      gap: 20px;
     }
+    .headline {
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+    .headline_bgr img {
+      width: 60%;
+    }
+
+    /*
     .headliner_list {
       position: absolute;
       top: 0;
@@ -93,7 +111,7 @@ const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artis
       position: absolute;
       top: 0;
       transform: translate(447px, 297px);
-    }
+    }*/
     .list {
       max-width: 1600px;
       display: flex;
