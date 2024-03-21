@@ -57,7 +57,7 @@ const { artist } = Astro.props;
     </div>
 
     <div class="single-sound">
-      <iframe src={artist.music} frameborder="0" class="soundCloud"></iframe>
+        <img class="musicplayer" src="/webp/singleview/musicplayer.webp" alt="Musicplayer image" />
     </div>
   </section>
 </SingleviewLayout>
@@ -69,7 +69,9 @@ const { artist } = Astro.props;
     box-sizing: border-box;
   }
 
-
+.musicplayer{
+  
+}
   /* BREADCRUMB */
   ul.breadcrumb {
     list-style: none;
