@@ -28,6 +28,7 @@ import ButtonOverview from "./ButtonOverview.astro";
   }
   .card-container {
     width: 300px;
+    height: auto;
     display: flex;
     position: relative;
     height: auto;
@@ -42,22 +43,25 @@ import ButtonOverview from "./ButtonOverview.astro";
   .head_1 {
     position: absolute;
     top: 0;
-    transform: translate(-260px, 190px);
+    left: 52px;
+    transform: translate(-50%, 50%);
   }
   .head_2 {
     position: absolute;
-    top: 0;
-    transform: translate(507px, -126px);
+    top: -277px;
+    left: 633px;
+    transform: translate(-50%, 50%);
   }
   .head_3 {
     position: absolute;
-    top: 0;
-    transform: translate(447px, 297px);
+    top: 202px;
+    left: 531px;
+    transform: translate(-50%, 50%);
   }
   img {
     display: flex;
     position: relative;
-    width: 300px;
+    width: 100%;
     height: auto;
     border-radius: 20px;
     object-fit: cover;
@@ -103,37 +107,85 @@ import ButtonOverview from "./ButtonOverview.astro";
     padding-bottom: 15px;
   }
 
-  @media (min-width: 1200px) {
+  @media (max-width: 1760px) {
     .head_1 {
       position: absolute;
-      top: 0;
-      transform: translate(30%, 50%);
+      top: 0px;
+      left: 50px;
+      transform: translate(-50%, 50%);
     }
     .head_2 {
       position: absolute;
-      top: 0;
-      transform: translate(-24%, -43%);
+      top: -277px;
+      left: 558px;
+      transform: translate(-50%, 50%);
     }
     .head_3 {
       position: absolute;
-      top: 0;
-      transform: translate(108%, 143%);
+      top: 196px;
+      left: 514px;
+      transform: translate(-50%, 50%);
     }
-      @media (min-width: 1200px) {
+  }
+  @media (max-width: 1600px) {
     .head_1 {
       position: absolute;
-      top: 0;
-      transform: translate(30%, 50%);
+      top: 0px;
+      left: -38px;
+      transform: translate(-50%, 50%);
     }
     .head_2 {
       position: absolute;
-      top: 0;
-      transform: translate(-24%, -43%);
+      top: -277px;
+      left: 558px;
+      transform: translate(-50%, 50%);
     }
     .head_3 {
       position: absolute;
-      top: 0;
-      transform: translate(108%, 143%);
+      top: 196px;
+      left: 497px;
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  @media (max-width: 940px) {
+    .head_1 {
+      position: absolute;
+      top: 0px;
+      left: -38px;
+      transform: translate(-50%, 50%);
+    }
+    .head_2 {
+      position: absolute;
+      top: -277px;
+      left: 444px;
+      transform: translate(-50%, 50%);
+    }
+    .head_3 {
+      position: absolute;
+      top: 193px;
+      left: 395px;
+      transform: translate(-50%, 50%);
+    }
+  }
+  @media (max-width: 700px) {
+    .head_1 {
+      position: absolute;
+      top: 19px;
+      left: 120px;
+      transform: translate(-50%, 50%);
+    }
+    .head_2 {
+      position: absolute;
+      top: -335px;
+      left: 121px;
+      transform: translate(-50%, 50%);
+    }
+    .head_3 {
+      position: absolute;
+      top: 383px;
+      left: 117px;
+      transform: translate(-50%, 50%);
     }
   }
 </style>
