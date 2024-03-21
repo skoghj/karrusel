@@ -2,7 +2,7 @@
 const { variant, category } = Astro.props;
 ---
 
-<button class="custom-button btn" onclick="filterSelection" data-variant={variant} data-category={category}>
+<button class="custom-button btn" data-variant={variant} data-category={category}>
   <slot></slot>
 </button>
 
@@ -18,7 +18,8 @@ const { variant, category } = Astro.props;
     font-weight: bold;
   }
 
-  .custom-button:hover {
+  .custom-button:hover,
+  .custom-button.active:hover { /* Added .custom-button.active:hover */
     cursor: pointer;
   }
 
@@ -34,7 +35,8 @@ const { variant, category } = Astro.props;
     color: orangered;
   }
 
-  [data-variant="secondary"]:hover {
+  [data-variant="secondary"]:hover,
+  [data-variant="secondary"].active { /* Added [data-variant="secondary"].active */
     background-color: orangered;
     color: black;
   }
@@ -45,11 +47,9 @@ const { variant, category } = Astro.props;
     color: #7000ff;
   }
 
-  [data-variant="primary"]:hover {
+  [data-variant="primary"]:hover,
+  [data-variant="primary"].active { /* Added [data-variant="primary"].active */
     background-color: #7000ff;
     color: white;
   }
-
-  
-
 </style>
