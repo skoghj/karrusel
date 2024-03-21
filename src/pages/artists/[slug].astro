@@ -55,9 +55,10 @@ const { artist } = Astro.props;
       <br />
       <p>Stay updated on their latest music releases and get behind-the-scenes insights into their creative process.</p>
     </div>
-
     <div class="single-sound">
-        <img class="musicplayer" src="/webp/singleview/musicplayer.webp" alt="Musicplayer image" />
+
+      <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/531816684&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/cockwhoreandmacho" title="Cockwhore &amp; Macho" target="_blank" style="color: #cccccc; text-decoration: none;">Cockwhore &amp; Macho</a> · <a href="https://soundcloud.com/cockwhoreandmacho/cockwhore-macho-selfdisrupt-etandetsted-october-2018" title="Cockwhore &amp; Macho @ Selfdisrupt, EtAndetSted October 2018" target="_blank" style="color: #cccccc; text-decoration: none;">Cockwhore &amp; Macho @ Selfdisrupt, EtAndetSted October 2018</a></div>
+    
     </div>
   </section>
 </SingleviewLayout>
@@ -69,10 +70,7 @@ const { artist } = Astro.props;
     box-sizing: border-box;
   }
 
-.musicplayer{
-  
-}
-  /* BREADCRUMB */
+/* BREADCRUMB */
   ul.breadcrumb {
     list-style: none;
   }
@@ -108,23 +106,13 @@ const { artist } = Astro.props;
   h1 {
     font-family: "Amarante";
     font-weight: 400;
-    background-image: url(../webp/mask_image.webp);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    --webkit-background-repeat: no-repeat;
-    background-size: cover;
-    filter: brightness(180%) contrast(100%);
+    color: #f84104;
   }
 
   h2 {
     font-family: "Amarante";
     font-weight: 400;
-    background-image: url(../webp/mask_image.webp);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    --webkit-background-repeat: no-repeat;
-    background-size: cover;
-    filter: brightness(180%) contrast(100%);
+color: #f84104;
   }
 
   .single-1_1 {

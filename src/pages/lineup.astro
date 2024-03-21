@@ -12,6 +12,8 @@ const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artis
   method: "GET",
   headers: { apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xemd6YWVldnVvbG5laXhndWF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA2MDQyNDQsImV4cCI6MjAyNjE4MDI0NH0.Qbj4-BVvOnlAroDN44rKnJaPILmiSdhtvARYZEbJrkA" },
 }).then((res) => res.json());
+
+let headlineCounter = 0;
 ---
 
 <MainLayout title="LINEUP">
@@ -35,19 +37,18 @@ const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artis
       <br /> 44 <span class="days">artists</span>
     </div>
     <div class="stage_2">
-      3 <span class="days">days</span>
-      <span class="slash">/</span> 3 <span class="days">stages</span>
-      <span class="slash">/</span> 44 <span class="days">artists </span>
+      3 <span class="days">days </span>
+      <span class="slash">/ </span> 3 <span class="days">stages </span>
+      <span class="slash">/ </span> 44 <span class="days">artists </span>
     </div>
     <div class="headline_bgr">
       <img src="/webp/lineup/headlineup_bgr.webp" alt="background_img" />
-      <div class="headline">
+      <div class="headline headliner_list">
         {
           data.map((artist) => {
-            console.log("Name", artist.name);
-            console.log("headline", artist.headliner);
             if (artist.headliner) {
-              return <CardsHeadliner data={artist} />;
+              headlineCounter++;
+              return <CardsHeadliner data={artist} className={`head_${headlineCounter}`} />;
             }
           })
         }
@@ -70,166 +71,186 @@ const data = await fetch("https://oqzgzaeevuolneixguaw.supabase.co/rest/v1/artis
     </section>
     <Scroll />
   </section>
+</MainLayout>
 
-  <style>
-    .headline_bgr {
+<style>
+  .headline_bgr {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    position: relative;
+    max-width: 100%;
+    padding: 80px 0;
+    height: auto;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .headline {
+    display: flex;
+    position: absolute;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 20px;
+    top: 8%;
+    left: 34%;
+    margin: 0 auto;
+    transform: translate(-50%, 50%);
+  }
+  .list {
+    max-width: 1600px;
+    display: flex;
+    flex-flow: wrap;
+    margin: auto;
+    gap: 40px;
+    justify-content: center;
+    padding-bottom: 100px;
+  }
+  .filtering {
+    display: flex;
+    flex-flow: wrap;
+    margin: auto;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 50px;
+    max-width: 1300px;
+    margin-top: 0px;
+  }
+  .festival_overblik {
+    display: flex;
+    flex-flow: wrap column;
+    place-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 80px 0;
+    position: relative;
+  }
+  h1 {
+    background-image: url(../webp/lineup/mask_artist.webp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    --webkit-background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .lineup_beskrivelse {
+    width: 50%;
+    line-height: 20px;
+    padding-top: 20px;
+  }
+  .stage {
+    color: #f84104;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 40px;
+    margin-left: 65px;
+    position: absolute;
+    top: 160px;
+  }
+  .stage_2 {
+    display: none;
+  }
+  .days {
+    font-size: 20px;
+  }
+  .slash {
+    color: #7000ff;
+    font-size: 25px;
+  }
+
+  @media (max-width: 700px) {
+    .festival_overblik {
+      padding: 80px 0 40px 0;
+    }
+    .stage_2 {
+      color: #f84104;
+      font-family:
+        Abhaya Libre,
+        serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 40px;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-top: 80px;
-      padding-bottom: 100px;
-      position: relative;
-      gap: 20px;
+      align-items: end;
+    }
+    .filtering {
+      margin-top: 120px;
+    }
+    .stage {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .list {
+      padding: 0 20px 20px 20px;
+    }
+    .headline_bgr img {
       width: 100%;
+    }
+    .filtering {
+      margin-top: 0;
+      padding-top: 35%;
+      align-items: center;
+      justify-content: center;
     }
     .headline {
       display: flex;
       position: absolute;
-      flex-direction: column;
+      flex-flow: column wrap;
       justify-content: center;
       padding: 20px;
-      margin-top: 0;
+      top: 14%;
+      left: 34%;
+      margin: 0 auto;
+      transform: translate(-50%, 50%);
     }
-    .headline_bgr img {
-      width: 60%;
-    }
+  }
 
-    /*
-    .headliner_list {
-      position: absolute;
-      top: 0;
-      transform: translate(-260px, 190px);
-    }
-    .headliner_list_2 {
-      display: none;
-    }
-    .head_2 {
-      position: absolute;
-      top: 0;
-      transform: translate(507px, -126px);
-    }
-    .head_3 {
-      position: absolute;
-      top: 0;
-      transform: translate(447px, 297px);
-    }*/
-    .list {
-      max-width: 1600px;
-      display: flex;
-      flex-flow: wrap;
-      margin: auto;
-      gap: 40px;
-      justify-content: center;
-      padding-bottom: 100px;
-    }
+  @media (max-width: 320px) {
     .filtering {
-      display: flex;
-      flex-flow: wrap;
-      margin: auto;
-      justify-content: flex-start;
-      gap: 40px;
-      padding: 50px;
-      max-width: 1300px;
-    }
-    .festival_overblik {
-      display: flex;
-      flex-flow: wrap column;
-      place-content: center;
-      text-align: center;
-      width: 100%;
-      padding: 80px 0;
-      position: relative;
-    }
-    h1 {
-      background-image: url(../webp/lineup/mask_artist.webp);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      --webkit-background-repeat: no-repeat;
-      background-size: cover;
+      padding-top: 120%;
+      justify-content: center;
     }
     .lineup_beskrivelse {
-      width: 50%;
+      width: 100%;
       line-height: 20px;
-      padding-top: 20px;
+      padding: 20px;
     }
-    .stage {
+    .headline_bgr img {
+      width: 100%;
+    }
+    .headline {
+      top: 8%;
+      left: 20%;
+      margin: 0 auto;
+      transform: translate(-50%, 50%);
+    }
+
+    .stage_2 {
       color: #f84104;
-      font-family: "Abhaya Libre", serif;
+      font-family:
+        Abhaya Libre,
+        serif;
       font-weight: 600;
       font-style: normal;
       font-size: 40px;
-      margin-left: 65px;
       position: absolute;
-      top: 160px;
+      top: 16%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: end;
     }
-    .stage_2 {
+    .filtering {
+      margin-top: 120px;
+    }
+    .stage {
       display: none;
     }
-    .days {
-      font-size: 20px;
-    }
-    .slash {
-      color: #7000ff;
-      font-size: 25px;
-    }
-    @media (max-width: 800px) {
-      .festival_overblik {
-        padding: 80px 0 40px 0;
-      }
-      .stage {
-        display: none;
-      }
-      .stage_2 {
-        color: #f84104;
-        font-family: "Abhaya Libre", serif;
-        font-weight: 600;
-        font-style: normal;
-        font-size: 40px;
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-        padding-bottom: 20px;
-      }
-
-      .headliner_list {
-        display: none;
-      }
-      .headline_bgr {
-        position: relative;
-        padding-bottom: 100px;
-      }
-
-      .headliner_list_2 {
-        display: flex;
-        flex-flow: wrap;
-        justify-content: center;
-        place-items: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        padding: 20px;
-        gap: 20px;
-      }
-      @media (max-width: 661px) {
-        .headliner_list {
-          display: none;
-        }
-        .headline_bgr {
-          position: relative;
-          padding-bottom: 100px;
-          width: 100vw;
-          height: auto;
-        }
-        html,
-        body {
-          margin: 0px;
-          overflow-x: hidden;
-        }
-      }
-    }
-  </style>
-</MainLayout>
+  }
+</style>
